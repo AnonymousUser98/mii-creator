@@ -46,7 +46,7 @@ async function build() {
         join(import.meta.dir, "src/helper.ts"),
         join(import.meta.dir, "src/popup.ts"),
         join(import.meta.dir, "src/worker.ts"),
-      ]
+      ],
       "./public/dist/"
     );
   } catch (e) {
