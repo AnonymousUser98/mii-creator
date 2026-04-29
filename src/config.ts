@@ -6,7 +6,7 @@ const fflResourcePath = "FFLResHigh.dat"; // Configure the path for where the re
 
 // Instance of FFL-Testing/Mii Studio API compatible renderer.
 // const baseURL = "http://localhost:5000/miis/image"; // <-- Uncomment this when using local FFL-testing for development
-const baseURL = "https://mii-renderer.nxw.pw/miis/image"; // <-- Comment this when committing for prod
+const baseURL = "https://mii-unsecure.ariankordi.net/miis/image"; // <-- Comment this when committing for prod
 // ^^ image.png, image.glb
 const newApiParams = true;
 // false if using FFL-Testing-with-hats
