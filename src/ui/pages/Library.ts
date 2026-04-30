@@ -578,7 +578,11 @@ export async function Library(highlightMiiId?: string) {
     ),
     new Html("button").text("View on GitHub").on("click", () => {
       window.open("https://github.com/AnonymousUser98/mii-creator", "_blank");
-    })
+    }),
+    new Html("button").text("Enter Password").on("click", () => {
+      var pwdEntry = prompt("Enter a secret password to unlock a special Mii.");
+      // More code here
+    }
   );
 }
 
