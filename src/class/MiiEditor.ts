@@ -393,7 +393,7 @@ export class MiiEditor {
                 },
               },
               {
-                text: "Exit without Saving",
+                text: "Exit Without Saving",
                 callback: () => {
                   this.shutdown(false);
                 },
