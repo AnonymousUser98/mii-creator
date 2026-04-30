@@ -22,7 +22,7 @@ import { Config } from "../config";
 import Html from "@datkat21/html";
 import { AddButtonSounds } from "../util/AddButtonSounds";
 import { customRender } from "./pages/library/render/customRender";
-import { importMiiConfirmation } from "./library/importDialog";
+import { importMiiConfirmation } from "./pages/library/importDialog";
 
 export async function setupUi() {
   let mm = getMusicManager();
