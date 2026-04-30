@@ -54,8 +54,8 @@ export const Config = {
     // ^^ scaleLimit, scaleLimitClampY, scaleApply
   },
   version: {
-    string: "v0.9.3.1",
-    name: "Patch Update",
+    string: "v0.9.4",
+    name: "Public Instance Update",
 
     // ignore that I'm just writing HTML here
     changelog: `
