@@ -354,7 +354,7 @@ export class MiiEditor {
         select: TabInit(MiscTab, CameraPosition.MiiFullBody),
       },
       {
-        icon: EditorIcons.save + "<span>Save</span>",
+        icon: EditorIcons.save + "<span>Save / Exit</span>",
         type: "tab-save",
         select: () => {
           if (this.dirty === true)
@@ -372,7 +372,7 @@ export class MiiEditor {
                 },
               },
               {
-                text: "Exit without Saving",
+                text: "Exit Without Saving",
                 callback: () => {
                   this.shutdown(false);
                 },
