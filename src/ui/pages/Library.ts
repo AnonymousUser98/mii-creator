@@ -575,7 +575,7 @@ export async function Library(highlightMiiId?: string) {
           replayUpdateNotice();
         })
       // new Html("strong").text("Please send any feedback or bug reports either through GitHub issues or to my email: datkat21.yt@gmail.com"),
-    )
+    ),
     new Html("button").text("View on GitHub").on("click", () => {
       window.open("https://github.com/AnonymousUser98/mii-creator", "_blank");
     })
