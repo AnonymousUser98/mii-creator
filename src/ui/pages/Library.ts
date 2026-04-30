@@ -567,6 +567,9 @@ export async function Library(highlightMiiId?: string) {
               .style({ flex: "1" })
           )
         ),
+      new Html("button").text("View on GitHub").on("click", () => {
+          window.open("https://github.com/AnonymousUser98/mii-creator", "_blank");
+      })
       new Html("strong").text("This site is not affiliated with Nintendo."),
       new Html("small")
         .text(`${Config.version.string} (${Config.version.name})`)
