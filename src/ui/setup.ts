@@ -356,5 +356,7 @@ export async function setupUi() {
   });
 }
 
-/* NOTES ABOUT MIIC
+/* NOTES ABOUT THE MIIC FORMAT
 To make a Mii get recognized as "non-editable" and "obtained through Mii Creator", replace bytes $10 to $15 with "2F F9 16 1C FA AD", then update the checksum at $5E-$5F with CRC-16/XMODEM.
+To convert from MIIC to FFSD, remove the last 12 bytes (the ones after the checksum).
+*/
