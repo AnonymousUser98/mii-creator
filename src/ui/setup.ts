@@ -256,6 +256,9 @@ export async function setupUi() {
   //@ts-expect-error
   window.soundManager = getSoundManager();
 
+  let kci = 0;
+  const codeKeys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "KeyB", "KeyA"];
+  
   document.addEventListener("keydown", (e) => {
     if (document.activeElement === document.body) {
       if (e.ctrlKey || e.altKey || e.metaKey) return;
@@ -291,6 +294,62 @@ export async function setupUi() {
 
         getSoundManager().setVolume(vol);
         mm.setVolume(vol);
+      }
+      if (e.code === "ArrowUp") {
+        if (kci === 0 || kci === 1) {
+          kci++;
+        } else {
+          if (kci === 2) {
+            // Do Nothing
+          } else {
+            kci = 0;
+          }
+        }
+      }
+      if (e.code === "ArrowDown") {
+        if (kci === 2 || kci === 3) {
+          kci++;
+        } else {
+          kci = 0;
+        }
+      }
+      if (e.code === "ArrowLeft") {
+        if (kci === 4 || kci === 6) {
+          kci++;
+        } else {
+          kci = 0;
+        }
+      }
+      if (e.code === "ArrowRight") {
+        if (kci === 5 || kci === 7) {
+          kci++;
+        } else {
+          kci = 0;
+        }
+      }
+      if (e.code === "KeyB") {
+        if (kci === 8) {
+          kci++;
+        } else {
+          kci = 0;
+        }
+      }
+      if (e.code === "KeyA") {
+        if (kci === 9) {
+          const mii = new Mii(
+            Buffer.from(
+              "AwEAQAAAAAAAAAAAAP9wmQAAAAAAAAAAABBNAGEAcgBtAHUAbAAAAAAAAAAAAGt2aZUiDmsJQxivFUUUbBISaK0AKSmgUQAlSgBpAGYAZgB5AFAAbwBwAEoAcgAAAObsAAA8QhNNHwAAAAAA",
+              "base64"
+            )
+          );
+          importMiiConfirmation(mii, "Mii Creator (Special Mii)");
+          kci = 0;
+        } else {
+          kci = 0;
+        }
+      }
+      if (!codeKeys.includes(e.code)) {
+        kci = 0;
       }
     }
   });
