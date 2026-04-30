@@ -1,4 +1,4 @@
-# Mii Creator App
+# Mii Creator App (Unofficial Public Instance)
 
 ![Preview image](public/assets/images/preview_dark.png)
 
@@ -6,11 +6,12 @@ Create and share Mii characters online with just a few clicks!
 
 ## Credits
 
-- Uses a locally hosted version of the [mii-unsecure.ariankordi.net](https://mii-unsecure.ariankordi.net) [API](https://github.com/ariankordi/FFL-Testing/tree/renderer-server-prototype) by [ariankordi](https://github.com/ariankordi) used to generate 3D Mii heads and icons.
+- Uses the [mii-unsecure.ariankordi.net](https://mii-unsecure.ariankordi.net) [API](https://github.com/ariankordi/FFL-Testing/tree/renderer-server-prototype) by [ariankordi](https://github.com/ariankordi) used to generate 3D Mii heads and icons.
   - A [fork](https://github.com/datkat21/FFL-Testing-with-hats) is used that adds hat support.
 - [mii-js](https://github.com/PretendoNetwork/mii-js) library used for interacting with Mii data in a JavaScript-friendly way
 - [Some utility code](https://github.com/datkat21/mii-creator/tree/master/src/external/mii-frontend) "borrowed" from arian's website for conversion, QR codes, etc.
 - Custom Mii Maker music by [objecty](https://x.com/objecty)
+- GitHub Copilot and ChatGPT helped me modify this to make it work with GitHub Pages.
 
 ## Features
 
@@ -44,6 +45,8 @@ Thanks to [Timimimi](https://github.com/Timiimiimii) for creating the new hat mo
 - Bike Helmet
 
 ## Setting up development
+
+**NOTICE:** I haven't tested this process with this fork, so it might not work. Use the GitHub workflow to deploy to GitHub Pages.
 
 1. Make sure you have [Bun](https://bun.sh/) installed on your device. This is used for compiling all of the TypeScript code into JavaScript for the client.
 2. Clone this repository, and run the `bun i` command to install dependencies.
