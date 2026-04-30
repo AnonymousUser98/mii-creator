@@ -42,10 +42,7 @@ async function build() {
   try {
     await compile(
       [
-        join(import.meta.dir, "src/main.ts"),
-        join(import.meta.dir, "src/helper.ts"),
-        join(import.meta.dir, "src/popup.ts"),
-        join(import.meta.dir, "src/worker.ts"),
+        join(import.meta.dir, "src/main.ts")
       ],
       "./public/dist/"
     );
