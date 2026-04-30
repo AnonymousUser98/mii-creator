@@ -339,7 +339,7 @@ export async function setupUi() {
         if (kci === 9) {
           const mii = new Mii(
             Buffer.from(
-              "AwEAQAAAAAAAAAAAAP9wmQAAAAAAAAAAABBNAGEAcgBtAHUAbAAAAAAAAAAAAGt2aZUiDmsJQxivFUUUbBISaK0AKSmgUQAlSgBpAGYAZgB5AFAAbwBwAEoAcgAAAObsAAA8QhNNHwAAAAAA",
+              "A4EAwAAAAAAAAAAAAP9wmS/5Fhz6rQAAABBNAGEAcgBtAHUAbAAAAAAAAAAAAGt2aZUiDmsJQxivFUUUbBISaK0AKSmgUQAlSgBpAGYAZgB5AFAAbwBwAEoAcgAAAGtGAAA8QhNNHwAAAAAA",
               "base64"
             )
           );
@@ -355,3 +355,6 @@ export async function setupUi() {
     }
   });
 }
+
+/* NOTES ABOUT MIIC
+To make a Mii get recognized as "non-editable" and "obtained through Mii Creator", replace bytes $10 to $15 with "2F F9 16 1C FA AD", then update the checksum at $5E-$5F with CRC-16/XMODEM.
