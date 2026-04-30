@@ -469,6 +469,14 @@ export async function Library(highlightMiiId?: string) {
                   "Helped with design and created the Wii U theme",
                   "0800450308040402020c0308060406020a0001000006000804000a0800326702010314031304190d04000a040109"
                 );
+                createMiiCard(
+                  container,
+                  "AnonymousUser98",
+                  "AnonymousUser98",
+                  "https://github.com/AnonymousUser98",
+                  "Creator of this public instance",
+                  "00070e71797b86899297a3a7abb5bdb5bebec5ccd3dae5ecebf6fdfe060d29525d646d808aa0aac0d4d7dedbe6eeed"
+                );
               })
               .style({ flex: "1" })
           ),
@@ -495,7 +503,7 @@ export async function Library(highlightMiiId?: string) {
                   .style({ gap: "0" })
                   .prependTo(mb);
                 new Html("span")
-                  .text("Here's where you can contact the author, Kat21")
+                  .text("Here's where you can contact the author, Kat21. You can also contact AnonymousUser98 with a GitHub issue. Note that Kat21 might not be available to help because this is an unofficial fork.")
                   .style({
                     "font-size": "20px",
                     "flex-shrink": "0",
@@ -546,6 +554,13 @@ export async function Library(highlightMiiId?: string) {
                   "File an issue on GitHub",
                   "https://github.com/datkat21/mii-creator",
                   "datkat21/mii-creator",
+                  EditorIcons.contact_github
+                );
+                createIconCard(
+                  container,
+                  "File an issue on GitHub",
+                  "https://github.com/AnonymousUser98/mii-creator",
+                  "AnonymousUser98/mii-creator",
                   EditorIcons.contact_github
                 );
               })
