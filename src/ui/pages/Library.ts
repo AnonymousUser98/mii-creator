@@ -648,7 +648,7 @@ export async function Library(highlightMiiId?: string) {
       }
     }
   )
-}
+);
 
 export type MiiLocalforage = {
   id: string;
