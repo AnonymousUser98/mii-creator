@@ -369,6 +369,18 @@ export async function Library(highlightMiiId?: string) {
         })
       ),
       AddButtonSounds(
+        new Html("button").text("Import from Base64").on("click", () => {
+          var miiDataInput = prompt("Paste the Base64 data here:");
+          var mii = new Mii(
+            Buffer.from(
+              miiDataInput,
+              "base64"
+            )
+          );
+          importMiiConfirmation(mii, "Imported from Base64");
+        })
+      ),
+      AddButtonSounds(
         new Html("button").text("Settings").on("click", async () => {
           Settings();
         })
@@ -642,17 +654,7 @@ export async function Library(highlightMiiId?: string) {
           alert("Invalid password.");
       }
     }
-  ),
-  new Html("button").text("Import from Base64").on("click", () => {
-    var miiDataInput = prompt("Paste the Base64 data here:");
-    var mii = new Mii(
-      Buffer.from(
-        miiDataInput,
-        "base64"
-      )
-    );
-    importMiiConfirmation(mii, "Imported from Base64");
-  })
+  )
 );
 }
 
