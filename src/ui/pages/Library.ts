@@ -26,6 +26,8 @@ import { playSound } from "../../class/audio/SoundManager";
 import { miiSelect } from "./library/select";
 import { miiCreateDialog } from "./library/new/_dialog";
 import { importMiiConfirmation } from "./library/importDialog";
+import { sha3_256 } from "js-sha3";
+
 export const savedMiiCount = async () =>
   (await localforage.keys()).filter((k) => k.startsWith("mii-")).length;
 export const newMiiId = async () =>
@@ -580,8 +582,40 @@ export async function Library(highlightMiiId?: string) {
       window.open("https://github.com/AnonymousUser98/mii-creator", "_blank");
     }),
     new Html("button").text("Enter Password").on("click", () => {
-      var pwdEntry = prompt("Enter a secret password to unlock a special Mii.");
-      // More code here
+      var pwdEntry = prompt("Enter a secret password (in ALL CAPS) to unlock a special Mii.");
+      // Use this tool to calculate hashes: https://cryptotools.net/hash
+      // See the private reference document for a list of passwords
+      switch(sha3_256(pwdEntry)) {
+        case "ec0b1cd6a5685d948813af6bdbc84cd45a0c4a89d3f3d5615b3fc92f180a23d7":
+          // Add secret Mii here
+          break;
+        case "82145d50fd50a7a71ea2114bf484ab04b5a4aa9af7eca700f8cf96bc323ba0b6":
+          // Add secret Mii here
+          break;
+        case "7f030c6ad313181913f2f1c104d2bce73362f606a6407ebe0297d4aab686acfa":
+          const mii = new Mii(
+            Buffer.from(
+              "A8EAQAAAAAAAAAAAAP9wmS/5Fhz6rQAAAABCAHIAaQBnAGgAdAAgAEcAdQB5AEdEDwA3CYfOBBqANEUQiBghaBAAACkAUkhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAHuqAABaPAAAAAAAAAAA",
+              "base64"
+            )
+          );
+          importMiiConfirmation(mii, "Mii Creator (Special Mii)");
+          break;
+        case "a52252a98f9bb8e910a66e22d91fedabd4e27fa0bf826e995e8948d28f571f0b":
+          const mii = new Mii(
+            Buffer.from(
+              "A8EAQAAAAAAAAAAAAP9wmS/5Fhz6rQAAAABCAHIAaQBnAGgAdAAgAEcAdQB5AEdEDwA3CYfOBBqANEUQiBghaBAAACkAUkhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAHuqAABaPAAAAAAAAAAA",
+              "base64"
+            )
+          );
+          importMiiConfirmation(mii, "Mii Creator (Special Mii)");
+          break;
+        case "550814f27f5408929d0a92461e33a1309f1d7a6cb0227814273a42ae82d4fba9":
+          // add here
+          break;
+        default:
+          alert("Invalid password.");
+      }
     }
   );
 }
