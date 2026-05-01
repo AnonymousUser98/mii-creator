@@ -26,6 +26,8 @@ import { playSound } from "../../class/audio/SoundManager";
 import { miiSelect } from "./library/select";
 import { miiCreateDialog } from "./library/new/_dialog";
 import { importMiiConfirmation } from "./library/importDialog";
+import { sha3_256 } from "js-sha3";
+
 export const savedMiiCount = async () =>
   (await localforage.keys()).filter((k) => k.startsWith("mii-")).length;
 export const newMiiId = async () =>
@@ -578,8 +580,75 @@ export async function Library(highlightMiiId?: string) {
     ),
     new Html("button").text("View on GitHub").on("click", () => {
       window.open("https://github.com/AnonymousUser98/mii-creator", "_blank");
-    })
-  );
+    }),
+    new Html("button").text("Enter Password").on("click", () => {
+      var pwdEntry = prompt("Enter a secret password (in ALL CAPS) to unlock a special Mii.");
+      // Use this tool to calculate hashes: https://cryptotools.net/hash
+      // See the private reference document for a list of passwords
+      switch(sha3_256(pwdEntry)) {
+        case "ec0b1cd6a5685d948813af6bdbc84cd45a0c4a89d3f3d5615b3fc92f180a23d7":
+          var mii = new Mii(
+            Buffer.from(
+              "A8EAwAAAAAAAAAAAAN8Zmi/5Fhz6rQAAARxKAEIAWgBTACAAUwBhAG0AdQBzAG0uBQBkAx5HQxzTM0UcixrbKBEAACkAUkhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAPNMAAAMABYAAAAAAAAA",
+              "base64"
+            )
+          );
+          importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
+          break;
+        case "82145d50fd50a7a71ea2114bf484ab04b5a4aa9af7eca700f8cf96bc323ba0b6":
+          alert("Tell that to Microsoft!");
+          break;
+        case "7f030c6ad313181913f2f1c104d2bce73362f606a6407ebe0297d4aab686acfa":
+          var mii = new Mii(
+            Buffer.from(
+              "A8EAQAAAAAAAAAAAAP9wmS/5Fhz6rQAAAABCAHIAaQBnAGgAdAAgAEcAdQB5AEdEDwA3CYfOBBqANEUQiBghaBAAACkAUkhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAHuqAABaPAAAAAAAAAAA",
+              "base64"
+            )
+          );
+          importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
+          break;
+        case "a52252a98f9bb8e910a66e22d91fedabd4e27fa0bf826e995e8948d28f571f0b":
+          var mii = new Mii(
+            Buffer.from(
+              "A8EAQAAAAAAAAAAAAP9wmS/5Fhz6rQAAAABCAHIAaQBnAGgAdAAgAEcAdQB5AEdEDwA3CYfOBBqANEUQiBghaBAAACkAUkhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAHuqAABaPAAAAAAAAAAA",
+              "base64"
+            )
+          );
+          importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
+          break;
+        case "550814f27f5408929d0a92461e33a1309f1d7a6cb0227814273a42ae82d4fba9":
+          var mii = new Mii(
+            Buffer.from(
+              "A8EAQAAAAAAAAAAAAP9wmS/5Fhz6rQAAACxLAGkAdABiAG8AZwBhAAAAAAAAAFpgBQBDATFlYxYjU0UScBDYCo0ANCGGWUhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAH/8AAAMABYAAA8AAAAA",
+              "base64"
+            )
+          );
+          importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
+          break;
+        case "f908010a9e7efeb0f5d41e443abdc560ff1917fbde0454507fceddc701b781c3":
+          var mii = new Mii(
+            Buffer.from(
+              "A8EAQAAAAAAAAAAAAP9wmS/5Fhz6rQAAACxOAGEAcgBpAGgAaQByAG8AAAAAAEBACQBACDKGQxgMFCQUrRIGDg4AAimhUUhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAK/rAAAIAAAAAAAAAAAA",
+              "base64"
+            )
+          );
+          importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
+          break;
+        case "4ffb69a6020d8c77ec66cb799df506bc829fc211e03d4f9265fa867f5a6af637":
+          var mii = new Mii(
+            Buffer.from(
+              "A8EAQAAAAAAAAAAAAP9wmS/5Fhz6rQAAACxOAGEAcgBpAGgAaQByAG8AAAAAAEBACQBACDKGQxgMFCQUrRIGDg4AAimhUUhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAK/rAAAIAAAAAAAAAAAA",
+              "base64"
+            )
+          );
+          importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
+          break;
+        default:
+          alert("Invalid password.");
+      }
+    }
+  )
+);
 }
 
 export type MiiLocalforage = {
