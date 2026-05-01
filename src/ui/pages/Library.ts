@@ -596,7 +596,7 @@ export async function Library(highlightMiiId?: string) {
           importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
           break;
         case "82145d50fd50a7a71ea2114bf484ab04b5a4aa9af7eca700f8cf96bc323ba0b6":
-          // Add secret Mii here
+          alert("Tell that to Microsoft!");
           break;
         case "7f030c6ad313181913f2f1c104d2bce73362f606a6407ebe0297d4aab686acfa":
           const mii = new Mii(
