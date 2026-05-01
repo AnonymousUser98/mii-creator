@@ -23,6 +23,7 @@
     "buffer": "^6.0.3",
     "camera-controls": "^2.9.0",
     "iconv-lite": "^0.6.3",
+    "js-sha3": "^0.9.3",
     "jszip": "^3.10.1",
     "kaitai-struct": "^0.10.0",
     "localforage": "^1.10.0",
