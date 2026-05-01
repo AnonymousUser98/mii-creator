@@ -599,14 +599,6 @@ export async function Library(highlightMiiId?: string) {
           alert("Tell that to Microsoft!");
           break;
         case "7f030c6ad313181913f2f1c104d2bce73362f606a6407ebe0297d4aab686acfa":
-          var mii = new Mii(
-            Buffer.from(
-              "A8EAQAAAAAAAAAAAAP9wmS/5Fhz6rQAAAABCAHIAaQBnAGgAdAAgAEcAdQB5AEdEDwA3CYfOBBqANEUQiBghaBAAACkAUkhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAHuqAABaPAAAAAAAAAAA",
-              "base64"
-            )
-          );
-          importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
-          break;
         case "a52252a98f9bb8e910a66e22d91fedabd4e27fa0bf826e995e8948d28f571f0b":
           var mii = new Mii(
             Buffer.from(
@@ -626,6 +618,7 @@ export async function Library(highlightMiiId?: string) {
           importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
           break;
         case "f908010a9e7efeb0f5d41e443abdc560ff1917fbde0454507fceddc701b781c3":
+        case "4ffb69a6020d8c77ec66cb799df506bc829fc211e03d4f9265fa867f5a6af637":
           var mii = new Mii(
             Buffer.from(
               "A8EAQAAAAAAAAAAAAP9wmS/5Fhz6rQAAACxOAGEAcgBpAGgAaQByAG8AAAAAAEBACQBACDKGQxgMFCQUrRIGDg4AAimhUUhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAK/rAAAIAAAAAAAAAAAA",
@@ -634,10 +627,12 @@ export async function Library(highlightMiiId?: string) {
           );
           importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
           break;
-        case "4ffb69a6020d8c77ec66cb799df506bc829fc211e03d4f9265fa867f5a6af637":
+        case "80fa1e682532c441a5ab85d367c5ffb42042b3a951483fc8099168e0aa2d805b":
+        case "fa6faa5bdc6b6297d977c49780502e7a3eb60b9abc5b2ba86a0c0e7d5870637b":
+        case "f1e24658b3a625595082c7fc290d1bc6a951f611d87c7407921d9f3f24943562":
           var mii = new Mii(
             Buffer.from(
-              "A8EAQAAAAAAAAAAAAP9wmS/5Fhz6rQAAACxOAGEAcgBpAGgAaQByAG8AAAAAAEBACQBACDKGQxgMFCQUrRIGDg4AAimhUUhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAK/rAAAIAAAAAAAAAAAA",
+              "A8EAQAAAAAAAAAAAAP9wmS/5Fhz6rQAAAChQAGkAeABlAGwAAAAAAAAAAAAAAE1ZDQA+CJlmJRoBU0QUZhQPSA8AACkAUkhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAF5mAAAKAAAAAAAAAAAA",
               "base64"
             )
           );
