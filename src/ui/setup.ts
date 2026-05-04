@@ -23,6 +23,7 @@ import Html from "@datkat21/html";
 import { AddButtonSounds } from "../util/AddButtonSounds";
 import { customRender } from "./pages/library/render/customRender";
 import { importMiiConfirmation } from "./pages/library/importDialog";
+import { sha3_256 } from "js-sha3";
 
 export async function setupUi() {
   let mm = getMusicManager();
