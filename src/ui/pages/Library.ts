@@ -597,6 +597,10 @@ export async function Library(highlightMiiId?: string) {
       var pwdEntry = prompt("Enter a secret password (in ALL CAPS) to unlock a special Mii.");
       // Use this tool to calculate hashes: https://cryptotools.net/hash
       // See the private reference document for a list of passwords
+      /* NOTES ABOUT THE MIIC FORMAT
+        To make a Mii get recognized as "non-editable" and "obtained through Mii Creator", replace bytes $10 to $15 with "2F F9 16 1C FA AD", then update the checksum at $5E-$5F with CRC-16/XMODEM.
+        To convert from MIIC to FFSD, remove the last 12 bytes (the ones after the checksum).
+      */
       switch(sha3_256(pwdEntry)) {
         case "ec0b1cd6a5685d948813af6bdbc84cd45a0c4a89d3f3d5615b3fc92f180a23d7":
           var mii = new Mii(
@@ -645,6 +649,16 @@ export async function Library(highlightMiiId?: string) {
           var mii = new Mii(
             Buffer.from(
               "A8EAQAAAAAAAAAAAAP9wmS/5Fhz6rQAAAChQAGkAeABlAGwAAAAAAAAAAAAAAE1ZDQA+CJlmJRoBU0QUZhQPSA8AACkAUkhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAF5mAAAKAAAAAAAAAAAA",
+              "base64"
+            )
+          );
+          importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
+          break;
+        case "9699ac448f27c249867e54f506e5fea2be4a528cec9a811e051ae215fa36e8f3":
+        case "8ec7d6a7e7f37fca82d9a45238808fe996173fbe172758220c59c498c0e4fbb4":
+          var mii = new Mii(
+            Buffer.from(
+              "AwEAQAAAAAAAAAAAgP9wmS/5Fhz6rQAAACxIAGEAeQBhAGIAdQBzAGEAAAAAAH5/bAB2AhGoJRgJY0YSzRASSqwAwCgAUkhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAADOIAAAAAAAAAAAAAAAA",
               "base64"
             )
           );
