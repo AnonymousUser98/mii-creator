@@ -296,6 +296,15 @@ export async function setupUi() {
         getSoundManager().setVolume(vol);
         mm.setVolume(vol);
       }
+      if (e.code === "KeyZ") {
+        alert("Quiz time! Answer this one question. Please provide only the first line. Do not use any capital letters. Spacing and punctuation is important. Click OK to continue.");
+        var answerInput = prompt("What is The Storm?");
+        if (sha3_256(answerInput) === "e646fd65b29b88c79dd50bd8d2b359baa3e825be93504e54404595e0648a8c33") {
+          alert("Hey! Listen!");
+        } else {
+          alert("You are wrong.");
+        }
+      }
       if (e.code === "ArrowUp") {
         if (kci === 0 || kci === 1) {
           kci++;
