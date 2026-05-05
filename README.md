@@ -11,7 +11,7 @@ Create and share Mii characters online with just a few clicks!
 - [mii-js](https://github.com/PretendoNetwork/mii-js) library used for interacting with Mii data in a JavaScript-friendly way
 - [Some utility code](https://github.com/datkat21/mii-creator/tree/master/src/external/mii-frontend) "borrowed" from arian's website for conversion, QR codes, etc.
 - Custom Mii Maker music by [objecty](https://x.com/objecty)
-- GitHub Copilot and ChatGPT (kind of) helped me modify this to make it work with GitHub Pages.
+- GitHub Copilot and ChatGPT (sort of) helped me modify this to make it work with GitHub Pages.
 
 ## Features
 
