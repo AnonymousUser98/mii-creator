@@ -174,6 +174,7 @@ export const Config = {
     </div>
     -->
 
+    <a></a>
     <p style="margin-bottom:0;text-align:center"><strong>You can view this message again in Settings.</strong></p>
     `,
   },
