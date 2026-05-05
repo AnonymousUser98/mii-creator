@@ -609,10 +609,11 @@ export async function displayUpdateNotice() {
       }
     );
     const button = m.qs("button")!.elm as HTMLButtonElement;
-    button.disabled = true;
+    // button.disabled = true;
 
-    // trying not to be too pushy  but i need to make users fully aware of the new update
-    let timer = 10;
+    // Commented-out comment: // trying not to be too pushy  but i need to make users fully aware of the new update
+    // This seems to be broken so I removed it
+    let timer = 0;
 
     function update() {
       if (timer !== 0) m.qs("button")!.text(`OK (${timer})`);
