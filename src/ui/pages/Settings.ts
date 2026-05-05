@@ -613,7 +613,7 @@ export async function displayUpdateNotice() {
 
     // Commented-out comment: // trying not to be too pushy  but i need to make users fully aware of the new update
     // This seems to be broken so I removed it
-    let timer = 0;
+    let timer = 1;
 
     function update() {
       if (timer !== 0) m.qs("button")!.text(`OK (${timer})`);
