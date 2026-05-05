@@ -106,6 +106,7 @@ export const Config = {
     </ul>
     -->
 
+    <br/>
     <h3>Changes & New Features</h3>
 
     <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
