@@ -54,21 +54,22 @@ export const Config = {
     // ^^ scaleLimit, scaleLimitClampY, scaleApply
   },
   version: {
-    string: "v0.9.4",
-    name: "Public Instance Update",
+    string: "v0.10.1",
+    name: "Public Instance",
 
     // ignore that I'm just writing HTML here
     changelog: `
-    <h1 style="font-size: 20px;text-align: center;">v0.9.2 - QR Code and MiiC v3 Support</h1>
+    <h1 style="font-size: 20px;text-align: center;">v0.10.1 - Public Instance & New Features</h1>
 
     <div class="flex-group">
-      <img draggable="false" width=96 height=96 src="https://i.imgur.com/sMtNF5a.png">
+      <img draggable="false" width=96 height=96 src="https://i.imgur.com/1dqrqiN.png">
       <div class="col" style="gap:12px">
-        <small>Austin☆²¹ / Kat21</small>
-        <div>Let's go over the new changes!</div>
+        <small>AnonymousUser98</small>
+        <div>Welcome to the public no-login version of Mii Creator!</div>
       </div>
     </div>
 
+    <!--
     <div style="text-align:center;margin:12px 0">
       <p style="margin-bottom:0"><strong style="color:var(--error-color)">Please <a target="_blank" href="mailto:datkat21.yt@gmail.com">contact me</a> <small>(kat21)</small> if you have any feedback, feature requests, or bug reports.</strong></p>
       <small>(Some people are just not aware that kat21 made this app, not ariankordi. if you are one of those people you should know by now. Also this project is named "Mii Creator", not "Mii Creator Web," or any other "mii maker" thing. 🙂)</small>
@@ -103,42 +104,26 @@ export const Config = {
       <li>Fix a bug where the Wii U animations were sped up.</li>
       <li style="color:var(--gold-color)">Secret Special Miis can be obtained through random menus (there is only 1 for now)</li>
     </ul>
+    -->
 
-    <h3>The new changes</h3>
+    <h3>Changes & New Features</h3>
 
     <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
-      <li>Update Mii Creator file format to version 3, still haven't decided the final feature to add to the miis to fill that last byte, my original idea was probably custom shirt color but that sounds a little bit boring.</li>
+      <li>Modified the render URLs and relative paths to make it work with GitHub Pages</li>
+      <li>Added a button to open the GitHub repository in a new tab</li>
+      <li>Re-enabled the Switch shader option in settings (it works fine for me)</li>
+      <li>Changed the "Save/Exit" button to "Save / Exit" because it looks better with the spaces there</li>
       <ul>
-        <li>The "face paint" feature for changing color of the head (I really thought it was called face paint in Miitopia, but checking again it is called "foundation")</li>
+        <li>I also fixed the capitalization in "Exit Without Saving"</li>
       </ul>
-      <li>I was testing default light direction previously but it looked a bit.. odd, so I got rid of it, if you want it as an option let me know</li>
-      <li>Add some new shader options (a few new ones based on the FFL shader)</li>
-      <li>Update readme and preview image</li>
-      <li>New way of displaying app updates (you're reading one right now)</li>
-      <li>Added my contact information inside the app! <small>(please email me about problems 🥺)</small></li>
-      <li>Subtle loading sound when each mii image loads in like the switch mii editor applet, just for fun</li>
-      <li>Functional QR code scanning</li>
-      <ul>
-        <li>It works with Wii U/3DS and mii creator qr codes, but unfortunately does not have fully compatibility with tomodachi life ones due to a weird bug where it isn't decrypting the extra data properly. The code to handle it is there, and once I find a fix, it will fully work with those Tomodachi Life Mii QR codes.</li>
-        <li>Camera scanning has a bug when you move away from the tab while scanning, don't do that</li>
-      </ul>
-      <li>The icons subtly change shader/body model in the background as you change the shader type or body model setting</li>
-      <li>Fixed most issues relating to the library duplication bugs by making it a single shutdown function</li>
-      <li>Display a version string in the sidebar on the main menu, (also helps to know which update you're on)</li>
-      <li>Miscellaneous settings related to QR code scanning</li>
-      <ul>
-        <li>Ability to disable closing of the QR code menu after you scan a QR code (the library will still refresh in the background if you click 'save')</li>
-        <li>Ability to completely disable camera for the QR scanner, so it just becomes a file input</li>
-      </ul>
-      <li>Fix a possible memory leak with the particle effects</li>
-      <li>Add Miitomo body model and animations</li>
-      <li>Option to color the hands like in Miitomo</li>
-      <li>Much more control in the custom render menu</li>
-      <li>Green-screen and other solid color background options for the custom render menu in Settings</li>
-      <li>Fix glTF textures exported using Wii U shader</li>
-      <li>And probably some more small changes that should improve the user experience</li>
+      <li>Updated the <i>Credits</i> and <i>Help/Contact</i> screens</li>
+      <li>Added an easter egg that involves getting 30 extra lives</li>
+      <li>Added some secret Miis that can be unlocked by entering a password</li>
+      <li>Added an option to import a Mii from Base64 data</li>
+      <li>Added a mysterious one-question quiz</li>
     </ul>
- 
+
+    <!--
     <h3>Plans</h3>
     <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
       <li>More theme options</li>
@@ -186,6 +171,7 @@ export const Config = {
         </div>
       </div>
     </div>
+    -->
 
     <p style="margin-bottom:0;text-align:center"><strong>You can view this message again in Settings.</strong></p>
     `,
