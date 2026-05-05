@@ -11,24 +11,26 @@ Create and share Mii characters online with just a few clicks!
 - [mii-js](https://github.com/PretendoNetwork/mii-js) library used for interacting with Mii data in a JavaScript-friendly way
 - [Some utility code](https://github.com/datkat21/mii-creator/tree/master/src/external/mii-frontend) "borrowed" from arian's website for conversion, QR codes, etc.
 - Custom Mii Maker music by [objecty](https://x.com/objecty)
-- GitHub Copilot and ChatGPT helped me modify this to make it work with GitHub Pages.
+- GitHub Copilot and ChatGPT (kind of) helped me modify this to make it work with GitHub Pages.
 
 ## Features
 
 This app uses a custom, extended version of the FFSD Mii format that I call the MiiCreator format (.miic), allowing for extra colors and glasses from the Switch, while still allowing you to convert back to FFSD for 3DS/Wii U.
 
-- [x] Real 3D rendering unlike Mii Studio
-- [x] Change parts and colors of the Mii
+- [x] Real 3D rendering (unlike Mii Studio)
+- [x] Change parts and colors of your Mii
 - [x] Save and load Miis in your library
-- [x] Save a Mii QR code
-- [x] Render to PNG file
+- [x] Save a Mii to a QR code
+- [x] Render to PNG image file
+- [x] Save as 3D model (in GLB format)
 - [x] Save/load .FFSD/.miic
 - [x] Create your own renders inside the app
 - [x] Custom hats (for fun!)
 
 ## Contributing
 
-I'm open to contributions if you want to help on the project!
+I'm open to contributions if you want to help with the project!
+I'm also fine with people forking and taking over the project and adding a whole bunch of features and improvements.
 
 ## Model Credits
 
