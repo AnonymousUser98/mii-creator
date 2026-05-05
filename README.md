@@ -27,6 +27,9 @@ This app uses a custom, extended version of the FFSD Mii format that [Kat21](htt
 - [x] Create your own renders inside the app
 - [x] Custom hats (for fun!)
 
+## Screenshots
+[Click here](screenshots/Screenshots.md) to view screenshots.
+
 ## Contributing
 
 I'm open to contributions if you want to help with the project!
