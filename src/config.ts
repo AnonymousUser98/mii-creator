@@ -110,6 +110,7 @@ export const Config = {
     <h3>Changes & New Features</h3>
 
     <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
+      <li>Added an option to get instructions for re-creating a Mii on Switch</li>
       <li>Added another secret password-unlocked Mii</li>
       <li>Added an argument about how letters are pronounced</li>
     </ul>
