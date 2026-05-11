@@ -517,7 +517,7 @@ export async function Library(highlightMiiId?: string) {
                   .style({ gap: "0" })
                   .prependTo(mb);
                 new Html("span")
-                  .text("Here's where you can contact the author, Kat21. You can also contact AnonymousUser98 with a GitHub issue. Note that Kat21 might not be available to help because this is an unofficial fork.")
+                  .text("Here's where you can contact the author, Kat21. You can also contact AnonymousUser98 with a GitHub issue. Note that Kat21 might not be available to help because this is an unofficial fork.\nIf you are having problems with the Miis not getting rendered, you might need to contact arainkordi.")
                   .style({
                     "font-size": "20px",
                     "flex-shrink": "0",
@@ -659,6 +659,19 @@ export async function Library(highlightMiiId?: string) {
           var mii = new Mii(
             Buffer.from(
               "AwEAQAAAAAAAAAAAgP9wmS/5Fhz6rQAAACxIAGEAeQBhAGIAdQBzAGEAAAAAAH5/bAB2AhGoJRgJY0YSzRASSqwAwCgAUkhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAADOIAAAAAAAAAAAAAAAA",
+              "base64"
+            )
+          );
+          importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
+          break;
+        case "888f0e5af87aa49835b77ab664d9de60b1f8318f422c657fd6244b437ae7367c":
+        case "01e9466decafd071413a87b240b889446f18db7cde7cddef0799f34fcd72656a":
+        case "35e62c48c303a9b08f62ef44e0602497675a22a00238674abfee691d6eb8b84d":
+        case "992af5d9a027a3ec29065e0efd2cf9b05ba906118ee4c382e18476389e40e34b":
+        case "2f73b18efb677656ae27e2243432efa8182088acfc9c3d4e45b9e7e81d140d46":
+          var mii = new Mii(
+            Buffer.from(
+              "A0EAQAAAAAAAAAAAAP9wmS/5Fhz6rQAAACxQAGkAZQByAG8AZwBpAAAAAAAAAGFfBbArBPFGYxYhQ4MShhAWSA4AGCkAUkhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAABw7AAwLAAAAAAAAAAAA",
               "base64"
             )
           );

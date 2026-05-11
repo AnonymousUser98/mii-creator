@@ -54,12 +54,12 @@ export const Config = {
     // ^^ scaleLimit, scaleLimitClampY, scaleApply
   },
   version: {
-    string: "v0.10.1",
-    name: "Public Instance",
+    string: "v0.10.2",
+    name: "Small Update",
 
     // ignore that I'm just writing HTML here
     changelog: `
-    <h1 style="font-size: 20px;text-align: center;">v0.10.1 - Public Instance & New Features</h1>
+    <h1 style="font-size: 20px;text-align: center;">v0.10.2 - Small Update</h1>
 
     <div class="flex-group">
       <img draggable="false" width=96 height=96 src="https://i.imgur.com/1dqrqiN.png">
@@ -110,6 +110,16 @@ export const Config = {
     <h3>Changes & New Features</h3>
 
     <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
+      <li>Added an option to get instructions for re-creating a Mii on Switch</li>
+      <li>Added another secret password-unlocked Mii</li>
+      <li>Added an argument about how letters are pronounced</li>
+      <li>Updated the text at the top of the Help/Contact popup</li>
+    </ul>
+
+    <br/>
+    <h3>Previous Changes</h3>
+
+    <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
       <li>Modified the render URLs and relative paths to make it work with GitHub Pages</li>
       <li>Added a button to open the GitHub repository in a new tab</li>
       <li>Re-enabled the Switch shader option in settings (it works fine for me)</li>
@@ -121,7 +131,6 @@ export const Config = {
       <li>Added an easter egg that involves getting 30 extra lives</li>
       <li>Added some secret Miis that can be unlocked by entering a password</li>
       <li>Added an option to import a Mii from Base64 data</li>
-      <li>Added a mysterious one-question quiz</li>
     </ul>
 
     <!--
