@@ -113,10 +113,11 @@ export const Config = {
       <li>Added an option to get instructions for re-creating a Mii on Switch</li>
       <li>Added another secret password-unlocked Mii</li>
       <li>Added an argument about how letters are pronounced</li>
+      <li>Updated the text at the top of the Help/Contact popup</li>
     </ul>
 
     <br/>
-    <h3>Previous Update</h3>
+    <h3>Previous Changes</h3>
 
     <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
       <li>Modified the render URLs and relative paths to make it work with GitHub Pages</li>
