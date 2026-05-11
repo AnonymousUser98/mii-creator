@@ -122,6 +122,13 @@ export const miiExportData = async (mii: MiiLocalforage, miiData: Mii) => {
       },
     },
     {
+      test: "Get recipe for Switch",
+      async callback() {
+        const tempData = miiData.encodeCharInfoSwitch().toString("hex");
+        const finalURL = `https://miiinstructions.sticksweb.site/?data=${tempData}`;
+        window.open(finalURL, "_blank");
+    },
+    {
       text: "Show other raw data formats",
       async callback() {
         const modal = Modal.modal(
