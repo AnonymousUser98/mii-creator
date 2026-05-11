@@ -517,8 +517,7 @@ export async function Library(highlightMiiId?: string) {
                   .style({ gap: "0" })
                   .prependTo(mb);
                 new Html("span")
-                  .text("Here's where you can contact the author, Kat21. You can also contact AnonymousUser98 with a GitHub issue. Note that Kat21 might not be available to help because this is an unofficial fork.")
-                  .text("If you are having problems with the Miis not getting rendered, you might need to contact arainkordi.")
+                  .text("Here's where you can contact the author, Kat21. You can also contact AnonymousUser98 with a GitHub issue. Note that Kat21 might not be available to help because this is an unofficial fork.\nIf you are having problems with the Miis not getting rendered, you might need to contact arainkordi.")
                   .style({
                     "font-size": "20px",
                     "flex-shrink": "0",
