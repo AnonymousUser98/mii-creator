@@ -678,7 +678,13 @@ export async function Library(highlightMiiId?: string) {
           importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
           break;
         case "1d5a8dba1e03d241137ce785c0c55696b1aaee1bcc5f96a2d1a5f631d80e99af":
-          // Add the Mii here
+          var mii = new Mii(
+            Buffer.from(
+              "AwEAwAAAAAAAAAAAAP9wmS/5Fhz6rQAAACxaAGEAbQBtAGkAcwAAAAAAAAAAAFpmBQBWAIJmZBgzVEQUixIXqI4AHCmCUUhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAGVGAAAKAAAAAAAAAAAA",
+              "base64"
+            )
+          );
+          importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
           break;
         default:
           alert("Invalid password.");
