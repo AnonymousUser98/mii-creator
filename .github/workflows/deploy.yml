@@ -1,8 +1,8 @@
-name: Deploy Bun App to GitHub Pages
+name: Deploy Bun TS Project to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main"] # Change to your default branch if it's master
   workflow_dispatch:
 
 permissions:
@@ -21,32 +21,33 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 1. Set up Bun environment
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
-      # 2. Install dependencies using Bun
       - name: Install dependencies
         run: bun install
 
-      # 3. Build the project
-      - name: Build project
-        run: bun run build
+      # Runs your custom TS compilation script
+      - name: Compile TypeScript
+        run: bun run build-ts || bun build.ts
 
+      # Configures the GitHub Pages environment
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # 4. Upload the build output (adjust 'dist' to your framework's build folder, e.g., 'build' or 'out')
+      # Uploads the static folder. Based on your local server command, 
+      # your built assets live inside the './public' directory.
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: './public'
 
+      # Deploys the uploaded artifact to Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
