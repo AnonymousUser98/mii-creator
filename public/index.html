@@ -4,113 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mii Creator</title>
-
     <meta property="og:title" content="Mii Creator - Web-based Mii editor" />
-    <meta property="og:description" content="Create and share Mii characters online with just a few clicks!" />
-    <meta name="description" content="Create and share Mii characters online with just a few clicks!" />
-
+    <meta
+      property="og:description"
+      content="Create and share Mii characters online with just a few clicks!"
+    />
+    <meta
+      name="description"
+      content="Create and share Mii characters online with just a few clicks!"
+    />
+    <meta
+      name="keywords"
+      content="Mii, Mii Creator, Nintendo, Pretendo, FFL, Wii U, 3DS, Mii Maker, Web Mii Maker"
+    />
     <meta property="theme-color" content="#484848" />
-
+    <meta property="og:site_name" content="mii.nxw.pw" />
+    <meta property="og:image" content="https://mii.nxw.pw/assets/images/preview_dark.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:image" content="https://mii.nxw.pw/assets/images/preview_dark.png" />
     <style>
-      html, body {
+      html,
+      body {
         background-color: white !important;
-        margin: 0;
-        font-family: sans-serif;
       }
-
       @media (prefers-color-scheme: dark) {
-        html, body {
+        html,
+        body {
           background-color: black !important;
-          color: white;
         }
-      }
-
-      #musicBtn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 9999;
-        padding: 12px 16px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        background: #484848;
-        color: white;
-        font-size: 14px;
-        transition: 0.2s;
-      }
-
-      #musicBtn:hover {
-        transform: scale(1.05);
       }
     </style>
-
     <link rel="stylesheet" href="dist/main.css" />
   </head>
-
   <body>
-    <!-- Music Button -->
-    <button id="musicBtn">🔇 Music Off</button>
-
-    <!-- Background Music -->
-    <audio id="bgMusic" loop preload="auto">
-      <source src="assets/music.mp3" type="audio/mpeg" />
-    </audio>
-
     <script>
-      const musicBtn = document.getElementById("musicBtn");
-      const bgMusic = document.getElementById("bgMusic");
-
-      // Restore saved state
-      let saved = localStorage.getItem("music") === "on";
-
-      function updateButton() {
-        if (bgMusic.paused) {
-          musicBtn.textContent = "🔇 Music Off";
-        } else {
-          musicBtn.textContent = "🔊 Music On";
-        }
-      }
-
-      async function tryPlay() {
-        try {
-          await bgMusic.play();
-          localStorage.setItem("music", "on");
-        } catch (err) {
-          console.log("Autoplay blocked until user interaction");
-        }
-        updateButton();
-      }
-
-      function stopMusic() {
-        bgMusic.pause();
-        localStorage.setItem("music", "off");
-        updateButton();
-      }
-
-      // Button toggle
-      musicBtn.addEventListener("click", async () => {
-        if (bgMusic.paused) {
-          await tryPlay();
-        } else {
-          stopMusic();
-        }
-      });
-
-      // Auto-start if user previously enabled it
-      window.addEventListener("load", async () => {
-        if (saved) {
-          await tryPlay();
-        } else {
-          updateButton();
-        }
-      });
-
-      // Keep UI synced if something else pauses audio
-      bgMusic.addEventListener("pause", updateButton);
-      bgMusic.addEventListener("play", updateButton);
+      const global = {};
+      const process = { env: { NODE_DEBUG: false } };
     </script>
-
+    <!-- <script src="https://cdn.jsdelivr.net/npm/spectorjs@0.9.30/dist/spector.bundle.js"></script> -->
     <script type="module" src="dist/main.js"></script>
   </body>
 </html>
