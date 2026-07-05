@@ -624,10 +624,10 @@ export async function Library(highlightMiiId?: string) {
           );
           importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
           break;
-        case "550814f27f5408929d0a92461e33a1309f1d7a6cb0227814273a42ae82d4fba9":
+        case "4ad2c4c8be4ad4ac3e0d91990d1d707c1ab385ff3980304c639c6bd036e8b629":
           var mii = new Mii(
             Buffer.from(
-              "A8EAQAAAAAAAAAAAAP9wmS/5Fhz6rQAAACxLAGkAdABiAG8AZwBhAAAAAAAAAFpgBQBDATFlYxYjU0UScBDYCo0ANCGGWUhQSgBpAGYAZgB5AFAAbwBwAEoAcgAAAH/8AAAMABYAAA8AAAAA",
+              "A0EAQAAAAAAAAAAAgP9wmQAAAAAAAAAAAAxQAEoAAAAAAAAAAAAAAAAAAAAAAEBJAgAlAAJoRBggNEYUgRITYA0AACkAUkhQAAAAAAAAAAAAAAAAAAAAAAAAAAAAADlFAAgAAAAAAAAAAAAA",
               "base64"
             )
           );
