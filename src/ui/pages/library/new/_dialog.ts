@@ -30,7 +30,7 @@ export const miiCreateDialog = () => {
       },
     },
     {
-      text: "FFSD/MiiCreator data",
+      text: "FFSD/MiiCreator Data",
       callback: () => {
         let id: string;
         let modal = Modal.modal(
@@ -130,7 +130,7 @@ export const miiCreateDialog = () => {
       text: "Cancel",
     },
     {
-      text: "Paste Base64",
+      text: "Enter Base64",
       callback: () => {
         newFromBase64();
       },
