@@ -9,6 +9,7 @@ import { newFromQRCode } from "./qrCode";
 import { newFromNNID, newFromPNID } from "./nnidPnid";
 import { newFromLookalike } from "./lookalike";
 import { newFromRandonNNID } from "./randomNnid";
+import { newFromBase64 } from "./base64";
 
 export const miiCreateDialog = () => {
   const m = Modal.modal(
@@ -127,6 +128,12 @@ export const miiCreateDialog = () => {
     },
     {
       text: "Cancel",
+    },
+    {
+      text: "Paste Base64",
+      callback: () => {
+        newFromBase64();
+      },
     }
   );
   m.qs(".modal-body")!.styleJs({ maxWidth: "600px" });
