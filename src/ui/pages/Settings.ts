@@ -177,7 +177,7 @@ export const settingsInfo: Record<string, any> = {
     type: "multi",
     label: "Shader Type",
     description:
-      "Sorry that most of the shaders are not yet ready for use.\nUsing the Simple shader brings back the old simplistic Mii Creator lighting from the early days.\n* Does not apply to 2D mode.",
+      "Using the Simple shader brings back the old simplistic Mii Creator lighting from the early days.\n* Does not apply to 2D mode.",
     default: ShaderType.WiiU,
     choices: [
       { label: "No Lighting", value: ShaderType.LightDisabled },

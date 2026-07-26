@@ -293,12 +293,10 @@ export async function setupUi() {
 
         if (vol < 0) return;
         if (vol > 1) return;
+        if (vol === null) return;
 
         getSoundManager().setVolume(vol);
         mm.setVolume(vol);
-      }
-      if (e.code === "KeyZ") {
-        alert("It's pronounced \"zed\".");
       }
       if (e.code === "ArrowUp") {
         if (kci === 0 || kci === 1) {

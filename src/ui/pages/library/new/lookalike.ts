@@ -49,7 +49,7 @@ export const newFromLookalike = async () => {
       })
       .text(
         // arian wrote this for me.. because i didn't want to offend anyone having "race" in my mii creator😭
-        "All of the options here are what Nintendo originally programmed in. Please let me know if you want more options added."
+        "All of the options here are what Nintendo originally programmed in."
       )
   );
 

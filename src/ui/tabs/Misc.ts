@@ -53,7 +53,7 @@ export function MiscTab(data: TabRenderInit) {
 
             // Empty string check
             let nameStr = nameBuffer.toString("utf16le");
-            if (nameStr.trim() === "") return false;
+            // if (nameStr.trim() === "") return false;
 
             // Name length check
             if (nameBuffer.length <= 0x14) return true;
