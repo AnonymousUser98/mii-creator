@@ -38,7 +38,7 @@ export const newFromBase64 = () => {
         importMiiConfirmation(mii, "Mii Creator (Secret Mii)");
         break;
     case "BUSH HID THE FACTS":
-        alert("Tell that to Microsoft!");
+        alert("isTextUnicode()");
         break;
     case "ORANGE EGGS":
     case "PEANUT BUTTER CRACKERS":
