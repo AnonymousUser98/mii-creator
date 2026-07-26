@@ -55,11 +55,11 @@ export const Config = {
   },
   version: {
     string: "v0.11.0",
-    name: "Summer Update",
+    name: "QoL Update",
 
     // ignore that I'm just writing HTML here
     changelog: `
-    <h1 style="font-size: 20px;text-align: center;">v0.11.0 - Summer Update</h1>
+    <h1 style="font-size: 20px;text-align: center;">v0.11.0 - QoL Update</h1>
 
     <div class="flex-group">
       <img draggable="false" width=96 height=96 src="https://i.imgur.com/1dqrqiN.png">
