@@ -293,6 +293,7 @@ export async function setupUi() {
 
         if (vol < 0) return;
         if (vol > 1) return;
+        if (vol === null) return;
 
         getSoundManager().setVolume(vol);
         mm.setVolume(vol);
