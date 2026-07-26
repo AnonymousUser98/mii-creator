@@ -130,7 +130,7 @@ export const miiCreateDialog = () => {
       text: "Cancel",
     },
     {
-      text: "Enter Base64",
+      text: "Import from Base64",
       callback: () => {
         newFromBase64();
       },
