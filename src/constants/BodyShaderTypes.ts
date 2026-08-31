@@ -3,6 +3,7 @@
 
 export enum BodyType {
   WiiU = "wiiu",
+  3DS = "3ds",
   Switch = "switch",
   Miitomo = "miitomo",
 }
