@@ -185,9 +185,9 @@ export const settingsInfo: Record<string, any> = {
       { label: "Toon", value: ShaderType.WiiUToon },
       { label: "Wii U (Default)", value: ShaderType.WiiU },
       { label: "Wii U (Blinn)", value: ShaderType.WiiUBlinn },
-      { label: "Wii U (Alt)", value: ShaderType.WiiUFFLIconWithBody },
-      { label: "Switch (WIP)", value: ShaderType.Switch },
-      { label: "Miitomo (Broken)", value: ShaderType.Miitomo, disabled: true },
+      { label: "Wii U (Bright)", value: ShaderType.WiiUFFLIconWithBody },
+      { label: "Switch", value: ShaderType.Switch },
+      { label: "Miitomo", value: ShaderType.Miitomo },
     ],
   },
   simpleShaderLegacyColors: {
