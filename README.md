@@ -9,6 +9,8 @@ The official version ([mii.nxw.pw](https://mii.nxw.pw)) is more complete and has
 
 Basically, the official version is the better one, but it has some room for improvement and it makes you sign in. If you want extra features, use the official version. If you don't want to sign in, use this public instance.
 
+Sign this petition to bring back Guest Mode: https://www.change.org/Kat21GuestMode
+
 ## Credits
 
 - Uses the [mii-unsecure.ariankordi.net](https://mii-unsecure.ariankordi.net) [API](https://github.com/ariankordi/FFL-Testing/tree/renderer-server-prototype) by [ariankordi](https://github.com/ariankordi) used to generate 3D Mii heads and icons.
