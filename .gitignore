@@ -173,3 +173,10 @@ out
 
 # Finder (MacOS) folder config
 .DS_Store
+
+# FFL resource files
+FFLRes*.dat
+AFLRes*.dat
+!public/FFLResHigh.dat
+
+mii-creator-server

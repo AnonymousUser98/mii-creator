@@ -1,8 +1,13 @@
 // Configuration file used client-side.
 
 // Settings relating to local rendering.
-const useRendererServer = true; // Allow use of the renderer server (legacy rendering)
-const fflResourcePath = "FFLResHigh.dat"; // Configure the path for where the resource file is located.
+const useRendererServer = false; // Allow use of the renderer server (legacy rendering)
+const fflResourcePath = [
+  "./FFLResHigh.dat",
+  "./FFLResHigh.dat",
+  "./FFLResHigh.dat"
+]; // Configure the path for where the resource file is located.
+const fflResourcesNames = ["Low", "Middle", "High"]; // Configure the path for where the resource file is located.
 
 // Instance of FFL-Testing/Mii Studio API compatible renderer.
 // const baseURL = "http://localhost:5000/miis/image"; // <-- Uncomment this when using local FFL-testing for development
@@ -17,10 +22,16 @@ const newApiParams = true;
 const nnidFetchOrigin = "https://mii-unsecure.ariankordi.net";
 
 export const Config = {
+  /**
+   * API base, or null to not use API for synchronization.
+   * @type {string|null}
+   */
+  syncAPIBase: null,
   renderer: {
     baseURL,
     useRendererServer,
     fflResourcePath,
+    fflResourcesNames,
     renderFFLMakeIcon: `${baseURL}.png?shaderType=miitomo&type=fflmakeicon&width=360&verifyCharInfo=0`,
     renderHeadshotURL: `${baseURL}.png?shaderType=wiiu&type=face&width=260&verifyCharInfo=0`,
     renderHeadshotURLNoParams: `${baseURL}.png`,
@@ -74,7 +85,7 @@ export const Config = {
       <p style="margin-bottom:0"><strong style="color:var(--error-color)">Please <a target="_blank" href="mailto:datkat21.yt@gmail.com">contact me</a> <small>(kat21)</small> if you have any feedback, feature requests, or bug reports.</strong></p>
       <small>(Some people are just not aware that kat21 made this app, not ariankordi. if you are one of those people you should know by now. Also this project is named "Mii Creator", not "Mii Creator Web," or any other "mii maker" thing. 🙂)</small>
     </div>
-    
+
     <h3>NEW: v0.9.3.1 - Extremely Small Patch Update</h3>
     <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
       <li>Testing bringing back 3D mode, let's see how the server performs...</li>

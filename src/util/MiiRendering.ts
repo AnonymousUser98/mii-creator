@@ -1,8 +1,28 @@
 import type { GLTF } from "three/examples/jsm/Addons.js";
-import Mii from "../external/mii-js/mii";
-import * as THREE from "three";
-import { RandomInt } from "./Numbers";
-import { cMaterialName } from "../class/3d/shader/fflShaderConst";
+// import Mii from "../external/mii-js/mii";
+import Mii from "../class/MiiData";
+import { _THREE } from "./PrepareThree";
+const THREE = _THREE();
+//@ts-expect-error shhh
+import type * as THREE from "three";
+import {
+  CharModel,
+  convertStudioCharInfoToFFLiCharInfo,
+  createCharModel,
+  FFLCharModelDescDefault,
+  FFLiCharInfo,
+  FFLModelFlag,
+  initCharModelTextures,
+  StudioCharInfo,
+  updateCharModel
+} from "../external/ffl.js/ffl";
+import {
+  isShaderMaterial,
+  getShaderMaterialFromShaderType
+} from "../class/3d/shader/ShaderUtils";
+import { getFFL } from "./FFLLoader";
+import { renderTargetToDataTexture } from "./rendertarget";
+import FFLShaderMaterial from "../external/ffl.js/FFLShaderMaterial";
 
 export type GLTFLike = {
   animations: any[];
@@ -14,35 +34,116 @@ export type GLTFLike = {
   userData: any;
 };
 
-export async function getHeadModel(mii: Mii): Promise<GLTF> {
-  // In the future, this could be hooked up to a custom rendering library (FFL under WASM or a custom asset loader)
-  // For now, this will just return a cube with some FFL shader properties to test if it's working.
-  const geometry = new THREE.BoxGeometry(45, 45, 45);
-  const material = new THREE.MeshBasicMaterial({
-    color: 0xff0000,
-  });
-  const mesh = new THREE.Mesh(geometry, material);
-  mesh.position.set(0, 25, 0);
+export type ModelFlag =
+  | "NORMAL"
+  | "HAT"
+  | "FACE_ONLY"
+  | "FLATTEN_NOSE"
+  | "NEW_EXPRESSIONS"
+  | "NEW_MASK_ONLY";
 
-  // Boilerplate data for use with the shader
-  mesh.geometry.userData = {
-    cullMode: 1,
-    modulateType: cMaterialName.FFL_MODULATE_TYPE_SHAPE_FACELINE,
-    modulateColor: [1, 0, 0, 1],
-    modulateMode: 0,
-  };
+// async function createOrUpdateCharModel(
+//   rendererRef: THREE.WebGLRenderer,
+//   modelDesc: any,
+//   newStudioData: Uint8Array,
+//   charModelRef?: CharModel
+// ) {
+//   let currentCharModel: CharModel;
+//   if (charModelRef) {
+//     if (!rendererRef)
+//       throw new Error("Missing renderer when trying to update CharModel");
+
+//     currentCharModel = charModelRef;
+
+//     // Create new charinfo data
+//     const studioCharInfo = StudioCharInfo.unpack(newStudioData);
+//     const newCharInfo = FFLiCharInfo.pack(
+//       convertStudioCharInfoToFFLiCharInfo(studioCharInfo)
+//     );
+
+//     // update char model
+//     updateCharModel(currentCharModel, newCharInfo, rendererRef, modelDesc);
+//   } else {
+//     currentCharModel = createCharModel(
+//       newStudioData,
+//       modelDesc,
+//       await getShaderMaterialFromShaderType(),
+//       getFFL(),
+//       false,
+//       await getMaterialOverridesFromShaderType()
+//     );
+//   }
+
+//   return currentCharModel;
+// }
+
+export async function getHeadModel(
+  mii: Mii,
+  rendererRef: THREE.WebGLRenderer,
+  modelFlag?: ModelFlag,
+  texResolution?: number
+): Promise<GLTF> {
+  const dataU8 = mii.export("studioData");
+
+  const modelDesc = FFLCharModelDescDefault;
+  modelDesc.resolution = 512;
+  modelDesc.allExpressionFlag = new Uint32Array([1, 0, 0]);
+  if (modelFlag) modelDesc.modelFlag = FFLModelFlag[modelFlag];
+  if (texResolution) modelDesc.resolution = texResolution;
+
+  let currentCharModel: CharModel | null;
+
+  try {
+    // currentCharModel = await createOrUpdateCharModel(
+    //   rendererRef,
+    //   modelDesc,
+    //   dataU8,
+    //   charModelRef
+    // );
+
+    currentCharModel = createCharModel(
+      dataU8,
+      modelDesc,
+      (await getShaderMaterialFromShaderType()) as any,
+      getFFL(),
+      false
+      // await getMaterialOverridesFromShaderType()
+    );
+
+    // Initialize textures for the new CharModel.
+
+    if (mii.eyeSclera === 1 && mii.eyeColor !== 8) {
+      window.eyeScleraHack = true;
+    }
+
+    // QUICKLY Replace the material
+    currentCharModel._materialTextureClass = FFLShaderMaterial as any;
+
+    initCharModelTextures(
+      currentCharModel,
+      rendererRef,
+      FFLShaderMaterial as any
+    );
+
+    if (mii.eyeSclera === 1 && mii.eyeColor !== 8) {
+      window.eyeScleraHack = false;
+    }
+  } catch (err) {
+    currentCharModel = null;
+    alert(`Error creating/updating CharModel: ${err}`);
+    console.error("Error creating/updating CharModel:", err);
+    throw err;
+  }
 
   const asset = {
     extras: {
-      partsTransform: {
-        hatTranslate: [0, 0, 0],
-      },
-    },
+      partsTransform: currentCharModel.partsTransform
+    }
   };
 
   let scene = new THREE.Group();
 
-  scene.add(mesh);
+  scene.add(currentCharModel.meshes!);
 
   // GLTF-like object so that the code can still handle it sort of like one
   return {
@@ -53,5 +154,76 @@ export async function getHeadModel(mii: Mii): Promise<GLTF> {
     scene,
     scenes: [scene],
     userData: {},
+    CharModel: currentCharModel
   } as GLTFLike as GLTF;
+}
+
+export type MaskResult = {
+  model: CharModel;
+  img: THREE.DataTexture;
+};
+
+export async function getMaskTex(
+  mii: Mii,
+  rendererRef: THREE.WebGLRenderer,
+  expressionFlag: Uint32Array = new Uint32Array([1, 0, 0])
+): Promise<MaskResult> {
+  const dataU8 = mii.export("studioData");
+
+  const modelDesc = FFLCharModelDescDefault;
+  modelDesc.resolution = 1024;
+  modelDesc.allExpressionFlag = expressionFlag;
+
+  let currentCharModel: CharModel | null;
+
+  var img: THREE.DataTexture;
+
+  const shaderMaterial = await getShaderMaterialFromShaderType();
+
+  try {
+    currentCharModel = createCharModel(
+      dataU8,
+      modelDesc,
+      // shader doesn't matter here for our purpose
+      shaderMaterial as any,
+      getFFL(),
+      false
+    );
+
+    // weird workaround to promisify the texture outcome?
+    img = await new Promise((resolve) => {
+      // Initialize textures for the new CharModel.
+      if (mii.eyeSclera === 1 && mii.eyeColor !== 8) {
+        window.eyeScleraHack = true;
+      }
+
+      initCharModelTextures(
+        currentCharModel!,
+        rendererRef,
+        FFLShaderMaterial as any
+        // null,
+        // (dataTexture) => {
+        //   resolve(dataTexture);
+        // }
+      );
+
+      if (mii.eyeSclera === 1 && mii.eyeColor !== 8) {
+        window.eyeScleraHack = false;
+      }
+
+      const target =
+        currentCharModel!._maskTargets[currentCharModel!.expression]!;
+
+      renderTargetToDataTexture(target, rendererRef).then((r) => {
+        resolve(r);
+      });
+    });
+  } catch (err) {
+    currentCharModel = null;
+    alert(`Error creating/updating CharModel: ${err}`);
+    console.error("Error creating/updating CharModel:", err);
+    throw err;
+  }
+
+  return { img, model: currentCharModel };
 }
