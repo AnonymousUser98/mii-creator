@@ -19,20 +19,21 @@ Sign this petition to bring back Guest Mode: https://www.change.org/Kat21GuestMo
 - [Some utility code](https://github.com/datkat21/mii-creator/tree/master/src/external/mii-frontend) "borrowed" from arian's website for conversion, QR codes, etc.
 - Custom Mii Maker music by [objecty](https://x.com/objecty)
 - GitHub Copilot and ChatGPT (sort of) helped me modify this to make it work with GitHub Pages.
+- [ariankordi](https://github.com/ariankordi) did most of the FFL implementation for local rendering.
 
 ## Features
 
-This app uses a custom, extended version of the FFSD Mii format that [Kat21](https://github.com/datkat21) (the original developer) calls the MiiCreator format (with the `.miic` file extension). It allows for extra colors and glasses from the Switch, while still allowing you to convert back to FFSD for 3DS/Wii U. It also allows for custom hats (but these are unofficial and aren't supported by any consoles).
+This app uses a custom, extended version of the FFSD Mii format that [Kat21](https://github.com/datkat21) (the original developer) calls the MiiCreator format (with the `.miic` file extension). It allows for extra colors and glasses from the Switch, while still allowing you to convert back to FFSD for 3DS/Wii U. It also allows for custom hats, clothing options, and face paint (but these are unofficial and aren't supported by any consoles).
 
 - [x] Real 3D rendering (unlike Mii Studio)
-- [x] Change parts and colors of your Mii
+- [x] Change parts and colours of your Mii
 - [x] Save and load Miis in your library
 - [x] Save a Mii to a QR code
 - [x] Render to PNG image file
 - [x] Export as 3D model (in GLB format)
-- [x] Save/load Miis as `.miic` or `.ffsd` files
+- [x] Save and load Miis as `.miic` or `.ffsd` files
 - [x] Create your own renders inside the app
-- [x] Custom hats (for fun!)
+- [x] Custom hats and clothing options
 
 ## Screenshots
 [Click here](screenshots/Screenshots.md) to view screenshots.
