@@ -34,7 +34,7 @@ export const miiSelect = (
           if (isSpecial) {
             Modal.modal(
               __("Notice"),
-              __("You can't edit Mii Creator-specific Special Miis."),
+              __("You can't edit special Miis obtained through Mii Creator."),
               "body",
               { text: "Cancel" },
               { text: __("OK") }
@@ -59,7 +59,7 @@ export const miiSelect = (
           if (isSpecial) {
             return Modal.modal(
               __("Notice"),
-              __("You can't edit Mii Creator-specific Special Miis."),
+              __("You can't edit special Miis obtained through Mii Creator."),
               "body",
               { text: "Cancel" },
               { text: __("OK") }
