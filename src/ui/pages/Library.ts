@@ -487,12 +487,26 @@ export async function Library(highlightMiiId?: string) {
 
       let specialMii = false;
       if (
+        // MAC address added by local rendering fork
         miiData.createId[4] === 42 &&
         miiData.createId[5] === 241 &&
         miiData.createId[6] === 22 &&
         miiData.createId[7] === 24 &&
         miiData.createId[8] === 250 &&
         miiData.createId[9] === 191 //193
+      ) {
+        miiContainer
+          .classOn("highlight")
+          .style({ "--selection-color": "#ffbf00" });
+        specialMii = true;
+      } else if (
+        // Original MAC address
+        miiData.createId[4] === 47 &&
+        miiData.createId[5] === 249 &&
+        miiData.createId[6] === 22 &&
+        miiData.createId[7] === 28 &&
+        miiData.createId[8] === 250 &&
+        miiData.createId[9] === 173
       ) {
         miiContainer
           .classOn("highlight")
