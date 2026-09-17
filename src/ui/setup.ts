@@ -328,10 +328,6 @@ export async function setupUi() {
       if (!codeKeys.includes(e.code)) {
         kci = 0;
       }
-      // Handle password Miis here
-      if (e.code === "KeyP") {
-        newFromPassword();
-      }
     }
   });
 }
