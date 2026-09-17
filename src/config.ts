@@ -65,13 +65,14 @@ export const Config = {
     // ^^ scaleLimit, scaleLimitClampY, scaleApply
   },
   version: {
-    string: "v0.12.0-wip",
-    name: "QoL Update",
+    string: "v1.0.0",
+    name: "Release",
 
     // ignore that I'm just writing HTML here
     changelog: `
-    <h1 style="font-size: 20px;text-align: center;">v0.12.0-wip - WIP Update</h1>
+    <h1 style="font-size: 20px;text-align: center;">v1.0.0 - Local Rendering</h1>
 
+    <!--
     <div class="flex-group">
       <img draggable="false" width=96 height=96 src="https://i.imgur.com/1dqrqiN.png">
       <div class="col" style="gap:12px">
@@ -79,52 +80,31 @@ export const Config = {
         <div>This update is WIP and is incomplete. Some features will be temporarily unavailable.</div>
       </div>
     </div>
-
-    <!--
-    <div style="text-align:center;margin:12px 0">
-      <p style="margin-bottom:0"><strong style="color:var(--error-color)">Please <a target="_blank" href="mailto:datkat21.yt@gmail.com">contact me</a> <small>(kat21)</small> if you have any feedback, feature requests, or bug reports.</strong></p>
-      <small>(Some people are just not aware that kat21 made this app, not ariankordi. if you are one of those people you should know by now. Also this project is named "Mii Creator", not "Mii Creator Web," or any other "mii maker" thing. 🙂)</small>
-    </div>
-
-    <h3>NEW: v0.9.3.1 - Extremely Small Patch Update</h3>
-    <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
-      <li>Testing bringing back 3D mode, let's see how the server performs...</li>
-    </ul>
-    <h3>NEW: v0.9.3 - Very Small Patch Update</h3>
-    <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
-      <li style="color:var(--error-color)"><s>Temporarily disabled 3D mode in the editor to save on bandwidth while I try and work around a solution</s></li>
-      <li style="color:var(--selection-color)">A lot of people are coming from FlipZ's tweet but that's OK, just know that I (kat21) made this website because the credit wasn't very clear</li>
-    </ul>
-    <h3>v0.9.2 - Small Patch Update</h3>
-    <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
-      <li style="color:var(--selection-color)">A LOT of new faces have shown up over the past few days, if you come from X/Twitter or YouTube, say hi!</li>
-      <li>Some hat models have been improved! Beanie, cap and cat ears were properly fixed.</li>
-      <li>2D renders now show hat textures!</li>
-      <li>Some broken expressions (blank face, cat face, dog face) work now</li>
-      <li>Bug fix Tomodachi Life QR codes not displaying the error message (they still do not work do not ask me about this)</li>
-      <li>Bug fix hats clipping the mask</li>
-      <li style="color:var(--gold-color)">More secret Special Miis added!</li>
-    </ul>
-
-    <h3>v0.9.1 - Patch Update</h3>
-
-    <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
-      <li>Bug fix the contact menu not closing</li>
-      <li>Wii U theme small design tweaks to fix some stuff broken by the new UI</li>
-      <li>Rename "Glossy" shader to "Toon"</li>
-      <li>Fix a bug where the Wii U animations were sped up.</li>
-      <li style="color:var(--gold-color)">Secret Special Miis can be obtained through random menus (there is only 1 for now)</li>
-    </ul>
     -->
 
-    <br/>
+  
     <h3>Changes & New Features</h3>
 
     <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
-      <li>Moved the Base64 import option to the <i>Create Mii</i> dialog box</li>
-      <li>Removed the password button (passwords are now entered in the Base64 import option)</li>
-      <li>Fixed a bug that prevented you from leaving the <i>Creator</i> field blank</li>
-      <li>Small improvements to grammar and wording</li>
+      <li>Switched to local FFL.js rendering to reduce load on arainkordi's server</li>
+    </ul>
+
+    <br/>
+    <h3>Local Rendering Fork</h3>
+
+    <p>
+      <a href="https://github.com/ariankordi">@ariankordi</a> helped a lot with this update.<br/>
+      In fact, they did almost all of the local rendering implementation, and they also created a pull request after solving all the conflicts.<br/>
+      The fork that this FFL update was based on has some extra features as well:
+    </p>
+    
+    <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
+      <li>New texture quality option in settings</li>
+      <li>Toon shader that actually works</li>
+      <li>Wii U (Toon) and Miitomo (Basic) shaders</li>
+      <li>New options for Mii clothing</li>
+      <li>Small improvements to Mii editor</li>
+      <li>Option to easily duplicate Miis</li>
     </ul>
 
     <br/>
@@ -143,16 +123,11 @@ export const Config = {
       <li>Added some secret Miis that can be unlocked by entering a password</li>
       <li>Added an option to import a Mii from Base64 data</li>
       <li>Added an option to get instructions for re-creating a Mii on Switch</li>
+      <li>Fixed a bug that prevented you from leaving the <i>Creator</i> field blank</li>
     </ul>
 
     <!--
-    <h3>Plans</h3>
-    <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
-      <li>More theme options</li>
-      <li>Online account system for saving your mii data across devices</li>
-    </ul>
-
-    <h3>Attributions / Acknowledgements</h5>
+    <h3>Attributions / Acknowledgements</h3>
 
     <p>These people helped me with the new update!</p>
 
