@@ -164,7 +164,7 @@ export const settingsInfo: Record<string, SettingsOption> = {
     ),
     choices: [
       { label: __("Normal"), value: "default" },
-      { label: __("Wii U"), value: "wiiu", disabled: true }
+      { label: __("Wii U"), value: "wiiu" }
     ]
   },
   resourceType: {
