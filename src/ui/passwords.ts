@@ -1,23 +1,16 @@
-// Most of these aren't needed here, but IDK which ones are, so I won't remove any.
 import localforage from "localforage";
-import { getMusicManager } from "../class/audio/MusicManager";
-import { getSoundManager } from "../class/audio/SoundManager";
-import Modal, { buttonsOkCancel, closeModal } from "./components/Modal";
-import { Library } from "./pages/Library";
-import Mii from "../class/MiiData";
-import { MiiEditor } from "../class/MiiEditor";
-import {
-  displayUpdateNotice,
-  Settings,
-  updateSettings
-} from "./pages/Settings";
-import { Config } from "../config";
-import { customRender } from "./pages/library/render/customRender";
-import { importMiiConfirmation } from "./pages/library/importDialog";
+import { MiiEditor, MiiGender } from "../../../../class/MiiEditor";
+import Modal from "../../../components/Modal";
+import { _shutdown, Library, newMiiId } from "../../Library";
+import { miiCreateDialog } from "./_dialog";
+// Above import lines copied from `fromScratch.ts`
 
-import { _ } from "../util/Lang";
-import { getCurrentLoadingModal, prepareFFLAsync } from "../util/FFLLoader";
-import Html from "@datkat21/html";
+import Mii from "../../../../external/mii-js/mii";
+import { importMiiConfirmation } from "../importDialog";
+import { sha3_256 } from "js-sha3";
+import { Buffer } from "../../../../../node_modules/buffer/index";
+
+// Import lines copied from `/src/ui/pages/library/new/base64.ts` in the pre-local branch.
 
 // START OF ACTUAL CODE
 
