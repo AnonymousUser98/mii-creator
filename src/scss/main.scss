@@ -1,4 +1,4 @@
-@use "./wiiu.scss";
+// @use "./wiiu.scss";
 
 $checkbox-unchecked: url("data:image/svg+xml,%3Csvg width='128' height='128' viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='128' height='128' rx='27' fill='%23FF5C4A'/%3E%3Cpath d='M88 40L40 88' stroke='white' stroke-width='14' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M40 40L88 88' stroke='white' stroke-width='14' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 $checkbox-checked: url("data:image/svg+xml,%3Csvg width='128' height='128' viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='128' height='128' rx='27' fill='%2300BF50'/%3E%3Cpath d='M100 38L50.5 88L28 65.2727' stroke='white' stroke-width='14' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -47,6 +47,7 @@ body {
 
   // UI colors
   --root: #ffffffee;
+  --root-solid: #ffffff;
   --text: #000000;
   --label: #666666;
   --stroke: #dddddd;
@@ -86,6 +87,7 @@ body {
 
     // UI colors
     --root: #000000ee;
+    --root-solid: #000000;
     --text: #ffffff;
     --label: #cccccc;
     --stroke: #484848;
@@ -209,10 +211,12 @@ h6 {
   margin: 0;
 }
 
-$animation-duration: 0.8s;
+$animation-duration: 0.0s; /*0.8s;*/
 $easing-function: cubic-bezier(0.16, 1, 0.3, 1);
+$phoneWidth: 540px;
 $tabletWidth: 960px;
-$desktopWidth: 1280px;
+$laptopWidth: 1556px;
+$desktopWidth: 1875px;
 
 @keyframes fadeIn {
   from {
@@ -222,20 +226,40 @@ $desktopWidth: 1280px;
     opacity: 1;
   }
 }
-@keyframes shortSlideUp {
-  from {
-    transform: translateY(-25%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
 @keyframes fadeOut {
   from {
     opacity: 1;
   }
   to {
     opacity: 0;
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+}
+@keyframes shortSlideUp {
+  from {
+    transform: translateY(-25%);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 @keyframes shortSlideDown {
@@ -248,10 +272,10 @@ $desktopWidth: 1280px;
 }
 @keyframes spinTranslated {
   from {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 @keyframes spinInPlaceAndCry {
@@ -306,7 +330,6 @@ $desktopWidth: 1280px;
     border: 2px solid var(--stroke);
     border-radius: 8px;
     min-width: 200px;
-    min-height: 140px;
     // max-width: 480px;
     max-height: 440px;
     overflow: clip;
@@ -324,21 +347,26 @@ $desktopWidth: 1280px;
         &:hover {
           filter: brightness(0.8);
         }
+        /*
         border-width: 0.1rem;
         border-radius: 50%;
         width: 1.25rem;
         height: 1.25rem;
+        */
+        /* Make the close button larger. TODO: needs redesign. */
+        width: 3.25rem;
+        height: 2.0rem;
         padding: 0;
         min-width: 0;
         position: absolute;
-        top: 50%;
+        top: /*50%;*/ 47%;
         right: 0.5rem;
         transform: translateY(-50%);
       }
     }
     .modal-body {
       padding: 16px 18px;
-      background-color: var(--root);
+      background-color: var(--root-solid);
       height: 100%;
       flex: 1;
       display: flex;
@@ -357,7 +385,9 @@ $desktopWidth: 1280px;
   }
   &.random-mii-grid {
     .modal-content {
-      width: 100%;
+      height: 720px;
+      max-height: 100vh;
+      width: 1280px;
       .modal-body {
         .random-mii-container {
           display: grid;
@@ -442,6 +472,12 @@ button {
   pointer-events: none;
 }
 
+.gender-select-btn {
+  flex-direction: column;
+  gap: 0;
+  font-size: 20px;
+}
+
 video {
   background-color: var(--root);
   border: 2px solid var(--stroke);
@@ -507,6 +543,14 @@ select {
   pointer-events: none;
   animation: fadeOut $animation-duration $easing-function !important;
 }
+.slideIn {
+  pointer-events: none;
+  animation: slideIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+.slideOut {
+  pointer-events: none;
+  animation: slideOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
 
 .loader {
   position: absolute;
@@ -518,12 +562,17 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 52px;
-  height: 52px;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
+
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
   &.active {
     opacity: 1;
-    animation: spinTranslated 0.5s linear infinite;
+    svg {
+      animation: spinTranslated 0.5s linear infinite;
+    }
   }
 }
 
@@ -542,6 +591,29 @@ select {
   width: 100%;
   height: 0;
   margin: 0;
+}
+
+.separator-gap-thin-laptop {
+  display: none;
+}
+@media screen and (min-width: $laptopWidth) {
+  .separator-gap-thin-laptop {
+    display: block !important;
+    width: 100%;
+    height: 0;
+    margin: 0;
+  }
+}
+.separator-gap-thin-desktop {
+  display: none;
+}
+@media screen and (min-width: $desktopWidth) {
+  .separator-gap-thin-desktop {
+    display: block !important;
+    width: 100%;
+    height: 0;
+    margin: 0;
+  }
 }
 
 .ui-base {
@@ -566,7 +638,7 @@ select {
     pointer-events: none;
     animation: fadeOut $animation-duration $easing-function !important;
   }
-  @media screen and (max-width: $tabletWidth) {
+  @media screen and (max-width: ($tabletWidth - 1)) {
     //1100px) {
     & {
       grid-template-areas: "mii" "tabList" "tabContent";
@@ -633,6 +705,7 @@ select {
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
 
     .render-mode-toggle {
       position: absolute;
@@ -641,8 +714,8 @@ select {
     }
     img,
     canvas {
-      width: 100%;
-      height: 100%;
+      width: 100% !important;
+      height: 100% !important;
       object-fit: contain;
       overflow: hidden;
       transition: opacity 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -655,6 +728,14 @@ select {
     grid-area: tabContent;
     border: 2px solid var(--stroke-dim);
   }
+}
+
+canvas.scene {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+  overflow: hidden;
+  transition: opacity 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .tab-save {
@@ -813,6 +894,7 @@ select {
     .feature-item {
       min-width: 52px;
       min-height: 52px;
+
       display: flex;
       justify-content: center;
       align-items: center;
@@ -838,6 +920,15 @@ select {
           background-color: var(--color);
           border: 2px solid var(--hover);
           // border: 0.1rem solid rgba(var(--stroke-rgb), 0.4);
+        }
+      }
+
+      @media screen and (min-width: $phoneWidth) {
+        min-width: 68px;
+        min-height: 68px;
+        svg {
+          width: 64px;
+          height: 64px;
         }
       }
     }
@@ -877,6 +968,7 @@ select {
     flex-direction: column;
     gap: 1rem;
     padding: 2rem;
+    width: 380px;
     background: var(--sub-container);
     grid-area: sidebar;
     .sidebar-buttons {
@@ -935,6 +1027,18 @@ select {
         width: 100%;
         object-fit: contain;
         aspect-ratio: 1 / 1;
+
+        --scale: 0.1rem;
+        --blur: 0;
+        --color: rgba(255, 255, 255);
+        // filter: drop-shadow(calc(-1 * var(--scale)) calc(-1 * var(--scale)) var(--blur) var(--color))
+        // drop-shadow(0 calc(-1 * var(--scale)) var(--blur) var(--color))
+        // drop-shadow(calc(1 * var(--scale)) calc(-1 * var(--scale)) var(--blur) var(--color))
+        // drop-shadow(calc(-1 * var(--scale)) 0 var(--blur) var(--color))
+        // drop-shadow(calc(1 * var(--scale)) 0 var(--blur) var(--color))
+        // drop-shadow(calc(-1 * var(--scale)) calc(1 * var(--scale)) var(--blur) var(--color))
+        // drop-shadow(0 calc(1 * var(--scale)) var(--blur) var(--color))
+        // drop-shadow(calc(1 * var(--scale)) calc(1 * var(--scale)) var(--blur) var(--color));
       }
       span {
         width: 100%;
@@ -964,7 +1068,7 @@ select {
     }
   }
 
-  @media screen and (max-width: $tabletWidth) {
+  @media screen and (max-width: ($tabletWidth - 1)) {
     grid-template-areas: "miiList miiList" "sidebar sidebar";
     grid-template-rows: 1fr auto;
     .library-sidebar {
@@ -989,4 +1093,44 @@ select {
   .responsive-row-lg {
     flex-direction: row !important;
   }
+}
+
+.notify-box {
+  display: flex;
+  flex-direction: column-reverse;
+  position: fixed;
+  z-index: 9999999999;
+  top: 1.5rem;
+  left: 1.5rem;
+  gap: 1rem;
+
+  > .notify {
+    background-color: var(--container);
+    border: 0.125rem solid var(--stroke);
+    border-radius: 0.32rem;
+    padding: 0.9rem 1rem;
+    min-width: 18rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    backdrop-filter: blur(0.5rem) brightness(0.5) contrast(1.05);
+    pointer-events: all;
+    width: max-content;
+  }
+  > .notify .notify-title {
+    font-size: 1.25rem;
+    color: var(--text);
+  }
+  > .notify .notify-description {
+    /* . . . */
+    opacity: 1;
+  }
+}
+.disable-item {
+  width: 120px;
+  font-size: 20px;
+  min-height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

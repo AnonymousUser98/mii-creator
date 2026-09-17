@@ -10,8 +10,24 @@ export type ModalButton = {
 
 export const buttonsOkCancel = [
   { callback() {}, text: "Cancel" },
-  { callback() {}, text: "OK" },
+  { callback() {}, text: "OK" }
 ];
+
+const duration = 0; //350;
+
+function closingCallback(modal: Html) {
+  modal
+    .qs(".modal-body")!
+    .qsa("*")!
+    .forEach((a) => a!.attr({ disabled: true, tabindex: "-1" }));
+}
+export function closeModal(modal: Html) {
+  modal.class("closing");
+  closingCallback(modal);
+  setTimeout(() => {
+    modal.cleanup();
+  }, duration);
+}
 
 export default {
   modal: function (
@@ -38,7 +54,8 @@ export default {
     } else {
       content.appendTo(modalBody);
     }
-    new Html("div").class("flex-group").appendTo(modalBody);
+    if (buttons.length > 0)
+      new Html("div").class("flex-group").appendTo(modalBody);
 
     for (let i = 0; i < buttons.length; i++) {
       let button = buttons[i];
@@ -51,8 +68,8 @@ export default {
           const t = e.target as HTMLElement;
           if (t == null) return;
           if (
-            t.closest(".modal-content") &&
-            !t.classList.contains("close-button")
+            !t.classList.contains("close-button") &&
+            t.closest(".modal-content") !== null
           )
             return;
           if (isClosing) return;
@@ -62,7 +79,7 @@ export default {
           setTimeout(() => {
             x.cleanup();
             if (typeof button.callback === "function") button.callback(e);
-          }, 350);
+          }, duration);
         };
         AddButtonSounds(
           new Html("button")
@@ -84,7 +101,7 @@ export default {
           setTimeout(() => {
             x.cleanup();
             if (typeof button.callback === "function") button.callback(e);
-          }, 350);
+          }, duration);
         })
       );
 
@@ -116,24 +133,26 @@ export default {
         }
       );
 
-      elementsArray[0].addEventListener(
-        "keydown",
-        (e: { key: string; shiftKey: any; preventDefault: () => void }) => {
-          if (e.key === "Tab" && e.shiftKey) {
-            e.preventDefault();
-            elementsArray[elementsArray.length - 1].focus();
+      if (elementsArray.length > 0) {
+        elementsArray[0].addEventListener(
+          "keydown",
+          (e: { key: string; shiftKey: any; preventDefault: () => void }) => {
+            if (e.key === "Tab" && e.shiftKey) {
+              e.preventDefault();
+              elementsArray[elementsArray.length - 1].focus();
+            }
           }
-        }
-      );
-      elementsArray[elementsArray.length - 1].addEventListener(
-        "keydown",
-        (e: { key: string; shiftKey: any; preventDefault: () => void }) => {
-          if (e.key === "Tab" && !e.shiftKey) {
-            e.preventDefault();
-            elementsArray[0].focus();
+        );
+        elementsArray[elementsArray.length - 1].addEventListener(
+          "keydown",
+          (e: { key: string; shiftKey: any; preventDefault: () => void }) => {
+            if (e.key === "Tab" && !e.shiftKey) {
+              e.preventDefault();
+              elementsArray[0].focus();
+            }
           }
-        }
-      );
+        );
+      }
     });
 
     requestAnimationFrame(() => {
@@ -164,14 +183,14 @@ export default {
           callback: (_: any) => {
             res(true);
             Html.qs(".modal-selectable")?.cleanup();
-          },
+          }
         },
         {
           text: "Cancel",
           callback: (_: any) => {
             res(false);
             Html.qs(".modal-selectable")?.cleanup();
-          },
+          }
         }
       );
     });
@@ -190,15 +209,15 @@ export default {
         {
           text: "Yes",
           type: dangerous ? "danger" : "primary",
-          callback: (_: any) => res(true),
+          callback: (_: any) => res(true)
         },
         {
           text: "No",
-          callback: (_: any) => res(false),
+          callback: (_: any) => res(false)
         },
         {
           text: "Cancel",
-          callback: (_: any) => res(false),
+          callback: (_: any) => res(false)
         }
       );
       m.qs(".modal-body")!.classOn("flex-group");
@@ -223,11 +242,11 @@ export default {
           type: "primary",
           callback: (_: any) => {
             res((input.elm as HTMLInputElement).value);
-          },
+          }
         },
         {
           text: "Cancel",
-          callback: (_: any) => res(false),
+          callback: (_: any) => res(false)
         }
       );
 
@@ -236,7 +255,7 @@ export default {
         .attr({
           placeholder,
           value,
-          type: isPassword === true ? "password" : "text",
+          type: isPassword === true ? "password" : "text"
         })
         .on("keyup", (e) => {
           const ev = e as KeyboardEvent;
@@ -246,10 +265,10 @@ export default {
             setTimeout(() => {
               modal.cleanup();
               res((input.elm as HTMLInputElement).value);
-            }, 350);
+            }, duration);
           }
         })
         .appendTo(wrapper);
     });
-  },
+  }
 };
