@@ -133,9 +133,10 @@ export const miiCreateDialog = () => {
 
         if (result === false) return;
 
+        /* BROKEN
         // Check for secret passwords
         var pwdAccepted = false;
-        switch(return) {
+        switch(result) {
         case "JUSTIN BAILEY":
             var mii = new Mii(
             Buffer.from(
@@ -234,6 +235,7 @@ export const miiCreateDialog = () => {
         }
 
         if (pwdAccepted) return;
+        */
 
         const miiData = parseHexOrB64ToUint8Array(result);
 
