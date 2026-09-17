@@ -60,9 +60,9 @@ export const updateSettings = async (force: boolean = false) => {
   const theme = await localforage.getItem("settings_theme");
   if (theme === null) {
     await setSetting("theme", "default");
-  } else if (theme === "wiiu") {
+  } /* else if (theme === "wiiu") {
     await setSetting("theme", "default");
-  }
+  } */
 
   // Theme selector
   document.documentElement.dataset.theme = String(
