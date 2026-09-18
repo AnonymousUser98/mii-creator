@@ -832,7 +832,7 @@ export async function Library(highlightMiiId?: string) {
                   "datkat21",
                   "https://github.com/datkat21",
                   // Kat21's attribution
-                  __("Lead developer of Mii Creator"),
+                  __('Lead developer of the official Mii Creator (<a href="https://mii.nxw.pw">mii.nxw.pw</a>), has nothing to do with this fork'),
                   "000040030c040320020c0407050213030a0000000008000804000a07003e5303010a09031303130d04000a030d0a"
                 );
                 createMiiCard(
@@ -843,7 +843,7 @@ export async function Library(highlightMiiId?: string) {
                   "https://github.com/ariankordi",
                   // Arian's attribution
                   __(
-                    'Creator of <a target="_blank" href="https://mii-unsecure.ariankordi.net">Mii Renderer (REAL)</a>, made FFL.js and ported shaders, was a big help with debugging many issues'
+                    'Creator of <a target="_blank" href="https://mii-unsecure.ariankordi.net">Mii Renderer (REAL)</a>, made FFL.js and ported shaders, and was a big help with debugging many issues in the original code. Also resolved all the PR conflicts for the local rendering update.'
                   ),
                   "080037030d020531020c030105040a0209000001000a011004010b0100662f04000214031603140d04000a020109"
                 );
@@ -910,8 +910,17 @@ export async function Library(highlightMiiId?: string) {
                   "AnonymousUser98",
                   "https://github.com/AnonymousUser98",
                   // AnonymousUser98's attribution
-                  __("Creator of this public instance"),
+                  __("Creator of this unofficial public instance"),
                   "00070e71797b86899297a3a7abb5bdb5bebec5ccd3dae5ecebf6fdfe060d29525d646d808aa0aac0d4d7dedbe6eeed"
+                );
+                createMiiCard(
+                  container,
+                  __("sh0ty"),
+                  "sh0tybumbati",
+                  "https://github.com/sh0tybumbati",
+                  // sh0tybumbati's attribution
+                  __('Creator of <a href="https://github.com/sh0tybumbati/mii-creator-draw-edition">this fork</a>, which implemented the local FFL.js rendering'),
+                  "0800400308040402020c0301060406020a0000000000000804000a0100214004000214031304170d04000a040109"
                 );
               }
             },
@@ -937,7 +946,7 @@ export async function Library(highlightMiiId?: string) {
                   .style({ gap: "0" })
                   .prependTo(mb);
                 new Html("span")
-                  .text(__("Here's where you can contact the author, Kat21"))
+                  .text(__("Here's where you can contact the developer, AnonymousUser98"))
                   .style({
                     "font-size": "20px",
                     "flex-shrink": "0",
@@ -970,6 +979,23 @@ export async function Library(highlightMiiId?: string) {
 
                 createIconCard(
                   container,
+                  __("File an issue on GitHub"),
+                  "https://github.com/AnonymousUser98/mii-creator",
+                  "AnonymousUser98/mii-creator",
+                  EditorIcons.contact_github
+                );
+
+                new Html("span")
+                  .text(__("Here's where you can contact the original author, Kat21<br/>Kat21 has nothing to do with this public instance"))
+                  .style({
+                    "font-size": "20px",
+                    "flex-shrink": "0",
+                    "margin-bottom": "-16px"
+                  })
+                  .prependTo(mb);
+                
+                createIconCard(
+                  container,
                   __("E-mail (Preferred)"),
                   "mailto:datkat21.yt@gmail.com",
                   "datkat21.yt@gmail.com",
@@ -989,22 +1015,6 @@ export async function Library(highlightMiiId?: string) {
                   "datkat21/mii-creator",
                   EditorIcons.contact_github
                 );
-                createIconCard(
-                  container,
-                  __("File an issue on GitHub"),
-                  "https://github.com/AnonymousUser98/mii-creator",
-                  "AnonymousUser98/mii-creator",
-                  EditorIcons.contact_github
-                );
-              }
-            },
-            {
-              text: __("Manual"),
-              callback(e) {
-                Modal.alert(
-                  __("Notice"),
-                  __("The manual isn't finished yet. Please come back later.")
-                );
               }
             }
           );
@@ -1012,7 +1022,7 @@ export async function Library(highlightMiiId?: string) {
       )
     ),
     new Html("div").class("sidebar-credits").appendMany(
-      new Html("strong").text(__("This site is not affiliated with Nintendo.")),
+      new Html("strong").text(__('This site is not affiliated with Nintendo or Kat21. Kat21's version can be found at <a href="https://mii.nxw.pw">mii.nxw.pw</a>.')),
       new Html("small")
         .text(`${Config.version.string} (${Config.version.name})`)
         .style({ cursor: "pointer" })
