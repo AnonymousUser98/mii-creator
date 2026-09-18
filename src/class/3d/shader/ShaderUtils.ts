@@ -180,7 +180,7 @@ export async function isShaderMaterial(
     case ShaderType.Switch:
     case ShaderType.Miitomo:
     case ShaderType.MiitomoBasic:
-    case ShaderType.3DS
+    case ShaderType.ThreeDS:
       return true;
     case ShaderType.LightDisabled:
     case ShaderType.ThreeToon:
