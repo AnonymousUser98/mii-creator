@@ -6,6 +6,7 @@ import type * as THREE from "three";
 import { ShaderType } from "../../../constants/BodyShaderTypes";
 import FFLShaderMaterial from "../../../external/ffl.js/FFLShaderMaterial";
 import LUTShaderMaterial from "../../../external/ffl.js/LUTShaderMaterial";
+import CTRShaderMaterial from "../../../external/ffl.js/CTRShaderMaterial";
 import localforage from "localforage";
 import {
   CustomToonMaterial,
@@ -179,6 +180,7 @@ export async function isShaderMaterial(
     case ShaderType.Switch:
     case ShaderType.Miitomo:
     case ShaderType.MiitomoBasic:
+    case ShaderType.ThreeDS:
       return true;
     case ShaderType.LightDisabled:
     case ShaderType.ThreeToon:
@@ -200,6 +202,8 @@ export async function getShaderMaterialFromShaderType(type?: string) {
       return FFLShaderBrightMaterial;
     case ShaderType.WiiUToon:
       return FFLShaderToonMaterial;
+    case ShaderType.ThreeDS:
+      return CTRShaderMaterial;
     case ShaderType.Switch:
       // todo: switch should have its own material class?
       return FFLShaderMaterial;
@@ -263,6 +267,7 @@ export async function getSimpleMaterialAddLights(
     case ShaderType.Switch:
     case ShaderType.Miitomo:
     case ShaderType.MiitomoBasic:
+    case ShaderType.ThreeDS:
       return;
     case ShaderType.LightDisabled:
     case ShaderType.ThreePhong:
