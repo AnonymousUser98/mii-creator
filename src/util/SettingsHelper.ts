@@ -167,6 +167,7 @@ export const settingsInfo: Record<string, SettingsOption> = {
       { label: __("Wii U"), value: "wiiu" }
     ]
   },
+  /* This setting does nothing and isn't needed.
   resourceType: {
     type: SettingsType.Multi,
     label: __("Resource Type"),
@@ -180,7 +181,7 @@ export const settingsInfo: Record<string, SettingsOption> = {
         value: String(i)
       }))
     ]
-  },
+  }, */
   shaderType: {
     type: SettingsType.Multi,
     label: __("Shader Type"),
