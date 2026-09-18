@@ -202,7 +202,7 @@ export async function getShaderMaterialFromShaderType(type?: string) {
       return FFLShaderBrightMaterial;
     case ShaderType.WiiUToon:
       return FFLShaderToonMaterial;
-    case ShaderType.3DS:
+    case ShaderType.ThreeDS:
       return CTRShaderMaterial;
     case ShaderType.Switch:
       // todo: switch should have its own material class?
@@ -267,7 +267,7 @@ export async function getSimpleMaterialAddLights(
     case ShaderType.Switch:
     case ShaderType.Miitomo:
     case ShaderType.MiitomoBasic:
-    case ShaderType.3DS:
+    case ShaderType.ThreeDS:
       return;
     case ShaderType.LightDisabled:
     case ShaderType.ThreePhong:
