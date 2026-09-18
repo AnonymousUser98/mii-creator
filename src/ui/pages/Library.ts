@@ -1022,7 +1022,7 @@ export async function Library(highlightMiiId?: string) {
       )
     ),
     new Html("div").class("sidebar-credits").appendMany(
-      new Html("strong").text(__('This site is not affiliated with Nintendo or Kat21. Kat21's version can be found at <a href="https://mii.nxw.pw">mii.nxw.pw</a>.')),
+      new Html("strong").text(__('This site is not affiliated with Nintendo or Kat21. Kat21\'s version can be found at <a href="https://mii.nxw.pw">mii.nxw.pw</a>.')),
       new Html("small")
         .text(`${Config.version.string} (${Config.version.name})`)
         .style({ cursor: "pointer" })
