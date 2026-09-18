@@ -5,6 +5,8 @@
 Create and share Mii characters online with just a few clicks!
 
 ## Public vs. Official
+This public instance is unofficial and is not endorsed by Kat21.
+
 The official version ([mii.nxw.pw](https://mii.nxw.pw)) is more complete and has a lot more features and improvements, but it makes you sign in. It also doesn't use shaders for the icons in your Mii list. This public instance doesn't make you sign in, but it's based on an old version and doesn't have as many features and improvements. However, it does use better rendering for the icons in your Mii list.
 
 Basically, the official version is the better one, but it has some room for improvement and it makes you sign in. If you want extra features, use the official version. If you don't want to sign in, use this public instance.
