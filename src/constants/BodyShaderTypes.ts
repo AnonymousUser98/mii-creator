@@ -12,6 +12,7 @@ export enum BodyType {
 export enum ShaderType {
   WiiU = "wiiu",
   Switch = "switch",
+  3DS = "3ds",
   LightDisabled = "lightDisabled",
   Miitomo = "miitomo",
   MiitomoBasic = "miitomo_basic",
@@ -27,6 +28,7 @@ export function adjustShaderQuery(params: URLSearchParams, shader: ShaderType) {
     case ShaderType.WiiU:
     case ShaderType.Switch:
     case ShaderType.Miitomo:
+    case ShaderType.3DS:
       // share the same type string so can be used directly
       params.set("shaderType", shader);
       break;
