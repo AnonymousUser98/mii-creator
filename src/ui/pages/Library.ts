@@ -1016,15 +1016,6 @@ export async function Library(highlightMiiId?: string) {
                   EditorIcons.contact_github
                 );
               }
-            },
-            {
-              text: __("Manual"),
-              callback(e) {
-                Modal.alert(
-                  __("Notice"),
-                  __("The manual isn't finished yet. Please come back later.")
-                );
-              }
             }
           );
         })
