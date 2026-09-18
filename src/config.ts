@@ -65,13 +65,22 @@ export const Config = {
     // ^^ scaleLimit, scaleLimitClampY, scaleApply
   },
   version: {
-    string: "v1.0.0",
-    name: "FFL Update",
+    string: "v0.12.1",
+    name: "FFL Beta",
 
     // ignore that I'm just writing HTML here
     changelog: `
-    <h1 style="font-size: 20px;text-align: center;">v1.0.0 - Local Rendering</h1>
+    <h1 style="font-size: 20px;text-align: center;">Beta Test</h1>
 
+    <h3>HELP WANTED</h3>
+    <p>There are a few issues that I can't figure out:</p>
+    <ul>
+      <li>The Wii U theme is broken and I can't figure out what files the themes are in.</li>
+      <li>The delete confirmation popup doesn't render Miis at all.</li>
+      <li>There's no more option to use the Switch body model.</li>
+    </ul>
+
+    <br/>
     <h3>Changes & New Features</h3>
 
     <ul style="display:flex;flex-direction:column;gap:8px;line-height:1.75rem">
