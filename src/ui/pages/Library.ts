@@ -946,7 +946,7 @@ export async function Library(highlightMiiId?: string) {
                   .style({ gap: "0" })
                   .prependTo(mb);
                 new Html("span")
-                  .text(__("Here's where you can contact the author, Kat21"))
+                  .text(__("Here's where you can contact the developer, AnonymousUser98"))
                   .style({
                     "font-size": "20px",
                     "flex-shrink": "0",
@@ -979,6 +979,23 @@ export async function Library(highlightMiiId?: string) {
 
                 createIconCard(
                   container,
+                  __("File an issue on GitHub"),
+                  "https://github.com/AnonymousUser98/mii-creator",
+                  "AnonymousUser98/mii-creator",
+                  EditorIcons.contact_github
+                );
+
+                new Html("span")
+                  .text(__("Here's where you can contact the original author, Kat21<br/>Kat21 has nothing to do with this public instance"))
+                  .style({
+                    "font-size": "20px",
+                    "flex-shrink": "0",
+                    "margin-bottom": "-16px"
+                  })
+                  .prependTo(mb);
+                
+                createIconCard(
+                  container,
                   __("E-mail (Preferred)"),
                   "mailto:datkat21.yt@gmail.com",
                   "datkat21.yt@gmail.com",
@@ -996,13 +1013,6 @@ export async function Library(highlightMiiId?: string) {
                   __("File an issue on GitHub"),
                   "https://github.com/datkat21/mii-creator",
                   "datkat21/mii-creator",
-                  EditorIcons.contact_github
-                );
-                createIconCard(
-                  container,
-                  __("File an issue on GitHub"),
-                  "https://github.com/AnonymousUser98/mii-creator",
-                  "AnonymousUser98/mii-creator",
                   EditorIcons.contact_github
                 );
               }
