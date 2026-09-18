@@ -196,6 +196,7 @@ export const settingsInfo: Record<string, SettingsOption> = {
       { label: __("Wii U (Blinn)"), value: ShaderType.WiiUBlinn },
       { label: __("Wii U (Bright)"), value: ShaderType.WiiUFFLIconWithBody },
       { label: __("Wii U (Toon)"), value: ShaderType.WiiUToon },
+      { label: __("3DS"), value: ShaderType.3DS },
       // { label: __("Switch (WIP)"), value: ShaderType.Switch, disabled: true },
       { label: __("Miitomo"), value: ShaderType.Miitomo },
       { label: __("Miitomo (Basic)"), value: ShaderType.MiitomoBasic }
