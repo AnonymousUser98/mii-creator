@@ -512,6 +512,19 @@ export async function Library(highlightMiiId?: string) {
           .classOn("highlight")
           .style({ "--selection-color": "#ffbf00" });
         specialMii = true;
+      } else if (
+        // MAC address matching updated booey, dummy, and charline Miis
+        miiData.createId[4] === 42 &&
+        miiData.createId[5] === 241 &&
+        miiData.createId[6] === 22 &&
+        miiData.createId[7] === 24 &&
+        miiData.createId[8] === 250 &&
+        miiData.createId[9] === 193
+      ) {
+        miiContainer
+          .classOn("highlight")
+          .style({ "--selection-color": "#ffbf00" });
+        specialMii = true;
       }
 
       // if (miiData)
