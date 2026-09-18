@@ -160,6 +160,7 @@ export const Config = {
     -->
 
     <a></a>
+    <p style="margin-bottom:0;text-aligh:center">This public instance is unofficial and is different from Kat21's project.</p>
     <p style="margin-bottom:0;text-align:center"><strong>You can view this message again in Settings.</strong></p>
     `,
   },
