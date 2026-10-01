@@ -11,7 +11,7 @@ The official version ([mii.nxw.pw](https://mii.nxw.pw)) is more complete and has
 
 Basically, the official version is the better one, but it makes you sign in. If you want extra features, use the official version. If you don't want to sign in, use this public instance.
 
-Sign this petition to bring back Guest Mode: https://www.change.org/Kat21GuestMode
+Sign this petition to bring back Guest Mode: https://www.ipetitions.com/p/bring-back-guest-mode-in-mii-creator/
 
 ## Credits
 
