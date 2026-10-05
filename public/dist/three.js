@@ -4,42 +4,75 @@ var __defProp = Object.defineProperty;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
+function __accessProp(key) {
+  return this[key];
+}
+var __toESMCache_node;
+var __toESMCache_esm;
 var __toESM = (mod, isNodeMode, target) => {
+  var canCache = mod != null && typeof mod === "object";
+  if (canCache) {
+    var cache = isNodeMode ? __toESMCache_node ??= new WeakMap : __toESMCache_esm ??= new WeakMap;
+    var cached = cache.get(mod);
+    if (cached)
+      return cached;
+  }
   target = mod != null ? __create(__getProtoOf(mod)) : {};
-  const to = isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target;
-  for (let key of __getOwnPropNames(mod))
-    if (!__hasOwnProp.call(to, key))
-      __defProp(to, key, {
-        get: () => mod[key],
-        enumerable: true
-      });
+  const to = isNodeMode || !mod || !mod.__esModule || !__hasOwnProp.call(mod, "default") ? __defProp(target, "default", { value: mod, enumerable: true }) : target;
+  if (mod && typeof mod === "object" || typeof mod === "function") {
+    for (let key of __getOwnPropNames(mod))
+      if (!__hasOwnProp.call(to, key))
+        __defProp(to, key, {
+          get: __accessProp.bind(mod, key),
+          enumerable: true
+        });
+  }
+  if (canCache)
+    cache.set(mod, to);
   return to;
 };
-var __moduleCache = /* @__PURE__ */ new WeakMap;
 var __toCommonJS = (from) => {
-  var entry = __moduleCache.get(from), desc;
+  var entry = (__moduleCache ??= new WeakMap).get(from), desc;
   if (entry)
     return entry;
   entry = __defProp({}, "__esModule", { value: true });
-  if (from && typeof from === "object" || typeof from === "function")
-    __getOwnPropNames(from).map((key) => !__hasOwnProp.call(entry, key) && __defProp(entry, key, {
-      get: () => from[key],
-      enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable
-    }));
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (var key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(entry, key))
+        __defProp(entry, key, {
+          get: __accessProp.bind(from, key),
+          enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable
+        });
+  }
   __moduleCache.set(from, entry);
   return entry;
 };
+var __moduleCache;
 var __commonJS = (cb, mod) => () => (mod || cb((mod = { exports: {} }).exports, mod), mod.exports);
+var __returnValue = (v) => v;
+function __exportSetter(name, newValue) {
+  this[name] = __returnValue.bind(null, newValue);
+}
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, {
       get: all[name],
       enumerable: true,
       configurable: true,
-      set: (newValue) => all[name] = () => newValue
+      set: __exportSetter.bind(all, name)
     });
 };
-var __esm = (fn, res) => () => (fn && (res = fn(fn = 0)), res);
+var __esm = (fn, res, err) => () => {
+  if (fn)
+    try {
+      res = fn(fn = 0);
+    } catch (e) {
+      err = [e];
+    }
+  if (err)
+    throw err[0];
+  return res;
+};
 var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
   get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
 }) : x)(function(x) {
@@ -51,425 +84,425 @@ var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require
 // node_modules/three/build/three.module.js
 var exports_three_module = {};
 __export(exports_three_module, {
-  createCanvasElement: () => createCanvasElement,
-  ZeroStencilOp: () => ZeroStencilOp,
-  ZeroSlopeEnding: () => ZeroSlopeEnding,
-  ZeroFactor: () => ZeroFactor,
-  ZeroCurvatureEnding: () => ZeroCurvatureEnding,
-  WrapAroundEnding: () => WrapAroundEnding,
-  WireframeGeometry: () => WireframeGeometry,
-  WebXRController: () => WebXRController,
-  WebGPUCoordinateSystem: () => WebGPUCoordinateSystem,
-  WebGLUtils: () => WebGLUtils,
-  WebGLRenderer: () => WebGLRenderer,
-  WebGLRenderTarget: () => WebGLRenderTarget,
-  WebGLCubeRenderTarget: () => WebGLCubeRenderTarget,
-  WebGLCoordinateSystem: () => WebGLCoordinateSystem,
-  WebGLArrayRenderTarget: () => WebGLArrayRenderTarget,
-  WebGL3DRenderTarget: () => WebGL3DRenderTarget,
-  VideoTexture: () => VideoTexture,
-  VideoFrameTexture: () => VideoFrameTexture,
-  VectorKeyframeTrack: () => VectorKeyframeTrack,
-  Vector4: () => Vector4,
-  Vector3: () => Vector3,
-  Vector2: () => Vector2,
-  VSMShadowMap: () => VSMShadowMap,
-  UnsignedShortType: () => UnsignedShortType,
-  UnsignedShort5551Type: () => UnsignedShort5551Type,
-  UnsignedShort4444Type: () => UnsignedShort4444Type,
-  UnsignedIntType: () => UnsignedIntType,
-  UnsignedInt5999Type: () => UnsignedInt5999Type,
-  UnsignedInt248Type: () => UnsignedInt248Type,
-  UnsignedByteType: () => UnsignedByteType,
-  UniformsUtils: () => UniformsUtils,
-  UniformsLib: () => UniformsLib,
-  UniformsGroup: () => UniformsGroup,
-  Uniform: () => Uniform,
-  Uint8ClampedBufferAttribute: () => Uint8ClampedBufferAttribute,
-  Uint8BufferAttribute: () => Uint8BufferAttribute,
-  Uint32BufferAttribute: () => Uint32BufferAttribute,
-  Uint16BufferAttribute: () => Uint16BufferAttribute,
-  UVMapping: () => UVMapping,
-  TubeGeometry: () => TubeGeometry,
-  TrianglesDrawMode: () => TrianglesDrawMode,
-  TriangleStripDrawMode: () => TriangleStripDrawMode,
-  TriangleFanDrawMode: () => TriangleFanDrawMode,
-  Triangle: () => Triangle,
-  TorusKnotGeometry: () => TorusKnotGeometry,
-  TorusGeometry: () => TorusGeometry,
-  TimestampQuery: () => TimestampQuery,
-  TextureUtils: () => TextureUtils,
-  TextureLoader: () => TextureLoader,
-  Texture: () => Texture,
-  TetrahedronGeometry: () => TetrahedronGeometry,
-  TangentSpaceNormalMap: () => TangentSpaceNormalMap,
-  TOUCH: () => TOUCH,
-  SubtractiveBlending: () => SubtractiveBlending,
-  SubtractEquation: () => SubtractEquation,
-  StringKeyframeTrack: () => StringKeyframeTrack,
-  StreamReadUsage: () => StreamReadUsage,
-  StreamDrawUsage: () => StreamDrawUsage,
-  StreamCopyUsage: () => StreamCopyUsage,
-  StereoCamera: () => StereoCamera,
-  StaticReadUsage: () => StaticReadUsage,
-  StaticDrawUsage: () => StaticDrawUsage,
-  StaticCopyUsage: () => StaticCopyUsage,
-  SrcColorFactor: () => SrcColorFactor,
-  SrcAlphaSaturateFactor: () => SrcAlphaSaturateFactor,
-  SrcAlphaFactor: () => SrcAlphaFactor,
-  SpriteMaterial: () => SpriteMaterial,
-  Sprite: () => Sprite,
-  SpotLightHelper: () => SpotLightHelper,
-  SpotLight: () => SpotLight,
-  SplineCurve: () => SplineCurve,
-  SphericalHarmonics3: () => SphericalHarmonics3,
-  Spherical: () => Spherical,
-  SphereGeometry: () => SphereGeometry,
-  Sphere: () => Sphere,
-  Source: () => Source,
-  SkinnedMesh: () => SkinnedMesh,
-  SkeletonHelper: () => SkeletonHelper,
-  Skeleton: () => Skeleton,
-  ShortType: () => ShortType,
-  ShapeUtils: () => ShapeUtils,
-  ShapePath: () => ShapePath,
-  ShapeGeometry: () => ShapeGeometry,
-  Shape: () => Shape,
-  ShadowMaterial: () => ShadowMaterial,
-  ShaderMaterial: () => ShaderMaterial,
-  ShaderLib: () => ShaderLib,
-  ShaderChunk: () => ShaderChunk,
-  Scene: () => Scene,
-  SRGBTransfer: () => SRGBTransfer,
-  SRGBColorSpace: () => SRGBColorSpace,
-  SIGNED_RED_RGTC1_Format: () => SIGNED_RED_RGTC1_Format,
-  SIGNED_RED_GREEN_RGTC2_Format: () => SIGNED_RED_GREEN_RGTC2_Format,
-  RingGeometry: () => RingGeometry,
-  ReverseSubtractEquation: () => ReverseSubtractEquation,
-  ReplaceStencilOp: () => ReplaceStencilOp,
-  RepeatWrapping: () => RepeatWrapping,
-  RenderTargetArray: () => RenderTargetArray,
-  RenderTarget3D: () => RenderTarget3D,
-  RenderTarget: () => RenderTarget,
-  ReinhardToneMapping: () => ReinhardToneMapping,
-  RedIntegerFormat: () => RedIntegerFormat,
-  RedFormat: () => RedFormat,
-  RectAreaLight: () => RectAreaLight,
-  Raycaster: () => Raycaster,
-  Ray: () => Ray,
-  RawShaderMaterial: () => RawShaderMaterial,
-  RGIntegerFormat: () => RGIntegerFormat,
-  RGFormat: () => RGFormat,
-  RGDepthPacking: () => RGDepthPacking,
-  RGB_S3TC_DXT1_Format: () => RGB_S3TC_DXT1_Format,
-  RGB_PVRTC_4BPPV1_Format: () => RGB_PVRTC_4BPPV1_Format,
-  RGB_PVRTC_2BPPV1_Format: () => RGB_PVRTC_2BPPV1_Format,
-  RGB_ETC2_Format: () => RGB_ETC2_Format,
-  RGB_ETC1_Format: () => RGB_ETC1_Format,
-  RGB_BPTC_UNSIGNED_Format: () => RGB_BPTC_UNSIGNED_Format,
-  RGB_BPTC_SIGNED_Format: () => RGB_BPTC_SIGNED_Format,
-  RGBIntegerFormat: () => RGBIntegerFormat,
-  RGBFormat: () => RGBFormat,
-  RGBDepthPacking: () => RGBDepthPacking,
-  RGBA_S3TC_DXT5_Format: () => RGBA_S3TC_DXT5_Format,
-  RGBA_S3TC_DXT3_Format: () => RGBA_S3TC_DXT3_Format,
-  RGBA_S3TC_DXT1_Format: () => RGBA_S3TC_DXT1_Format,
-  RGBA_PVRTC_4BPPV1_Format: () => RGBA_PVRTC_4BPPV1_Format,
-  RGBA_PVRTC_2BPPV1_Format: () => RGBA_PVRTC_2BPPV1_Format,
-  RGBA_ETC2_EAC_Format: () => RGBA_ETC2_EAC_Format,
-  RGBA_BPTC_Format: () => RGBA_BPTC_Format,
-  RGBA_ASTC_8x8_Format: () => RGBA_ASTC_8x8_Format,
-  RGBA_ASTC_8x6_Format: () => RGBA_ASTC_8x6_Format,
-  RGBA_ASTC_8x5_Format: () => RGBA_ASTC_8x5_Format,
-  RGBA_ASTC_6x6_Format: () => RGBA_ASTC_6x6_Format,
-  RGBA_ASTC_6x5_Format: () => RGBA_ASTC_6x5_Format,
-  RGBA_ASTC_5x5_Format: () => RGBA_ASTC_5x5_Format,
-  RGBA_ASTC_5x4_Format: () => RGBA_ASTC_5x4_Format,
-  RGBA_ASTC_4x4_Format: () => RGBA_ASTC_4x4_Format,
-  RGBA_ASTC_12x12_Format: () => RGBA_ASTC_12x12_Format,
-  RGBA_ASTC_12x10_Format: () => RGBA_ASTC_12x10_Format,
-  RGBA_ASTC_10x8_Format: () => RGBA_ASTC_10x8_Format,
-  RGBA_ASTC_10x6_Format: () => RGBA_ASTC_10x6_Format,
-  RGBA_ASTC_10x5_Format: () => RGBA_ASTC_10x5_Format,
-  RGBA_ASTC_10x10_Format: () => RGBA_ASTC_10x10_Format,
-  RGBAIntegerFormat: () => RGBAIntegerFormat,
-  RGBAFormat: () => RGBAFormat,
-  RGBADepthPacking: () => RGBADepthPacking,
-  REVISION: () => REVISION,
-  RED_RGTC1_Format: () => RED_RGTC1_Format,
-  RED_GREEN_RGTC2_Format: () => RED_GREEN_RGTC2_Format,
-  QuaternionLinearInterpolant: () => QuaternionLinearInterpolant,
-  QuaternionKeyframeTrack: () => QuaternionKeyframeTrack,
-  Quaternion: () => Quaternion,
-  QuadraticBezierCurve3: () => QuadraticBezierCurve3,
-  QuadraticBezierCurve: () => QuadraticBezierCurve,
-  PropertyMixer: () => PropertyMixer,
-  PropertyBinding: () => PropertyBinding,
-  PositionalAudio: () => PositionalAudio,
-  PolyhedronGeometry: () => PolyhedronGeometry,
-  PolarGridHelper: () => PolarGridHelper,
-  PointsMaterial: () => PointsMaterial,
-  Points: () => Points,
-  PointLightHelper: () => PointLightHelper,
-  PointLight: () => PointLight,
-  PlaneHelper: () => PlaneHelper,
-  PlaneGeometry: () => PlaneGeometry,
-  Plane: () => Plane,
-  PerspectiveCamera: () => PerspectiveCamera,
-  Path: () => Path,
-  PMREMGenerator: () => PMREMGenerator,
-  PCFSoftShadowMap: () => PCFSoftShadowMap,
-  PCFShadowMap: () => PCFShadowMap,
-  OrthographicCamera: () => OrthographicCamera,
-  OneMinusSrcColorFactor: () => OneMinusSrcColorFactor,
-  OneMinusSrcAlphaFactor: () => OneMinusSrcAlphaFactor,
-  OneMinusDstColorFactor: () => OneMinusDstColorFactor,
-  OneMinusDstAlphaFactor: () => OneMinusDstAlphaFactor,
-  OneMinusConstantColorFactor: () => OneMinusConstantColorFactor,
-  OneMinusConstantAlphaFactor: () => OneMinusConstantAlphaFactor,
-  OneFactor: () => OneFactor,
-  OctahedronGeometry: () => OctahedronGeometry,
-  ObjectSpaceNormalMap: () => ObjectSpaceNormalMap,
-  ObjectLoader: () => ObjectLoader,
-  Object3D: () => Object3D,
-  NumberKeyframeTrack: () => NumberKeyframeTrack,
-  NotEqualStencilFunc: () => NotEqualStencilFunc,
-  NotEqualDepth: () => NotEqualDepth,
-  NotEqualCompare: () => NotEqualCompare,
-  NormalBlending: () => NormalBlending,
-  NormalAnimationBlendMode: () => NormalAnimationBlendMode,
-  NoToneMapping: () => NoToneMapping,
-  NoColorSpace: () => NoColorSpace,
-  NoBlending: () => NoBlending,
-  NeverStencilFunc: () => NeverStencilFunc,
-  NeverDepth: () => NeverDepth,
-  NeverCompare: () => NeverCompare,
-  NeutralToneMapping: () => NeutralToneMapping,
-  NearestMipmapNearestFilter: () => NearestMipmapNearestFilter,
-  NearestMipmapLinearFilter: () => NearestMipmapLinearFilter,
-  NearestMipMapNearestFilter: () => NearestMipMapNearestFilter,
-  NearestMipMapLinearFilter: () => NearestMipMapLinearFilter,
-  NearestFilter: () => NearestFilter,
-  MultiplyOperation: () => MultiplyOperation,
-  MultiplyBlending: () => MultiplyBlending,
-  MixOperation: () => MixOperation,
-  MirroredRepeatWrapping: () => MirroredRepeatWrapping,
-  MinEquation: () => MinEquation,
-  MeshToonMaterial: () => MeshToonMaterial,
-  MeshStandardMaterial: () => MeshStandardMaterial,
-  MeshPhysicalMaterial: () => MeshPhysicalMaterial,
-  MeshPhongMaterial: () => MeshPhongMaterial,
-  MeshNormalMaterial: () => MeshNormalMaterial,
-  MeshMatcapMaterial: () => MeshMatcapMaterial,
-  MeshLambertMaterial: () => MeshLambertMaterial,
-  MeshDistanceMaterial: () => MeshDistanceMaterial,
-  MeshDepthMaterial: () => MeshDepthMaterial,
-  MeshBasicMaterial: () => MeshBasicMaterial,
-  Mesh: () => Mesh,
-  MaxEquation: () => MaxEquation,
-  Matrix4: () => Matrix4,
-  Matrix3: () => Matrix3,
-  Matrix2: () => Matrix2,
-  MathUtils: () => MathUtils,
-  MaterialLoader: () => MaterialLoader,
-  Material: () => Material,
-  MOUSE: () => MOUSE,
-  LuminanceFormat: () => LuminanceFormat,
-  LuminanceAlphaFormat: () => LuminanceAlphaFormat,
-  LoopRepeat: () => LoopRepeat,
-  LoopPingPong: () => LoopPingPong,
-  LoopOnce: () => LoopOnce,
-  LoadingManager: () => LoadingManager,
-  LoaderUtils: () => LoaderUtils,
-  Loader: () => Loader,
-  LinearTransfer: () => LinearTransfer,
-  LinearToneMapping: () => LinearToneMapping,
-  LinearSRGBColorSpace: () => LinearSRGBColorSpace,
-  LinearMipmapNearestFilter: () => LinearMipmapNearestFilter,
-  LinearMipmapLinearFilter: () => LinearMipmapLinearFilter,
-  LinearMipMapNearestFilter: () => LinearMipMapNearestFilter,
-  LinearMipMapLinearFilter: () => LinearMipMapLinearFilter,
-  LinearInterpolant: () => LinearInterpolant,
-  LinearFilter: () => LinearFilter,
-  LineSegments: () => LineSegments,
-  LineLoop: () => LineLoop,
-  LineDashedMaterial: () => LineDashedMaterial,
-  LineCurve3: () => LineCurve3,
-  LineCurve: () => LineCurve,
-  LineBasicMaterial: () => LineBasicMaterial,
-  Line3: () => Line3,
-  Line: () => Line,
-  LightProbe: () => LightProbe,
-  Light: () => Light,
-  LessStencilFunc: () => LessStencilFunc,
-  LessEqualStencilFunc: () => LessEqualStencilFunc,
-  LessEqualDepth: () => LessEqualDepth,
-  LessEqualCompare: () => LessEqualCompare,
-  LessDepth: () => LessDepth,
-  LessCompare: () => LessCompare,
-  Layers: () => Layers,
-  LatheGeometry: () => LatheGeometry,
-  LOD: () => LOD,
-  KeyframeTrack: () => KeyframeTrack,
-  KeepStencilOp: () => KeepStencilOp,
-  InvertStencilOp: () => InvertStencilOp,
-  InterpolateSmooth: () => InterpolateSmooth,
-  InterpolateLinear: () => InterpolateLinear,
-  InterpolateDiscrete: () => InterpolateDiscrete,
-  Interpolant: () => Interpolant,
-  InterleavedBufferAttribute: () => InterleavedBufferAttribute,
-  InterleavedBuffer: () => InterleavedBuffer,
-  IntType: () => IntType,
-  Int8BufferAttribute: () => Int8BufferAttribute,
-  Int32BufferAttribute: () => Int32BufferAttribute,
-  Int16BufferAttribute: () => Int16BufferAttribute,
-  InstancedMesh: () => InstancedMesh,
-  InstancedInterleavedBuffer: () => InstancedInterleavedBuffer,
-  InstancedBufferGeometry: () => InstancedBufferGeometry,
-  InstancedBufferAttribute: () => InstancedBufferAttribute,
-  IncrementWrapStencilOp: () => IncrementWrapStencilOp,
-  IncrementStencilOp: () => IncrementStencilOp,
-  ImageUtils: () => ImageUtils,
-  ImageLoader: () => ImageLoader,
-  ImageBitmapLoader: () => ImageBitmapLoader,
-  IcosahedronGeometry: () => IcosahedronGeometry,
-  HemisphereLightHelper: () => HemisphereLightHelper,
-  HemisphereLight: () => HemisphereLight,
-  HalfFloatType: () => HalfFloatType,
-  Group: () => Group,
-  GridHelper: () => GridHelper,
-  GreaterStencilFunc: () => GreaterStencilFunc,
-  GreaterEqualStencilFunc: () => GreaterEqualStencilFunc,
-  GreaterEqualDepth: () => GreaterEqualDepth,
-  GreaterEqualCompare: () => GreaterEqualCompare,
-  GreaterDepth: () => GreaterDepth,
-  GreaterCompare: () => GreaterCompare,
-  GLSL3: () => GLSL3,
-  GLSL1: () => GLSL1,
-  GLBufferAttribute: () => GLBufferAttribute,
-  Frustum: () => Frustum,
-  FrontSide: () => FrontSide,
-  FramebufferTexture: () => FramebufferTexture,
-  FogExp2: () => FogExp2,
-  Fog: () => Fog,
-  FloatType: () => FloatType,
-  Float32BufferAttribute: () => Float32BufferAttribute,
-  Float16BufferAttribute: () => Float16BufferAttribute,
-  FileLoader: () => FileLoader,
-  ExtrudeGeometry: () => ExtrudeGeometry,
-  EventDispatcher: () => EventDispatcher,
-  Euler: () => Euler,
-  EquirectangularRefractionMapping: () => EquirectangularRefractionMapping,
-  EquirectangularReflectionMapping: () => EquirectangularReflectionMapping,
-  EqualStencilFunc: () => EqualStencilFunc,
-  EqualDepth: () => EqualDepth,
-  EqualCompare: () => EqualCompare,
-  EllipseCurve: () => EllipseCurve,
-  EdgesGeometry: () => EdgesGeometry,
-  DynamicReadUsage: () => DynamicReadUsage,
-  DynamicDrawUsage: () => DynamicDrawUsage,
-  DynamicCopyUsage: () => DynamicCopyUsage,
-  DstColorFactor: () => DstColorFactor,
-  DstAlphaFactor: () => DstAlphaFactor,
-  DoubleSide: () => DoubleSide,
-  DodecahedronGeometry: () => DodecahedronGeometry,
-  DiscreteInterpolant: () => DiscreteInterpolant,
-  DirectionalLightHelper: () => DirectionalLightHelper,
-  DirectionalLight: () => DirectionalLight,
-  DetachedBindMode: () => DetachedBindMode,
-  DepthTexture: () => DepthTexture,
-  DepthStencilFormat: () => DepthStencilFormat,
-  DepthFormat: () => DepthFormat,
-  DefaultLoadingManager: () => DefaultLoadingManager,
-  DecrementWrapStencilOp: () => DecrementWrapStencilOp,
-  DecrementStencilOp: () => DecrementStencilOp,
-  DataUtils: () => DataUtils,
-  DataTextureLoader: () => DataTextureLoader,
-  DataTexture: () => DataTexture,
-  DataArrayTexture: () => DataArrayTexture,
-  Data3DTexture: () => Data3DTexture,
-  Cylindrical: () => Cylindrical,
-  CylinderGeometry: () => CylinderGeometry,
-  CustomToneMapping: () => CustomToneMapping,
-  CustomBlending: () => CustomBlending,
-  CurvePath: () => CurvePath,
-  Curve: () => Curve,
-  CullFaceNone: () => CullFaceNone,
-  CullFaceFrontBack: () => CullFaceFrontBack,
-  CullFaceFront: () => CullFaceFront,
-  CullFaceBack: () => CullFaceBack,
-  CubicInterpolant: () => CubicInterpolant,
-  CubicBezierCurve3: () => CubicBezierCurve3,
-  CubicBezierCurve: () => CubicBezierCurve,
-  CubeUVReflectionMapping: () => CubeUVReflectionMapping,
-  CubeTextureLoader: () => CubeTextureLoader,
-  CubeTexture: () => CubeTexture,
-  CubeRefractionMapping: () => CubeRefractionMapping,
-  CubeReflectionMapping: () => CubeReflectionMapping,
-  CubeCamera: () => CubeCamera,
-  Controls: () => Controls,
-  ConstantColorFactor: () => ConstantColorFactor,
-  ConstantAlphaFactor: () => ConstantAlphaFactor,
-  ConeGeometry: () => ConeGeometry,
-  CompressedTextureLoader: () => CompressedTextureLoader,
-  CompressedTexture: () => CompressedTexture,
-  CompressedCubeTexture: () => CompressedCubeTexture,
-  CompressedArrayTexture: () => CompressedArrayTexture,
-  ColorManagement: () => ColorManagement,
-  ColorKeyframeTrack: () => ColorKeyframeTrack,
-  Color: () => Color,
-  Clock: () => Clock,
-  ClampToEdgeWrapping: () => ClampToEdgeWrapping,
-  CircleGeometry: () => CircleGeometry,
-  CineonToneMapping: () => CineonToneMapping,
-  CatmullRomCurve3: () => CatmullRomCurve3,
-  CapsuleGeometry: () => CapsuleGeometry,
-  CanvasTexture: () => CanvasTexture,
-  CameraHelper: () => CameraHelper,
-  Camera: () => Camera,
-  Cache: () => Cache,
-  ByteType: () => ByteType,
-  BufferGeometryLoader: () => BufferGeometryLoader,
-  BufferGeometry: () => BufferGeometry,
-  BufferAttribute: () => BufferAttribute,
-  BoxHelper: () => BoxHelper,
-  BoxGeometry: () => BoxGeometry,
-  Box3Helper: () => Box3Helper,
-  Box3: () => Box3,
-  Box2: () => Box2,
-  BooleanKeyframeTrack: () => BooleanKeyframeTrack,
-  Bone: () => Bone,
-  BatchedMesh: () => BatchedMesh,
-  BasicShadowMap: () => BasicShadowMap,
-  BasicDepthPacking: () => BasicDepthPacking,
-  BackSide: () => BackSide,
-  AxesHelper: () => AxesHelper,
-  AudioLoader: () => AudioLoader,
-  AudioListener: () => AudioListener,
-  AudioContext: () => AudioContext,
-  AudioAnalyser: () => AudioAnalyser,
-  Audio: () => Audio,
-  AttachedBindMode: () => AttachedBindMode,
-  ArrowHelper: () => ArrowHelper,
-  ArrayCamera: () => ArrayCamera,
-  ArcCurve: () => ArcCurve,
-  AnimationUtils: () => AnimationUtils,
-  AnimationObjectGroup: () => AnimationObjectGroup,
-  AnimationMixer: () => AnimationMixer,
-  AnimationLoader: () => AnimationLoader,
-  AnimationClip: () => AnimationClip,
-  AnimationAction: () => AnimationAction,
-  AmbientLight: () => AmbientLight,
-  AlwaysStencilFunc: () => AlwaysStencilFunc,
-  AlwaysDepth: () => AlwaysDepth,
-  AlwaysCompare: () => AlwaysCompare,
-  AlphaFormat: () => AlphaFormat,
-  AgXToneMapping: () => AgXToneMapping,
-  AdditiveBlending: () => AdditiveBlending,
-  AdditiveAnimationBlendMode: () => AdditiveAnimationBlendMode,
-  AddOperation: () => AddOperation,
+  ACESFilmicToneMapping: () => ACESFilmicToneMapping,
   AddEquation: () => AddEquation,
-  ACESFilmicToneMapping: () => ACESFilmicToneMapping
+  AddOperation: () => AddOperation,
+  AdditiveAnimationBlendMode: () => AdditiveAnimationBlendMode,
+  AdditiveBlending: () => AdditiveBlending,
+  AgXToneMapping: () => AgXToneMapping,
+  AlphaFormat: () => AlphaFormat,
+  AlwaysCompare: () => AlwaysCompare,
+  AlwaysDepth: () => AlwaysDepth,
+  AlwaysStencilFunc: () => AlwaysStencilFunc,
+  AmbientLight: () => AmbientLight,
+  AnimationAction: () => AnimationAction,
+  AnimationClip: () => AnimationClip,
+  AnimationLoader: () => AnimationLoader,
+  AnimationMixer: () => AnimationMixer,
+  AnimationObjectGroup: () => AnimationObjectGroup,
+  AnimationUtils: () => AnimationUtils,
+  ArcCurve: () => ArcCurve,
+  ArrayCamera: () => ArrayCamera,
+  ArrowHelper: () => ArrowHelper,
+  AttachedBindMode: () => AttachedBindMode,
+  Audio: () => Audio,
+  AudioAnalyser: () => AudioAnalyser,
+  AudioContext: () => AudioContext,
+  AudioListener: () => AudioListener,
+  AudioLoader: () => AudioLoader,
+  AxesHelper: () => AxesHelper,
+  BackSide: () => BackSide,
+  BasicDepthPacking: () => BasicDepthPacking,
+  BasicShadowMap: () => BasicShadowMap,
+  BatchedMesh: () => BatchedMesh,
+  Bone: () => Bone,
+  BooleanKeyframeTrack: () => BooleanKeyframeTrack,
+  Box2: () => Box2,
+  Box3: () => Box3,
+  Box3Helper: () => Box3Helper,
+  BoxGeometry: () => BoxGeometry,
+  BoxHelper: () => BoxHelper,
+  BufferAttribute: () => BufferAttribute,
+  BufferGeometry: () => BufferGeometry,
+  BufferGeometryLoader: () => BufferGeometryLoader,
+  ByteType: () => ByteType,
+  Cache: () => Cache,
+  Camera: () => Camera,
+  CameraHelper: () => CameraHelper,
+  CanvasTexture: () => CanvasTexture,
+  CapsuleGeometry: () => CapsuleGeometry,
+  CatmullRomCurve3: () => CatmullRomCurve3,
+  CineonToneMapping: () => CineonToneMapping,
+  CircleGeometry: () => CircleGeometry,
+  ClampToEdgeWrapping: () => ClampToEdgeWrapping,
+  Clock: () => Clock,
+  Color: () => Color,
+  ColorKeyframeTrack: () => ColorKeyframeTrack,
+  ColorManagement: () => ColorManagement,
+  CompressedArrayTexture: () => CompressedArrayTexture,
+  CompressedCubeTexture: () => CompressedCubeTexture,
+  CompressedTexture: () => CompressedTexture,
+  CompressedTextureLoader: () => CompressedTextureLoader,
+  ConeGeometry: () => ConeGeometry,
+  ConstantAlphaFactor: () => ConstantAlphaFactor,
+  ConstantColorFactor: () => ConstantColorFactor,
+  Controls: () => Controls,
+  CubeCamera: () => CubeCamera,
+  CubeReflectionMapping: () => CubeReflectionMapping,
+  CubeRefractionMapping: () => CubeRefractionMapping,
+  CubeTexture: () => CubeTexture,
+  CubeTextureLoader: () => CubeTextureLoader,
+  CubeUVReflectionMapping: () => CubeUVReflectionMapping,
+  CubicBezierCurve: () => CubicBezierCurve,
+  CubicBezierCurve3: () => CubicBezierCurve3,
+  CubicInterpolant: () => CubicInterpolant,
+  CullFaceBack: () => CullFaceBack,
+  CullFaceFront: () => CullFaceFront,
+  CullFaceFrontBack: () => CullFaceFrontBack,
+  CullFaceNone: () => CullFaceNone,
+  Curve: () => Curve,
+  CurvePath: () => CurvePath,
+  CustomBlending: () => CustomBlending,
+  CustomToneMapping: () => CustomToneMapping,
+  CylinderGeometry: () => CylinderGeometry,
+  Cylindrical: () => Cylindrical,
+  Data3DTexture: () => Data3DTexture,
+  DataArrayTexture: () => DataArrayTexture,
+  DataTexture: () => DataTexture,
+  DataTextureLoader: () => DataTextureLoader,
+  DataUtils: () => DataUtils,
+  DecrementStencilOp: () => DecrementStencilOp,
+  DecrementWrapStencilOp: () => DecrementWrapStencilOp,
+  DefaultLoadingManager: () => DefaultLoadingManager,
+  DepthFormat: () => DepthFormat,
+  DepthStencilFormat: () => DepthStencilFormat,
+  DepthTexture: () => DepthTexture,
+  DetachedBindMode: () => DetachedBindMode,
+  DirectionalLight: () => DirectionalLight,
+  DirectionalLightHelper: () => DirectionalLightHelper,
+  DiscreteInterpolant: () => DiscreteInterpolant,
+  DodecahedronGeometry: () => DodecahedronGeometry,
+  DoubleSide: () => DoubleSide,
+  DstAlphaFactor: () => DstAlphaFactor,
+  DstColorFactor: () => DstColorFactor,
+  DynamicCopyUsage: () => DynamicCopyUsage,
+  DynamicDrawUsage: () => DynamicDrawUsage,
+  DynamicReadUsage: () => DynamicReadUsage,
+  EdgesGeometry: () => EdgesGeometry,
+  EllipseCurve: () => EllipseCurve,
+  EqualCompare: () => EqualCompare,
+  EqualDepth: () => EqualDepth,
+  EqualStencilFunc: () => EqualStencilFunc,
+  EquirectangularReflectionMapping: () => EquirectangularReflectionMapping,
+  EquirectangularRefractionMapping: () => EquirectangularRefractionMapping,
+  Euler: () => Euler,
+  EventDispatcher: () => EventDispatcher,
+  ExtrudeGeometry: () => ExtrudeGeometry,
+  FileLoader: () => FileLoader,
+  Float16BufferAttribute: () => Float16BufferAttribute,
+  Float32BufferAttribute: () => Float32BufferAttribute,
+  FloatType: () => FloatType,
+  Fog: () => Fog,
+  FogExp2: () => FogExp2,
+  FramebufferTexture: () => FramebufferTexture,
+  FrontSide: () => FrontSide,
+  Frustum: () => Frustum,
+  GLBufferAttribute: () => GLBufferAttribute,
+  GLSL1: () => GLSL1,
+  GLSL3: () => GLSL3,
+  GreaterCompare: () => GreaterCompare,
+  GreaterDepth: () => GreaterDepth,
+  GreaterEqualCompare: () => GreaterEqualCompare,
+  GreaterEqualDepth: () => GreaterEqualDepth,
+  GreaterEqualStencilFunc: () => GreaterEqualStencilFunc,
+  GreaterStencilFunc: () => GreaterStencilFunc,
+  GridHelper: () => GridHelper,
+  Group: () => Group,
+  HalfFloatType: () => HalfFloatType,
+  HemisphereLight: () => HemisphereLight,
+  HemisphereLightHelper: () => HemisphereLightHelper,
+  IcosahedronGeometry: () => IcosahedronGeometry,
+  ImageBitmapLoader: () => ImageBitmapLoader,
+  ImageLoader: () => ImageLoader,
+  ImageUtils: () => ImageUtils,
+  IncrementStencilOp: () => IncrementStencilOp,
+  IncrementWrapStencilOp: () => IncrementWrapStencilOp,
+  InstancedBufferAttribute: () => InstancedBufferAttribute,
+  InstancedBufferGeometry: () => InstancedBufferGeometry,
+  InstancedInterleavedBuffer: () => InstancedInterleavedBuffer,
+  InstancedMesh: () => InstancedMesh,
+  Int16BufferAttribute: () => Int16BufferAttribute,
+  Int32BufferAttribute: () => Int32BufferAttribute,
+  Int8BufferAttribute: () => Int8BufferAttribute,
+  IntType: () => IntType,
+  InterleavedBuffer: () => InterleavedBuffer,
+  InterleavedBufferAttribute: () => InterleavedBufferAttribute,
+  Interpolant: () => Interpolant,
+  InterpolateDiscrete: () => InterpolateDiscrete,
+  InterpolateLinear: () => InterpolateLinear,
+  InterpolateSmooth: () => InterpolateSmooth,
+  InvertStencilOp: () => InvertStencilOp,
+  KeepStencilOp: () => KeepStencilOp,
+  KeyframeTrack: () => KeyframeTrack,
+  LOD: () => LOD,
+  LatheGeometry: () => LatheGeometry,
+  Layers: () => Layers,
+  LessCompare: () => LessCompare,
+  LessDepth: () => LessDepth,
+  LessEqualCompare: () => LessEqualCompare,
+  LessEqualDepth: () => LessEqualDepth,
+  LessEqualStencilFunc: () => LessEqualStencilFunc,
+  LessStencilFunc: () => LessStencilFunc,
+  Light: () => Light,
+  LightProbe: () => LightProbe,
+  Line: () => Line,
+  Line3: () => Line3,
+  LineBasicMaterial: () => LineBasicMaterial,
+  LineCurve: () => LineCurve,
+  LineCurve3: () => LineCurve3,
+  LineDashedMaterial: () => LineDashedMaterial,
+  LineLoop: () => LineLoop,
+  LineSegments: () => LineSegments,
+  LinearFilter: () => LinearFilter,
+  LinearInterpolant: () => LinearInterpolant,
+  LinearMipMapLinearFilter: () => LinearMipMapLinearFilter,
+  LinearMipMapNearestFilter: () => LinearMipMapNearestFilter,
+  LinearMipmapLinearFilter: () => LinearMipmapLinearFilter,
+  LinearMipmapNearestFilter: () => LinearMipmapNearestFilter,
+  LinearSRGBColorSpace: () => LinearSRGBColorSpace,
+  LinearToneMapping: () => LinearToneMapping,
+  LinearTransfer: () => LinearTransfer,
+  Loader: () => Loader,
+  LoaderUtils: () => LoaderUtils,
+  LoadingManager: () => LoadingManager,
+  LoopOnce: () => LoopOnce,
+  LoopPingPong: () => LoopPingPong,
+  LoopRepeat: () => LoopRepeat,
+  LuminanceAlphaFormat: () => LuminanceAlphaFormat,
+  LuminanceFormat: () => LuminanceFormat,
+  MOUSE: () => MOUSE,
+  Material: () => Material,
+  MaterialLoader: () => MaterialLoader,
+  MathUtils: () => MathUtils,
+  Matrix2: () => Matrix2,
+  Matrix3: () => Matrix3,
+  Matrix4: () => Matrix4,
+  MaxEquation: () => MaxEquation,
+  Mesh: () => Mesh,
+  MeshBasicMaterial: () => MeshBasicMaterial,
+  MeshDepthMaterial: () => MeshDepthMaterial,
+  MeshDistanceMaterial: () => MeshDistanceMaterial,
+  MeshLambertMaterial: () => MeshLambertMaterial,
+  MeshMatcapMaterial: () => MeshMatcapMaterial,
+  MeshNormalMaterial: () => MeshNormalMaterial,
+  MeshPhongMaterial: () => MeshPhongMaterial,
+  MeshPhysicalMaterial: () => MeshPhysicalMaterial,
+  MeshStandardMaterial: () => MeshStandardMaterial,
+  MeshToonMaterial: () => MeshToonMaterial,
+  MinEquation: () => MinEquation,
+  MirroredRepeatWrapping: () => MirroredRepeatWrapping,
+  MixOperation: () => MixOperation,
+  MultiplyBlending: () => MultiplyBlending,
+  MultiplyOperation: () => MultiplyOperation,
+  NearestFilter: () => NearestFilter,
+  NearestMipMapLinearFilter: () => NearestMipMapLinearFilter,
+  NearestMipMapNearestFilter: () => NearestMipMapNearestFilter,
+  NearestMipmapLinearFilter: () => NearestMipmapLinearFilter,
+  NearestMipmapNearestFilter: () => NearestMipmapNearestFilter,
+  NeutralToneMapping: () => NeutralToneMapping,
+  NeverCompare: () => NeverCompare,
+  NeverDepth: () => NeverDepth,
+  NeverStencilFunc: () => NeverStencilFunc,
+  NoBlending: () => NoBlending,
+  NoColorSpace: () => NoColorSpace,
+  NoToneMapping: () => NoToneMapping,
+  NormalAnimationBlendMode: () => NormalAnimationBlendMode,
+  NormalBlending: () => NormalBlending,
+  NotEqualCompare: () => NotEqualCompare,
+  NotEqualDepth: () => NotEqualDepth,
+  NotEqualStencilFunc: () => NotEqualStencilFunc,
+  NumberKeyframeTrack: () => NumberKeyframeTrack,
+  Object3D: () => Object3D,
+  ObjectLoader: () => ObjectLoader,
+  ObjectSpaceNormalMap: () => ObjectSpaceNormalMap,
+  OctahedronGeometry: () => OctahedronGeometry,
+  OneFactor: () => OneFactor,
+  OneMinusConstantAlphaFactor: () => OneMinusConstantAlphaFactor,
+  OneMinusConstantColorFactor: () => OneMinusConstantColorFactor,
+  OneMinusDstAlphaFactor: () => OneMinusDstAlphaFactor,
+  OneMinusDstColorFactor: () => OneMinusDstColorFactor,
+  OneMinusSrcAlphaFactor: () => OneMinusSrcAlphaFactor,
+  OneMinusSrcColorFactor: () => OneMinusSrcColorFactor,
+  OrthographicCamera: () => OrthographicCamera,
+  PCFShadowMap: () => PCFShadowMap,
+  PCFSoftShadowMap: () => PCFSoftShadowMap,
+  PMREMGenerator: () => PMREMGenerator,
+  Path: () => Path,
+  PerspectiveCamera: () => PerspectiveCamera,
+  Plane: () => Plane,
+  PlaneGeometry: () => PlaneGeometry,
+  PlaneHelper: () => PlaneHelper,
+  PointLight: () => PointLight,
+  PointLightHelper: () => PointLightHelper,
+  Points: () => Points,
+  PointsMaterial: () => PointsMaterial,
+  PolarGridHelper: () => PolarGridHelper,
+  PolyhedronGeometry: () => PolyhedronGeometry,
+  PositionalAudio: () => PositionalAudio,
+  PropertyBinding: () => PropertyBinding,
+  PropertyMixer: () => PropertyMixer,
+  QuadraticBezierCurve: () => QuadraticBezierCurve,
+  QuadraticBezierCurve3: () => QuadraticBezierCurve3,
+  Quaternion: () => Quaternion,
+  QuaternionKeyframeTrack: () => QuaternionKeyframeTrack,
+  QuaternionLinearInterpolant: () => QuaternionLinearInterpolant,
+  RED_GREEN_RGTC2_Format: () => RED_GREEN_RGTC2_Format,
+  RED_RGTC1_Format: () => RED_RGTC1_Format,
+  REVISION: () => REVISION,
+  RGBADepthPacking: () => RGBADepthPacking,
+  RGBAFormat: () => RGBAFormat,
+  RGBAIntegerFormat: () => RGBAIntegerFormat,
+  RGBA_ASTC_10x10_Format: () => RGBA_ASTC_10x10_Format,
+  RGBA_ASTC_10x5_Format: () => RGBA_ASTC_10x5_Format,
+  RGBA_ASTC_10x6_Format: () => RGBA_ASTC_10x6_Format,
+  RGBA_ASTC_10x8_Format: () => RGBA_ASTC_10x8_Format,
+  RGBA_ASTC_12x10_Format: () => RGBA_ASTC_12x10_Format,
+  RGBA_ASTC_12x12_Format: () => RGBA_ASTC_12x12_Format,
+  RGBA_ASTC_4x4_Format: () => RGBA_ASTC_4x4_Format,
+  RGBA_ASTC_5x4_Format: () => RGBA_ASTC_5x4_Format,
+  RGBA_ASTC_5x5_Format: () => RGBA_ASTC_5x5_Format,
+  RGBA_ASTC_6x5_Format: () => RGBA_ASTC_6x5_Format,
+  RGBA_ASTC_6x6_Format: () => RGBA_ASTC_6x6_Format,
+  RGBA_ASTC_8x5_Format: () => RGBA_ASTC_8x5_Format,
+  RGBA_ASTC_8x6_Format: () => RGBA_ASTC_8x6_Format,
+  RGBA_ASTC_8x8_Format: () => RGBA_ASTC_8x8_Format,
+  RGBA_BPTC_Format: () => RGBA_BPTC_Format,
+  RGBA_ETC2_EAC_Format: () => RGBA_ETC2_EAC_Format,
+  RGBA_PVRTC_2BPPV1_Format: () => RGBA_PVRTC_2BPPV1_Format,
+  RGBA_PVRTC_4BPPV1_Format: () => RGBA_PVRTC_4BPPV1_Format,
+  RGBA_S3TC_DXT1_Format: () => RGBA_S3TC_DXT1_Format,
+  RGBA_S3TC_DXT3_Format: () => RGBA_S3TC_DXT3_Format,
+  RGBA_S3TC_DXT5_Format: () => RGBA_S3TC_DXT5_Format,
+  RGBDepthPacking: () => RGBDepthPacking,
+  RGBFormat: () => RGBFormat,
+  RGBIntegerFormat: () => RGBIntegerFormat,
+  RGB_BPTC_SIGNED_Format: () => RGB_BPTC_SIGNED_Format,
+  RGB_BPTC_UNSIGNED_Format: () => RGB_BPTC_UNSIGNED_Format,
+  RGB_ETC1_Format: () => RGB_ETC1_Format,
+  RGB_ETC2_Format: () => RGB_ETC2_Format,
+  RGB_PVRTC_2BPPV1_Format: () => RGB_PVRTC_2BPPV1_Format,
+  RGB_PVRTC_4BPPV1_Format: () => RGB_PVRTC_4BPPV1_Format,
+  RGB_S3TC_DXT1_Format: () => RGB_S3TC_DXT1_Format,
+  RGDepthPacking: () => RGDepthPacking,
+  RGFormat: () => RGFormat,
+  RGIntegerFormat: () => RGIntegerFormat,
+  RawShaderMaterial: () => RawShaderMaterial,
+  Ray: () => Ray,
+  Raycaster: () => Raycaster,
+  RectAreaLight: () => RectAreaLight,
+  RedFormat: () => RedFormat,
+  RedIntegerFormat: () => RedIntegerFormat,
+  ReinhardToneMapping: () => ReinhardToneMapping,
+  RenderTarget: () => RenderTarget,
+  RenderTarget3D: () => RenderTarget3D,
+  RenderTargetArray: () => RenderTargetArray,
+  RepeatWrapping: () => RepeatWrapping,
+  ReplaceStencilOp: () => ReplaceStencilOp,
+  ReverseSubtractEquation: () => ReverseSubtractEquation,
+  RingGeometry: () => RingGeometry,
+  SIGNED_RED_GREEN_RGTC2_Format: () => SIGNED_RED_GREEN_RGTC2_Format,
+  SIGNED_RED_RGTC1_Format: () => SIGNED_RED_RGTC1_Format,
+  SRGBColorSpace: () => SRGBColorSpace,
+  SRGBTransfer: () => SRGBTransfer,
+  Scene: () => Scene,
+  ShaderChunk: () => ShaderChunk,
+  ShaderLib: () => ShaderLib,
+  ShaderMaterial: () => ShaderMaterial,
+  ShadowMaterial: () => ShadowMaterial,
+  Shape: () => Shape,
+  ShapeGeometry: () => ShapeGeometry,
+  ShapePath: () => ShapePath,
+  ShapeUtils: () => ShapeUtils,
+  ShortType: () => ShortType,
+  Skeleton: () => Skeleton,
+  SkeletonHelper: () => SkeletonHelper,
+  SkinnedMesh: () => SkinnedMesh,
+  Source: () => Source,
+  Sphere: () => Sphere,
+  SphereGeometry: () => SphereGeometry,
+  Spherical: () => Spherical,
+  SphericalHarmonics3: () => SphericalHarmonics3,
+  SplineCurve: () => SplineCurve,
+  SpotLight: () => SpotLight,
+  SpotLightHelper: () => SpotLightHelper,
+  Sprite: () => Sprite,
+  SpriteMaterial: () => SpriteMaterial,
+  SrcAlphaFactor: () => SrcAlphaFactor,
+  SrcAlphaSaturateFactor: () => SrcAlphaSaturateFactor,
+  SrcColorFactor: () => SrcColorFactor,
+  StaticCopyUsage: () => StaticCopyUsage,
+  StaticDrawUsage: () => StaticDrawUsage,
+  StaticReadUsage: () => StaticReadUsage,
+  StereoCamera: () => StereoCamera,
+  StreamCopyUsage: () => StreamCopyUsage,
+  StreamDrawUsage: () => StreamDrawUsage,
+  StreamReadUsage: () => StreamReadUsage,
+  StringKeyframeTrack: () => StringKeyframeTrack,
+  SubtractEquation: () => SubtractEquation,
+  SubtractiveBlending: () => SubtractiveBlending,
+  TOUCH: () => TOUCH,
+  TangentSpaceNormalMap: () => TangentSpaceNormalMap,
+  TetrahedronGeometry: () => TetrahedronGeometry,
+  Texture: () => Texture,
+  TextureLoader: () => TextureLoader,
+  TextureUtils: () => TextureUtils,
+  TimestampQuery: () => TimestampQuery,
+  TorusGeometry: () => TorusGeometry,
+  TorusKnotGeometry: () => TorusKnotGeometry,
+  Triangle: () => Triangle,
+  TriangleFanDrawMode: () => TriangleFanDrawMode,
+  TriangleStripDrawMode: () => TriangleStripDrawMode,
+  TrianglesDrawMode: () => TrianglesDrawMode,
+  TubeGeometry: () => TubeGeometry,
+  UVMapping: () => UVMapping,
+  Uint16BufferAttribute: () => Uint16BufferAttribute,
+  Uint32BufferAttribute: () => Uint32BufferAttribute,
+  Uint8BufferAttribute: () => Uint8BufferAttribute,
+  Uint8ClampedBufferAttribute: () => Uint8ClampedBufferAttribute,
+  Uniform: () => Uniform,
+  UniformsGroup: () => UniformsGroup,
+  UniformsLib: () => UniformsLib,
+  UniformsUtils: () => UniformsUtils,
+  UnsignedByteType: () => UnsignedByteType,
+  UnsignedInt248Type: () => UnsignedInt248Type,
+  UnsignedInt5999Type: () => UnsignedInt5999Type,
+  UnsignedIntType: () => UnsignedIntType,
+  UnsignedShort4444Type: () => UnsignedShort4444Type,
+  UnsignedShort5551Type: () => UnsignedShort5551Type,
+  UnsignedShortType: () => UnsignedShortType,
+  VSMShadowMap: () => VSMShadowMap,
+  Vector2: () => Vector2,
+  Vector3: () => Vector3,
+  Vector4: () => Vector4,
+  VectorKeyframeTrack: () => VectorKeyframeTrack,
+  VideoFrameTexture: () => VideoFrameTexture,
+  VideoTexture: () => VideoTexture,
+  WebGL3DRenderTarget: () => WebGL3DRenderTarget,
+  WebGLArrayRenderTarget: () => WebGLArrayRenderTarget,
+  WebGLCoordinateSystem: () => WebGLCoordinateSystem,
+  WebGLCubeRenderTarget: () => WebGLCubeRenderTarget,
+  WebGLRenderTarget: () => WebGLRenderTarget,
+  WebGLRenderer: () => WebGLRenderer,
+  WebGLUtils: () => WebGLUtils,
+  WebGPUCoordinateSystem: () => WebGPUCoordinateSystem,
+  WebXRController: () => WebXRController,
+  WireframeGeometry: () => WireframeGeometry,
+  WrapAroundEnding: () => WrapAroundEnding,
+  ZeroCurvatureEnding: () => ZeroCurvatureEnding,
+  ZeroFactor: () => ZeroFactor,
+  ZeroSlopeEnding: () => ZeroSlopeEnding,
+  ZeroStencilOp: () => ZeroStencilOp,
+  createCanvasElement: () => createCanvasElement
 });
 
 // node_modules/three/build/three.core.js
@@ -2806,8 +2839,7 @@ class Quaternion {
     this._onChangeCallback = callback;
     return this;
   }
-  _onChangeCallback() {
-  }
+  _onChangeCallback() {}
   *[Symbol.iterator]() {
     yield this._x;
     yield this._y;
@@ -4661,8 +4693,7 @@ class Euler {
     this._onChangeCallback = callback;
     return this;
   }
-  _onChangeCallback() {
-  }
+  _onChangeCallback() {}
   *[Symbol.iterator]() {
     yield this._x;
     yield this._y;
@@ -4782,14 +4813,10 @@ class Object3D extends EventDispatcher {
     this.animations = [];
     this.userData = {};
   }
-  onBeforeShadow() {
-  }
-  onAfterShadow() {
-  }
-  onBeforeRender() {
-  }
-  onAfterRender() {
-  }
+  onBeforeShadow() {}
+  onAfterShadow() {}
+  onBeforeRender() {}
+  onAfterRender() {}
   applyMatrix4(matrix) {
     if (this.matrixAutoUpdate)
       this.updateMatrix();
@@ -4990,8 +5017,7 @@ class Object3D extends EventDispatcher {
     const e = this.matrixWorld.elements;
     return target.set(e[8], e[9], e[10]).normalize();
   }
-  raycast() {
-  }
+  raycast() {}
   traverse(callback) {
     callback(this);
     const children = this.children;
@@ -6014,10 +6040,8 @@ class Material extends EventDispatcher {
     }
     this._alphaTest = value;
   }
-  onBeforeRender() {
-  }
-  onBeforeCompile() {
-  }
+  onBeforeRender() {}
+  onBeforeCompile() {}
   customProgramCacheKey() {
     return this.onBeforeCompile.toString();
   }
@@ -6295,9 +6319,9 @@ class Material extends EventDispatcher {
     function extractFromCache(cache) {
       const values = [];
       for (const key in cache) {
-        const data2 = cache[key];
-        delete data2.metadata;
-        values.push(data2);
+        const data = cache[key];
+        delete data.metadata;
+        values.push(data);
       }
       return values;
     }
@@ -6545,8 +6569,7 @@ class BufferAttribute {
     this.gpuType = FloatType;
     this.version = 0;
   }
-  onUploadCallback() {
-  }
+  onUploadCallback() {}
   set needsUpdate(value) {
     if (value === true)
       this.version++;
@@ -7280,17 +7303,17 @@ class BufferGeometry extends EventDispatcher {
     }
   }
   toNonIndexed() {
-    function convertBufferAttribute(attribute, indices2) {
+    function convertBufferAttribute(attribute, indices) {
       const array = attribute.array;
       const itemSize = attribute.itemSize;
       const normalized = attribute.normalized;
-      const array2 = new array.constructor(indices2.length * itemSize);
+      const array2 = new array.constructor(indices.length * itemSize);
       let index = 0, index2 = 0;
-      for (let i = 0, l = indices2.length;i < l; i++) {
+      for (let i = 0, l = indices.length;i < l; i++) {
         if (attribute.isInterleavedBufferAttribute) {
-          index = indices2[i] * attribute.data.stride + attribute.offset;
+          index = indices[i] * attribute.data.stride + attribute.offset;
         } else {
-          index = indices2[i] * itemSize;
+          index = indices[i] * itemSize;
         }
         for (let j = 0;j < itemSize; j++) {
           array2[index2++] = array[index++];
@@ -7714,12 +7737,12 @@ class BoxGeometry extends BufferGeometry {
     this.setAttribute("position", new Float32BufferAttribute(vertices, 3));
     this.setAttribute("normal", new Float32BufferAttribute(normals, 3));
     this.setAttribute("uv", new Float32BufferAttribute(uvs, 2));
-    function buildPlane(u, v, w, udir, vdir, width2, height2, depth2, gridX, gridY, materialIndex) {
-      const segmentWidth = width2 / gridX;
-      const segmentHeight = height2 / gridY;
-      const widthHalf = width2 / 2;
-      const heightHalf = height2 / 2;
-      const depthHalf = depth2 / 2;
+    function buildPlane(u, v, w, udir, vdir, width, height, depth, gridX, gridY, materialIndex) {
+      const segmentWidth = width / gridX;
+      const segmentHeight = height / gridY;
+      const widthHalf = width / 2;
+      const heightHalf = height / 2;
+      const depthHalf = depth / 2;
       const gridX1 = gridX + 1;
       const gridY1 = gridY + 1;
       let vertexCounter = 0;
@@ -7735,7 +7758,7 @@ class BoxGeometry extends BufferGeometry {
           vertices.push(vector.x, vector.y, vector.z);
           vector[u] = 0;
           vector[v] = 0;
-          vector[w] = depth2 > 0 ? 1 : -1;
+          vector[w] = depth > 0 ? 1 : -1;
           normals.push(vector.x, vector.y, vector.z);
           uvs.push(ix / gridX);
           uvs.push(1 - iy / gridY);
@@ -8501,7 +8524,6 @@ class WebXRController {
     return hand.joints[inputjoint.jointName];
   }
 }
-
 class FogExp2 {
   constructor(color, density = 0.00025) {
     this.isFogExp2 = true;
@@ -8607,8 +8629,7 @@ class InterleavedBuffer {
     this.version = 0;
     this.uuid = generateUUID();
   }
-  onUploadCallback() {
-  }
+  onUploadCallback() {}
   set needsUpdate(value) {
     if (value === true)
       this.version++;
@@ -9588,8 +9609,7 @@ class InstancedMesh extends Mesh {
     array[dataIndex] = morphBaseInfluence;
     array.set(objectInfluences, dataIndex + 1);
   }
-  updateMorphTargets() {
-  }
+  updateMorphTargets() {}
   dispose() {
     this.dispatchEvent({ type: "dispose" });
     if (this.morphTexture !== null) {
@@ -10198,14 +10218,14 @@ class BatchedMesh extends Mesh {
       if (geometry.index !== null) {
         if (geometryInfo.indexStart !== nextIndexStart) {
           const { indexStart, vertexStart, reservedIndexCount } = geometryInfo;
-          const index2 = geometry.index;
-          const array = index2.array;
+          const index = geometry.index;
+          const array = index.array;
           const elementDelta = nextVertexStart - vertexStart;
           for (let j = indexStart;j < indexStart + reservedIndexCount; j++) {
             array[j] = array[j] + elementDelta;
           }
-          index2.array.copyWithin(nextIndexStart, indexStart, indexStart + reservedIndexCount);
-          index2.addUpdateRange(nextIndexStart, reservedIndexCount);
+          index.array.copyWithin(nextIndexStart, indexStart, indexStart + reservedIndexCount);
+          index.addUpdateRange(nextIndexStart, reservedIndexCount);
           geometryInfo.indexStart = nextIndexStart;
         }
         nextIndexStart += geometryInfo.reservedIndexCount;
@@ -10425,7 +10445,7 @@ class BatchedMesh extends Mesh {
       this.getBoundingBoxAt(geometryId, _mesh.geometry.boundingBox);
       this.getBoundingSphereAt(geometryId, _mesh.geometry.boundingSphere);
       _mesh.raycast(raycaster, _batchIntersects);
-      for (let j = 0, l2 = _batchIntersects.length;j < l2; j++) {
+      for (let j = 0, l = _batchIntersects.length;j < l; j++) {
         const intersect = _batchIntersects[j];
         intersect.object = this;
         intersect.batchId = i;
@@ -10908,8 +10928,7 @@ class VideoFrameTexture extends VideoTexture {
     super({}, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy);
     this.isVideoFrameTexture = true;
   }
-  update() {
-  }
+  update() {}
   clone() {
     return new this.constructor().copy(this);
   }
@@ -12079,7 +12098,6 @@ class LatheGeometry extends BufferGeometry {
     return new LatheGeometry(data.points, data.segments, data.phiStart, data.phiLength);
   }
 }
-
 class CapsuleGeometry extends LatheGeometry {
   constructor(radius = 1, length = 1, capSegments = 4, radialSegments = 8) {
     const path = new Path;
@@ -12322,7 +12340,7 @@ class PolyhedronGeometry extends BufferGeometry {
     } else {
       this.normalizeNormals();
     }
-    function subdivide(detail2) {
+    function subdivide(detail) {
       const a = new Vector3;
       const b = new Vector3;
       const c = new Vector3;
@@ -12330,11 +12348,11 @@ class PolyhedronGeometry extends BufferGeometry {
         getVertexByIndex(indices[i + 0], a);
         getVertexByIndex(indices[i + 1], b);
         getVertexByIndex(indices[i + 2], c);
-        subdivideFace(a, b, c, detail2);
+        subdivideFace(a, b, c, detail);
       }
     }
-    function subdivideFace(a, b, c, detail2) {
-      const cols = detail2 + 1;
+    function subdivideFace(a, b, c, detail) {
+      const cols = detail + 1;
       const v = [];
       for (let i = 0;i <= cols; i++) {
         v[i] = [];
@@ -12364,13 +12382,13 @@ class PolyhedronGeometry extends BufferGeometry {
         }
       }
     }
-    function applyRadius(radius2) {
+    function applyRadius(radius) {
       const vertex = new Vector3;
       for (let i = 0;i < vertexBuffer.length; i += 3) {
         vertex.x = vertexBuffer[i + 0];
         vertex.y = vertexBuffer[i + 1];
         vertex.z = vertexBuffer[i + 2];
-        vertex.normalize().multiplyScalar(radius2);
+        vertex.normalize().multiplyScalar(radius);
         vertexBuffer[i + 0] = vertex.x;
         vertexBuffer[i + 1] = vertex.y;
         vertexBuffer[i + 2] = vertex.z;
@@ -12437,12 +12455,12 @@ class PolyhedronGeometry extends BufferGeometry {
         correctUV(uvC, j + 4, c, azi);
       }
     }
-    function correctUV(uv, stride, vector, azimuth2) {
-      if (azimuth2 < 0 && uv.x === 1) {
+    function correctUV(uv, stride, vector, azimuth) {
+      if (azimuth < 0 && uv.x === 1) {
         uvBuffer[stride] = uv.x - 1;
       }
       if (vector.x === 0 && vector.z === 0) {
-        uvBuffer[stride] = azimuth2 / 2 / Math.PI + 0.5;
+        uvBuffer[stride] = azimuth / 2 / Math.PI + 0.5;
       }
     }
     function azimuth(vector) {
@@ -13104,8 +13122,8 @@ function getLeftmost(start) {
   } while (p !== start);
   return leftmost;
 }
-function pointInTriangle(ax, ay, bx, by, cx, cy, px2, py2) {
-  return (cx - px2) * (ay - py2) >= (ax - px2) * (cy - py2) && (ax - px2) * (by - py2) >= (bx - px2) * (ay - py2) && (bx - px2) * (cy - py2) >= (cx - px2) * (by - py2);
+function pointInTriangle(ax, ay, bx, by, cx, cy, px, py) {
+  return (cx - px) * (ay - py) >= (ax - px) * (cy - py) && (ax - px) * (by - py) >= (bx - px) * (ay - py) && (bx - px) * (cy - py) >= (cx - px) * (by - py);
 }
 function isValidDiagonal(a, b) {
   return a.next.i !== b.i && a.prev.i !== b.i && !intersectsPolygon(a, b) && (locallyInside(a, b) && locallyInside(b, a) && middleInside(a, b) && (area(a.prev, a, b.prev) || area(a, b.prev, b)) || equals(a, b) && area(a.prev, a, a.next) > 0 && area(b.prev, b, b.next) > 0);
@@ -13153,9 +13171,9 @@ function locallyInside(a, b) {
 }
 function middleInside(a, b) {
   let p = a, inside = false;
-  const px2 = (a.x + b.x) / 2, py2 = (a.y + b.y) / 2;
+  const px = (a.x + b.x) / 2, py = (a.y + b.y) / 2;
   do {
-    if (p.y > py2 !== p.next.y > py2 && p.next.y !== p.y && px2 < (p.next.x - p.x) * (py2 - p.y) / (p.next.y - p.y) + p.x)
+    if (p.y > py !== p.next.y > py && p.next.y !== p.y && px < (p.next.x - p.x) * (py - p.y) / (p.next.y - p.y) + p.x)
       inside = !inside;
     p = p.next;
   } while (p !== a);
@@ -13409,16 +13427,16 @@ class ExtrudeGeometry extends BufferGeometry {
       for (let b = 0;b < bevelSegments; b++) {
         const t = b / bevelSegments;
         const z = bevelThickness * Math.cos(t * Math.PI / 2);
-        const bs2 = bevelSize * Math.sin(t * Math.PI / 2) + bevelOffset;
+        const bs = bevelSize * Math.sin(t * Math.PI / 2) + bevelOffset;
         for (let i = 0, il = contour.length;i < il; i++) {
-          const vert = scalePt2(contour[i], contourMovements[i], bs2);
+          const vert = scalePt2(contour[i], contourMovements[i], bs);
           v(vert.x, vert.y, -z);
         }
         for (let h = 0, hl = holes.length;h < hl; h++) {
           const ahole = holes[h];
           oneHoleMovements = holesMovements[h];
           for (let i = 0, il = ahole.length;i < il; i++) {
-            const vert = scalePt2(ahole[i], oneHoleMovements[i], bs2);
+            const vert = scalePt2(ahole[i], oneHoleMovements[i], bs);
             v(vert.x, vert.y, -z);
           }
         }
@@ -13451,16 +13469,16 @@ class ExtrudeGeometry extends BufferGeometry {
       for (let b = bevelSegments - 1;b >= 0; b--) {
         const t = b / bevelSegments;
         const z = bevelThickness * Math.cos(t * Math.PI / 2);
-        const bs2 = bevelSize * Math.sin(t * Math.PI / 2) + bevelOffset;
+        const bs = bevelSize * Math.sin(t * Math.PI / 2) + bevelOffset;
         for (let i = 0, il = contour.length;i < il; i++) {
-          const vert = scalePt2(contour[i], contourMovements[i], bs2);
+          const vert = scalePt2(contour[i], contourMovements[i], bs);
           v(vert.x, vert.y, depth + z);
         }
         for (let h = 0, hl = holes.length;h < hl; h++) {
           const ahole = holes[h];
           oneHoleMovements = holesMovements[h];
           for (let i = 0, il = ahole.length;i < il; i++) {
-            const vert = scalePt2(ahole[i], oneHoleMovements[i], bs2);
+            const vert = scalePt2(ahole[i], oneHoleMovements[i], bs);
             if (!extrudeByPath) {
               v(vert.x, vert.y, depth + z);
             } else {
@@ -13510,13 +13528,13 @@ class ExtrudeGeometry extends BufferGeometry {
         }
         scope.addGroup(start, verticesArray.length / 3 - start, 1);
       }
-      function sidewalls(contour2, layeroffset) {
-        let i = contour2.length;
+      function sidewalls(contour, layeroffset) {
+        let i = contour.length;
         while (--i >= 0) {
           const j = i;
           let k = i - 1;
           if (k < 0)
-            k = contour2.length - 1;
+            k = contour.length - 1;
           for (let s = 0, sl = steps + bevelSegments * 2;s < sl; s++) {
             const slen1 = vlen * s;
             const slen2 = vlen * (s + 1);
@@ -14279,14 +14297,14 @@ class TorusKnotGeometry extends BufferGeometry {
     this.setAttribute("position", new Float32BufferAttribute(vertices, 3));
     this.setAttribute("normal", new Float32BufferAttribute(normals, 3));
     this.setAttribute("uv", new Float32BufferAttribute(uvs, 2));
-    function calculatePositionOnCurve(u, p2, q2, radius2, position) {
+    function calculatePositionOnCurve(u, p, q, radius, position) {
       const cu = Math.cos(u);
       const su = Math.sin(u);
-      const quOverP = q2 / p2 * u;
+      const quOverP = q / p * u;
       const cs = Math.cos(quOverP);
-      position.x = radius2 * (2 + cs) * 0.5 * cu;
-      position.y = radius2 * (2 + cs) * su * 0.5;
-      position.z = radius2 * Math.sin(quOverP) * 0.5;
+      position.x = radius * (2 + cs) * 0.5 * cu;
+      position.y = radius * (2 + cs) * su * 0.5;
+      position.z = radius * Math.sin(quOverP) * 0.5;
     }
   }
   copy(source) {
@@ -15377,8 +15395,7 @@ class Interpolant {
   interpolate_() {
     throw new Error("call to abstract method");
   }
-  intervalChanged_() {
-  }
+  intervalChanged_() {}
 }
 
 class CubicInterpolant extends Interpolant {
@@ -16077,16 +16094,14 @@ class Loader {
     this.resourcePath = "";
     this.requestHeader = {};
   }
-  load() {
-  }
+  load() {}
   loadAsync(url, onProgress) {
     const scope = this;
     return new Promise(function(resolve, reject) {
       scope.load(url, resolve, onProgress, reject);
     });
   }
-  parse() {
-  }
+  parse() {}
   setCrossOrigin(crossOrigin) {
     this.crossOrigin = crossOrigin;
     return this;
@@ -16539,8 +16554,7 @@ class Light extends Object3D {
     this.color = new Color(color);
     this.intensity = intensity;
   }
-  dispose() {
-  }
+  dispose() {}
   copy(source, recursive) {
     super.copy(source, recursive);
     this.color.copy(source.color);
@@ -16679,12 +16693,12 @@ class SpotLightShadow extends LightShadow {
   }
   updateMatrices(light) {
     const camera = this.camera;
-    const fov2 = RAD2DEG * 2 * light.angle * this.focus;
-    const aspect2 = this.mapSize.width / this.mapSize.height;
+    const fov = RAD2DEG * 2 * light.angle * this.focus;
+    const aspect = this.mapSize.width / this.mapSize.height;
     const far = light.distance || camera.far;
-    if (fov2 !== camera.fov || aspect2 !== camera.aspect || far !== camera.far) {
-      camera.fov = fov2;
-      camera.aspect = aspect2;
+    if (fov !== camera.fov || aspect !== camera.aspect || far !== camera.far) {
+      camera.fov = fov;
+      camera.aspect = aspect;
       camera.far = far;
       camera.updateProjectionMatrix();
     }
@@ -17546,22 +17560,22 @@ class BufferGeometryLoader extends Loader {
   parse(json) {
     const interleavedBufferMap = {};
     const arrayBufferMap = {};
-    function getInterleavedBuffer(json2, uuid) {
+    function getInterleavedBuffer(json, uuid) {
       if (interleavedBufferMap[uuid] !== undefined)
         return interleavedBufferMap[uuid];
-      const interleavedBuffers = json2.interleavedBuffers;
+      const interleavedBuffers = json.interleavedBuffers;
       const interleavedBuffer = interleavedBuffers[uuid];
-      const buffer = getArrayBuffer(json2, interleavedBuffer.buffer);
+      const buffer = getArrayBuffer(json, interleavedBuffer.buffer);
       const array = getTypedArray(interleavedBuffer.type, buffer);
       const ib = new InterleavedBuffer(array, interleavedBuffer.stride);
       ib.uuid = interleavedBuffer.uuid;
       interleavedBufferMap[uuid] = ib;
       return ib;
     }
-    function getArrayBuffer(json2, uuid) {
+    function getArrayBuffer(json, uuid) {
       if (arrayBufferMap[uuid] !== undefined)
         return arrayBufferMap[uuid];
-      const arrayBuffers = json2.arrayBuffers;
+      const arrayBuffers = json.arrayBuffers;
       const arrayBuffer = arrayBuffers[uuid];
       const ab = new Uint32Array(arrayBuffer).buffer;
       arrayBufferMap[uuid] = ab;
@@ -19225,10 +19239,8 @@ class PropertyBinding {
     }
     return null;
   }
-  _getValue_unavailable() {
-  }
-  _setValue_unavailable() {
-  }
+  _getValue_unavailable() {}
+  _setValue_unavailable() {}
   _getValue_direct(buffer, offset) {
     buffer[offset] = this.targetObject[this.propertyName];
   }
@@ -19622,7 +19634,6 @@ class AnimationObjectGroup {
     }
   }
 }
-
 class AnimationAction {
   constructor(mixer, clip, localRoot = null, blendMode = clip.blendMode) {
     this._mixer = mixer;
@@ -19748,15 +19759,15 @@ class AnimationAction {
     return this.warp(this._effectiveTimeScale, 0, duration);
   }
   warp(startTimeScale, endTimeScale, duration) {
-    const mixer = this._mixer, now2 = mixer.time, timeScale = this.timeScale;
+    const mixer = this._mixer, now = mixer.time, timeScale = this.timeScale;
     let interpolant = this._timeScaleInterpolant;
     if (interpolant === null) {
       interpolant = mixer._lendControlInterpolant();
       this._timeScaleInterpolant = interpolant;
     }
-    const { parameterPositions: times, sampleValues: values } = interpolant;
-    times[0] = now2;
-    times[1] = now2 + duration;
+    const times = interpolant.parameterPositions, values = interpolant.sampleValues;
+    times[0] = now;
+    times[1] = now + duration;
     values[0] = startTimeScale / timeScale;
     values[1] = endTimeScale / timeScale;
     return this;
@@ -19960,16 +19971,16 @@ class AnimationAction {
     }
   }
   _scheduleFading(duration, weightNow, weightThen) {
-    const mixer = this._mixer, now2 = mixer.time;
+    const mixer = this._mixer, now = mixer.time;
     let interpolant = this._weightInterpolant;
     if (interpolant === null) {
       interpolant = mixer._lendControlInterpolant();
       this._weightInterpolant = interpolant;
     }
-    const { parameterPositions: times, sampleValues: values } = interpolant;
-    times[0] = now2;
+    const times = interpolant.parameterPositions, values = interpolant.sampleValues;
+    times[0] = now;
     values[0] = weightNow;
-    times[1] = now2 + duration;
+    times[1] = now + duration;
     values[1] = weightThen;
     return this;
   }
@@ -19986,7 +19997,7 @@ class AnimationMixer extends EventDispatcher {
     this.timeScale = 1;
   }
   _bindAction(action, prototypeAction) {
-    const root = action._localRoot || this._root, tracks = action._clip.tracks, nTracks = tracks.length, bindings = action._propertyBindings, interpolants = action._interpolants, rootUuid = root.uuid, bindingsByRoot = this._bindingsByRootAndName;
+    const root = action._localRoot || this._root, tracks = action._clip.tracks, nTracks = tracks.length, { _propertyBindings: bindings, _interpolants: interpolants } = action, rootUuid = root.uuid, bindingsByRoot = this._bindingsByRootAndName;
     let bindingsByName = bindingsByRoot[rootUuid];
     if (bindingsByName === undefined) {
       bindingsByName = {};
@@ -20486,33 +20497,33 @@ class Raycaster {
     this.ray.direction.set(0, 0, -1).applyMatrix4(_matrix);
     return this;
   }
-  intersectObject(object, recursive = true, intersects2 = []) {
-    intersect(object, this, intersects2, recursive);
-    intersects2.sort(ascSort);
-    return intersects2;
+  intersectObject(object, recursive = true, intersects = []) {
+    intersect(object, this, intersects, recursive);
+    intersects.sort(ascSort);
+    return intersects;
   }
-  intersectObjects(objects, recursive = true, intersects2 = []) {
+  intersectObjects(objects, recursive = true, intersects = []) {
     for (let i = 0, l = objects.length;i < l; i++) {
-      intersect(objects[i], this, intersects2, recursive);
+      intersect(objects[i], this, intersects, recursive);
     }
-    intersects2.sort(ascSort);
-    return intersects2;
+    intersects.sort(ascSort);
+    return intersects;
   }
 }
 function ascSort(a, b) {
   return a.distance - b.distance;
 }
-function intersect(object, raycaster, intersects2, recursive) {
+function intersect(object, raycaster, intersects, recursive) {
   let propagate = true;
   if (object.layers.test(raycaster.layers)) {
-    const result = object.raycast(raycaster, intersects2);
+    const result = object.raycast(raycaster, intersects);
     if (result === false)
       propagate = false;
   }
   if (propagate === true && recursive === true) {
     const children = object.children;
     for (let i = 0, l = children.length;i < l; i++) {
-      intersect(children[i], raycaster, intersects2, true);
+      intersect(children[i], raycaster, intersects, true);
     }
   }
 }
@@ -21604,14 +21615,14 @@ class ShapePath {
   }
   toShapes(isCCW) {
     function toShapesNoHoles(inSubpaths) {
-      const shapes2 = [];
+      const shapes = [];
       for (let i = 0, l = inSubpaths.length;i < l; i++) {
-        const tmpPath2 = inSubpaths[i];
-        const tmpShape2 = new Shape;
-        tmpShape2.curves = tmpPath2.curves;
-        shapes2.push(tmpShape2);
+        const tmpPath = inSubpaths[i];
+        const tmpShape = new Shape;
+        tmpShape.curves = tmpPath.curves;
+        shapes.push(tmpShape);
       }
-      return shapes2;
+      return shapes;
     }
     function isPointInsidePolygon(inPt, inPolygon) {
       const polyLen = inPolygon.length;
@@ -21747,40 +21758,36 @@ class Controls extends EventDispatcher {
     this.mouseButtons = { LEFT: null, MIDDLE: null, RIGHT: null };
     this.touches = { ONE: null, TWO: null };
   }
-  connect() {
-  }
-  disconnect() {
-  }
-  dispose() {
-  }
-  update() {
-  }
+  connect() {}
+  disconnect() {}
+  dispose() {}
+  update() {}
 }
-function contain(texture, aspect2) {
+function contain(texture, aspect) {
   const imageAspect = texture.image && texture.image.width ? texture.image.width / texture.image.height : 1;
-  if (imageAspect > aspect2) {
+  if (imageAspect > aspect) {
     texture.repeat.x = 1;
-    texture.repeat.y = imageAspect / aspect2;
+    texture.repeat.y = imageAspect / aspect;
     texture.offset.x = 0;
     texture.offset.y = (1 - texture.repeat.y) / 2;
   } else {
-    texture.repeat.x = aspect2 / imageAspect;
+    texture.repeat.x = aspect / imageAspect;
     texture.repeat.y = 1;
     texture.offset.x = (1 - texture.repeat.x) / 2;
     texture.offset.y = 0;
   }
   return texture;
 }
-function cover(texture, aspect2) {
+function cover(texture, aspect) {
   const imageAspect = texture.image && texture.image.width ? texture.image.width / texture.image.height : 1;
-  if (imageAspect > aspect2) {
-    texture.repeat.x = aspect2 / imageAspect;
+  if (imageAspect > aspect) {
+    texture.repeat.x = aspect / imageAspect;
     texture.repeat.y = 1;
     texture.offset.x = (1 - texture.repeat.x) / 2;
     texture.offset.y = 0;
   } else {
     texture.repeat.x = 1;
-    texture.repeat.y = imageAspect / aspect2;
+    texture.repeat.y = imageAspect / aspect;
     texture.offset.x = 0;
     texture.offset.y = (1 - texture.repeat.y) / 2;
   }
@@ -26363,7 +26370,7 @@ function WebGLBackground(renderer, cubemaps, cubeuvmaps, state, objects, alpha, 
         }));
         boxMesh.geometry.deleteAttribute("normal");
         boxMesh.geometry.deleteAttribute("uv");
-        boxMesh.onBeforeRender = function(renderer2, scene2, camera) {
+        boxMesh.onBeforeRender = function(renderer, scene, camera) {
           this.matrixWorld.copyPosition(camera.matrixWorld);
         };
         Object.defineProperty(boxMesh.material, "envMap", {
@@ -26432,9 +26439,9 @@ function WebGLBackground(renderer, cubemaps, cubeuvmaps, state, objects, alpha, 
       renderList.unshift(planeMesh, planeMesh.geometry, planeMesh.material, 0, 0, null);
     }
   }
-  function setClear(color, alpha2) {
+  function setClear(color, alpha) {
     color.getRGB(_rgb, getUnlitUniformColorSpace(renderer));
-    state.buffers.color.setClear(_rgb.r, _rgb.g, _rgb.b, alpha2, premultipliedAlpha);
+    state.buffers.color.setClear(_rgb.r, _rgb.g, _rgb.b, alpha, premultipliedAlpha);
   }
   function dispose() {
     if (boxMesh !== undefined) {
@@ -26452,16 +26459,16 @@ function WebGLBackground(renderer, cubemaps, cubeuvmaps, state, objects, alpha, 
     getClearColor: function() {
       return clearColor;
     },
-    setClearColor: function(color, alpha2 = 1) {
+    setClearColor: function(color, alpha = 1) {
       clearColor.set(color);
-      clearAlpha = alpha2;
+      clearAlpha = alpha;
       setClear(clearColor, clearAlpha);
     },
     getClearAlpha: function() {
       return clearAlpha;
     },
-    setClearAlpha: function(alpha2) {
-      clearAlpha = alpha2;
+    setClearAlpha: function(alpha) {
+      clearAlpha = alpha;
       setClear(clearColor, clearAlpha);
     },
     render,
@@ -26578,13 +26585,13 @@ function WebGLBindingStates(gl, attributes) {
   }
   function saveCache(object, geometry, program, index) {
     const cache = {};
-    const attributes2 = geometry.attributes;
+    const attributes = geometry.attributes;
     let attributesNum = 0;
     const programAttributes = program.getAttributes();
     for (const name in programAttributes) {
       const programAttribute = programAttributes[name];
       if (programAttribute.location >= 0) {
-        let attribute = attributes2[name];
+        let attribute = attributes[name];
         if (attribute === undefined) {
           if (name === "instanceMatrix" && object.instanceMatrix)
             attribute = object.instanceMatrix;
@@ -26871,14 +26878,14 @@ function WebGLCapabilities(gl, extensions, parameters, utils) {
     }
     return true;
   }
-  function getMaxPrecision(precision2) {
-    if (precision2 === "highp") {
+  function getMaxPrecision(precision) {
+    if (precision === "highp") {
       if (gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.HIGH_FLOAT).precision > 0 && gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.HIGH_FLOAT).precision > 0) {
         return "highp";
       }
-      precision2 = "mediump";
+      precision = "mediump";
     }
-    if (precision2 === "mediump") {
+    if (precision === "mediump") {
       if (gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.MEDIUM_FLOAT).precision > 0 && gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.MEDIUM_FLOAT).precision > 0) {
         return "mediump";
       }
@@ -27197,9 +27204,9 @@ class PMREMGenerator {
     this._renderer.compile(tmpMesh, _flatCamera);
   }
   _sceneToCubeUV(scene, near, far, cubeUVRenderTarget) {
-    const fov2 = 90;
-    const aspect2 = 1;
-    const cubeCamera = new PerspectiveCamera(fov2, aspect2, near, far);
+    const fov = 90;
+    const aspect = 1;
+    const cubeCamera = new PerspectiveCamera(fov, aspect, near, far);
     const upSign = [1, -1, 1, 1, 1, 1];
     const forwardSign = [1, 1, 1, -1, -1, -1];
     const renderer = this._renderer;
@@ -27311,8 +27318,8 @@ class PMREMGenerator {
     const weights = [];
     let sum = 0;
     for (let i = 0;i < MAX_SAMPLES; ++i) {
-      const x2 = i / sigmaPixels;
-      const weight = Math.exp(-x2 * x2 / 2);
+      const x = i / sigmaPixels;
+      const weight = Math.exp(-x * x / 2);
       weights.push(weight);
       if (i === 0) {
         sum += weight;
@@ -27394,8 +27401,8 @@ function _createPlanes(lodMax) {
       ];
       position.set(coordinates, positionSize * vertices * face);
       uv.set(uv1, uvSize * vertices * face);
-      const fill2 = [face, face, face, face, face, face];
-      faceIndex.set(fill2, faceIndexSize * vertices * face);
+      const fill = [face, face, face, face, face, face];
+      faceIndex.set(fill, faceIndexSize * vertices * face);
     }
     const planes = new BufferGeometry;
     planes.setAttribute("position", new BufferAttribute(position, positionSize));
@@ -30545,7 +30552,7 @@ void main() {
 	gl_FragColor = pack2HalfToRGBA( vec2( mean, std_dev ) );
 }`;
 function WebGLShadowMap(renderer, objects, capabilities) {
-  let _frustum2 = new Frustum;
+  let _frustum = new Frustum;
   const _shadowMapSize = new Vector2, _viewportSize = new Vector2, _viewport = new Vector4, _depthMaterial = new MeshDepthMaterial({ depthPacking: RGBADepthPacking }), _distanceMaterial = new MeshDistanceMaterial, _materialCache = {}, _maxTextureSize = capabilities.maxTextureSize;
   const shadowSide = { [FrontSide]: BackSide, [BackSide]: FrontSide, [DoubleSide]: DoubleSide };
   const shadowMaterialVertical = new ShaderMaterial({
@@ -30630,7 +30637,7 @@ function WebGLShadowMap(renderer, objects, capabilities) {
         _viewport.set(_viewportSize.x * viewport.x, _viewportSize.y * viewport.y, _viewportSize.x * viewport.z, _viewportSize.y * viewport.w);
         _state.viewport(_viewport);
         shadow.updateMatrices(light, vp);
-        _frustum2 = shadow.getFrustum();
+        _frustum = shadow.getFrustum();
         renderObject(scene, camera, shadow.camera, light, this.type);
       }
       if (shadow.isPointLightShadow !== true && this.type === VSMShadowMap) {
@@ -30718,7 +30725,7 @@ function WebGLShadowMap(renderer, objects, capabilities) {
       return;
     const visible = object.layers.test(camera.layers);
     if (visible && (object.isMesh || object.isLine || object.isPoints)) {
-      if ((object.castShadow || object.receiveShadow && type === VSMShadowMap) && (!object.frustumCulled || _frustum2.intersectsObject(object))) {
+      if ((object.castShadow || object.receiveShadow && type === VSMShadowMap) && (!object.frustumCulled || _frustum.intersectsObject(object))) {
         object.modelViewMatrix.multiplyMatrices(shadowCamera.matrixWorldInverse, object.matrixWorld);
         const geometry = objects.update(object);
         const material = object.material;
@@ -31062,30 +31069,30 @@ function WebGLState(gl, extensions) {
     return false;
   }
   function drawBuffers(renderTarget, framebuffer) {
-    let drawBuffers2 = defaultDrawbuffers;
+    let drawBuffers = defaultDrawbuffers;
     let needsUpdate = false;
     if (renderTarget) {
-      drawBuffers2 = currentDrawbuffers.get(framebuffer);
-      if (drawBuffers2 === undefined) {
-        drawBuffers2 = [];
-        currentDrawbuffers.set(framebuffer, drawBuffers2);
+      drawBuffers = currentDrawbuffers.get(framebuffer);
+      if (drawBuffers === undefined) {
+        drawBuffers = [];
+        currentDrawbuffers.set(framebuffer, drawBuffers);
       }
       const textures = renderTarget.textures;
-      if (drawBuffers2.length !== textures.length || drawBuffers2[0] !== gl.COLOR_ATTACHMENT0) {
+      if (drawBuffers.length !== textures.length || drawBuffers[0] !== gl.COLOR_ATTACHMENT0) {
         for (let i = 0, il = textures.length;i < il; i++) {
-          drawBuffers2[i] = gl.COLOR_ATTACHMENT0 + i;
+          drawBuffers[i] = gl.COLOR_ATTACHMENT0 + i;
         }
-        drawBuffers2.length = textures.length;
+        drawBuffers.length = textures.length;
         needsUpdate = true;
       }
     } else {
-      if (drawBuffers2[0] !== gl.BACK) {
-        drawBuffers2[0] = gl.BACK;
+      if (drawBuffers[0] !== gl.BACK) {
+        drawBuffers[0] = gl.BACK;
         needsUpdate = true;
       }
     }
     if (needsUpdate) {
-      gl.drawBuffers(drawBuffers2);
+      gl.drawBuffers(drawBuffers);
     }
   }
   function useProgram(program) {
@@ -31393,16 +31400,16 @@ function WebGLState(gl, extensions) {
       console.error("THREE.WebGLState:", error);
     }
   }
-  function scissor(scissor2) {
-    if (currentScissor.equals(scissor2) === false) {
-      gl.scissor(scissor2.x, scissor2.y, scissor2.z, scissor2.w);
-      currentScissor.copy(scissor2);
+  function scissor(scissor) {
+    if (currentScissor.equals(scissor) === false) {
+      gl.scissor(scissor.x, scissor.y, scissor.z, scissor.w);
+      currentScissor.copy(scissor);
     }
   }
-  function viewport(viewport2) {
-    if (currentViewport.equals(viewport2) === false) {
-      gl.viewport(viewport2.x, viewport2.y, viewport2.z, viewport2.w);
-      currentViewport.copy(viewport2);
+  function viewport(viewport) {
+    if (currentViewport.equals(viewport) === false) {
+      gl.viewport(viewport.x, viewport.y, viewport.z, viewport.w);
+      currentViewport.copy(viewport);
     }
   }
   function updateUBOMapping(uniformsGroup, program) {
@@ -31530,13 +31537,12 @@ function WebGLTextures(_gl, extensions, state, properties, capabilities, utils, 
   const supportsInvalidateFramebuffer = typeof navigator === "undefined" ? false : /OculusBrowser/g.test(navigator.userAgent);
   const _imageDimensions = new Vector2;
   const _videoTextures = new WeakMap;
-  let _canvas2;
+  let _canvas;
   const _sources = new WeakMap;
   let useOffscreenCanvas = false;
   try {
     useOffscreenCanvas = typeof OffscreenCanvas !== "undefined" && new OffscreenCanvas(1, 1).getContext("2d") !== null;
-  } catch (err) {
-  }
+  } catch (err) {}
   function createCanvas(width, height) {
     return useOffscreenCanvas ? new OffscreenCanvas(width, height) : createElementNS("canvas");
   }
@@ -31550,9 +31556,9 @@ function WebGLTextures(_gl, extensions, state, properties, capabilities, utils, 
       if (typeof HTMLImageElement !== "undefined" && image instanceof HTMLImageElement || typeof HTMLCanvasElement !== "undefined" && image instanceof HTMLCanvasElement || typeof ImageBitmap !== "undefined" && image instanceof ImageBitmap || typeof VideoFrame !== "undefined" && image instanceof VideoFrame) {
         const width = Math.floor(scale * dimensions.width);
         const height = Math.floor(scale * dimensions.height);
-        if (_canvas2 === undefined)
-          _canvas2 = createCanvas(width, height);
-        const canvas = needsNewCanvas ? createCanvas(width, height) : _canvas2;
+        if (_canvas === undefined)
+          _canvas = createCanvas(width, height);
+        const canvas = needsNewCanvas ? createCanvas(width, height) : _canvas;
         canvas.width = width;
         canvas.height = height;
         const context = canvas.getContext("2d");
@@ -32133,7 +32139,7 @@ function WebGLTextures(_gl, extensions, state, properties, capabilities, utils, 
           if (useTexStorage) {
             state.texStorage2D(_gl.TEXTURE_2D, levels, glInternalFormat, image.width, image.height);
           } else {
-            let { width, height } = image;
+            let width = image.width, height = image.height;
             for (let i = 0;i < levels; i++) {
               state.texImage2D(_gl.TEXTURE_2D, i, glInternalFormat, width, height, 0, glFormat, glType, null);
               width >>= 1;
@@ -32510,12 +32516,12 @@ function WebGLTextures(_gl, extensions, state, properties, capabilities, utils, 
         renderTargetProperties.__webglColorRenderbuffer = [];
         state.bindFramebuffer(_gl.FRAMEBUFFER, renderTargetProperties.__webglMultisampledFramebuffer);
         for (let i = 0;i < textures.length; i++) {
-          const texture2 = textures[i];
+          const texture = textures[i];
           renderTargetProperties.__webglColorRenderbuffer[i] = _gl.createRenderbuffer();
           _gl.bindRenderbuffer(_gl.RENDERBUFFER, renderTargetProperties.__webglColorRenderbuffer[i]);
-          const glFormat = utils.convert(texture2.format, texture2.colorSpace);
-          const glType = utils.convert(texture2.type);
-          const glInternalFormat = getInternalFormat(texture2.internalFormat, glFormat, glType, texture2.colorSpace, renderTarget.isXRRenderTarget === true);
+          const glFormat = utils.convert(texture.format, texture.colorSpace);
+          const glType = utils.convert(texture.type);
+          const glInternalFormat = getInternalFormat(texture.internalFormat, glFormat, glType, texture.colorSpace, renderTarget.isXRRenderTarget === true);
           const samples = getRenderTargetSamples(renderTarget);
           _gl.renderbufferStorageMultisample(_gl.RENDERBUFFER, samples, glInternalFormat, renderTarget.width, renderTarget.height);
           _gl.framebufferRenderbuffer(_gl.FRAMEBUFFER, _gl.COLOR_ATTACHMENT0 + i, _gl.RENDERBUFFER, renderTargetProperties.__webglColorRenderbuffer[i]);
@@ -33192,14 +33198,14 @@ class WebXRManager extends EventDispatcher {
         const inputSource = event.added[i];
         let controllerIndex = controllerInputSources.indexOf(inputSource);
         if (controllerIndex === -1) {
-          for (let i2 = 0;i2 < controllers.length; i2++) {
-            if (i2 >= controllerInputSources.length) {
+          for (let i = 0;i < controllers.length; i++) {
+            if (i >= controllerInputSources.length) {
               controllerInputSources.push(inputSource);
-              controllerIndex = i2;
+              controllerIndex = i;
               break;
-            } else if (controllerInputSources[i2] === null) {
-              controllerInputSources[i2] = inputSource;
-              controllerIndex = i2;
+            } else if (controllerInputSources[i] === null) {
+              controllerInputSources[i] = inputSource;
+              controllerIndex = i;
               break;
             }
           }
@@ -33214,12 +33220,12 @@ class WebXRManager extends EventDispatcher {
     }
     const cameraLPos = new Vector3;
     const cameraRPos = new Vector3;
-    function setProjectionFromUnion(camera, cameraL2, cameraR2) {
-      cameraLPos.setFromMatrixPosition(cameraL2.matrixWorld);
-      cameraRPos.setFromMatrixPosition(cameraR2.matrixWorld);
+    function setProjectionFromUnion(camera, cameraL, cameraR) {
+      cameraLPos.setFromMatrixPosition(cameraL.matrixWorld);
+      cameraRPos.setFromMatrixPosition(cameraR.matrixWorld);
       const ipd = cameraLPos.distanceTo(cameraRPos);
-      const projL = cameraL2.projectionMatrix.elements;
-      const projR = cameraR2.projectionMatrix.elements;
+      const projL = cameraL.projectionMatrix.elements;
+      const projR = cameraR.projectionMatrix.elements;
       const near = projL[14] / (projL[10] - 1);
       const far = projL[14] / (projL[10] + 1);
       const topFov = (projL[9] + 1) / projL[5];
@@ -33230,14 +33236,14 @@ class WebXRManager extends EventDispatcher {
       const right = near * rightFov;
       const zOffset = ipd / (-leftFov + rightFov);
       const xOffset = zOffset * -leftFov;
-      cameraL2.matrixWorld.decompose(camera.position, camera.quaternion, camera.scale);
+      cameraL.matrixWorld.decompose(camera.position, camera.quaternion, camera.scale);
       camera.translateX(xOffset);
       camera.translateZ(zOffset);
       camera.matrixWorld.compose(camera.position, camera.quaternion, camera.scale);
       camera.matrixWorldInverse.copy(camera.matrixWorld).invert();
       if (projL[10] === -1) {
-        camera.projectionMatrix.copy(cameraL2.projectionMatrix);
-        camera.projectionMatrixInverse.copy(cameraL2.projectionMatrixInverse);
+        camera.projectionMatrix.copy(cameraL.projectionMatrix);
+        camera.projectionMatrixInverse.copy(cameraL.projectionMatrixInverse);
       } else {
         const near2 = near + zOffset;
         const far2 = far + zOffset;
@@ -33282,30 +33288,30 @@ class WebXRManager extends EventDispatcher {
       cameraR.layers.mask = camera.layers.mask | 4;
       cameraXR.layers.mask = cameraL.layers.mask | cameraR.layers.mask;
       const parent = camera.parent;
-      const cameras2 = cameraXR.cameras;
+      const cameras = cameraXR.cameras;
       updateCamera(cameraXR, parent);
-      for (let i = 0;i < cameras2.length; i++) {
-        updateCamera(cameras2[i], parent);
+      for (let i = 0;i < cameras.length; i++) {
+        updateCamera(cameras[i], parent);
       }
-      if (cameras2.length === 2) {
+      if (cameras.length === 2) {
         setProjectionFromUnion(cameraXR, cameraL, cameraR);
       } else {
         cameraXR.projectionMatrix.copy(cameraL.projectionMatrix);
       }
       updateUserCamera(camera, cameraXR, parent);
     };
-    function updateUserCamera(camera, cameraXR2, parent) {
+    function updateUserCamera(camera, cameraXR, parent) {
       if (parent === null) {
-        camera.matrix.copy(cameraXR2.matrixWorld);
+        camera.matrix.copy(cameraXR.matrixWorld);
       } else {
         camera.matrix.copy(parent.matrixWorld);
         camera.matrix.invert();
-        camera.matrix.multiply(cameraXR2.matrixWorld);
+        camera.matrix.multiply(cameraXR.matrixWorld);
       }
       camera.matrix.decompose(camera.position, camera.quaternion, camera.scale);
       camera.updateMatrixWorld(true);
-      camera.projectionMatrix.copy(cameraXR2.projectionMatrix);
-      camera.projectionMatrixInverse.copy(cameraXR2.projectionMatrixInverse);
+      camera.projectionMatrix.copy(cameraXR.projectionMatrix);
+      camera.projectionMatrixInverse.copy(cameraXR.projectionMatrixInverse);
       if (camera.isPerspectiveCamera) {
         camera.fov = RAD2DEG * 2 * Math.atan(1 / camera.projectionMatrix.elements[5]);
         camera.zoom = 1;
@@ -33411,8 +33417,7 @@ class WebXRManager extends EventDispatcher {
     this.setAnimationLoop = function(callback) {
       onAnimationFrameCallback = callback;
     };
-    this.dispose = function() {
-    };
+    this.dispose = function() {};
   }
 }
 var _e1 = /* @__PURE__ */ new Euler;
@@ -33788,7 +33793,7 @@ function WebGLUniformsGroups(gl, info, capabilities, state) {
           let arrayOffset = 0;
           for (let k = 0;k < values.length; k++) {
             const value = values[k];
-            const info2 = getUniformSize(value);
+            const info = getUniformSize(value);
             if (typeof value === "number" || typeof value === "boolean") {
               uniform.__data[0] = value;
               gl.bufferSubData(gl.UNIFORM_BUFFER, offset + arrayOffset, uniform.__data);
@@ -33807,7 +33812,7 @@ function WebGLUniformsGroups(gl, info, capabilities, state) {
               uniform.__data[11] = 0;
             } else {
               value.toArray(uniform.__data, arrayOffset);
-              arrayOffset += info2.storage / Float32Array.BYTES_PER_ELEMENT;
+              arrayOffset += info.storage / Float32Array.BYTES_PER_ELEMENT;
             }
           }
           gl.bufferSubData(gl.UNIFORM_BUFFER, offset, uniform.__data);
@@ -33853,17 +33858,17 @@ function WebGLUniformsGroups(gl, info, capabilities, state) {
         const values = Array.isArray(uniform.value) ? uniform.value : [uniform.value];
         for (let k = 0, kl = values.length;k < kl; k++) {
           const value = values[k];
-          const info2 = getUniformSize(value);
-          const chunkOffset2 = offset % chunkSize;
-          const chunkPadding = chunkOffset2 % info2.boundary;
-          const chunkStart = chunkOffset2 + chunkPadding;
+          const info = getUniformSize(value);
+          const chunkOffset = offset % chunkSize;
+          const chunkPadding = chunkOffset % info.boundary;
+          const chunkStart = chunkOffset + chunkPadding;
           offset += chunkPadding;
-          if (chunkStart !== 0 && chunkSize - chunkStart < info2.storage) {
+          if (chunkStart !== 0 && chunkSize - chunkStart < info.storage) {
             offset += chunkSize - chunkStart;
           }
-          uniform.__data = new Float32Array(info2.storage / Float32Array.BYTES_PER_ELEMENT);
+          uniform.__data = new Float32Array(info.storage / Float32Array.BYTES_PER_ELEMENT);
           uniform.__offset = offset;
-          offset += info2.storage;
+          offset += info.storage;
         }
       }
     }
@@ -33875,34 +33880,34 @@ function WebGLUniformsGroups(gl, info, capabilities, state) {
     return this;
   }
   function getUniformSize(value) {
-    const info2 = {
+    const info = {
       boundary: 0,
       storage: 0
     };
     if (typeof value === "number" || typeof value === "boolean") {
-      info2.boundary = 4;
-      info2.storage = 4;
+      info.boundary = 4;
+      info.storage = 4;
     } else if (value.isVector2) {
-      info2.boundary = 8;
-      info2.storage = 8;
+      info.boundary = 8;
+      info.storage = 8;
     } else if (value.isVector3 || value.isColor) {
-      info2.boundary = 16;
-      info2.storage = 12;
+      info.boundary = 16;
+      info.storage = 12;
     } else if (value.isVector4) {
-      info2.boundary = 16;
-      info2.storage = 16;
+      info.boundary = 16;
+      info.storage = 16;
     } else if (value.isMatrix3) {
-      info2.boundary = 48;
-      info2.storage = 48;
+      info.boundary = 48;
+      info.storage = 48;
     } else if (value.isMatrix4) {
-      info2.boundary = 64;
-      info2.storage = 64;
+      info.boundary = 64;
+      info.storage = 64;
     } else if (value.isTexture) {
       console.warn("THREE.WebGLRenderer: Texture samplers can not be part of an uniforms group.");
     } else {
       console.warn("THREE.WebGLRenderer: Unsupported uniform value type.", value);
     }
-    return info2;
+    return info;
   }
   function onUniformsGroupsDispose(event) {
     const uniformsGroup = event.target;
@@ -33994,13 +33999,13 @@ class WebGLRenderer {
     const _viewport = new Vector4(0, 0, _width, _height);
     const _scissor = new Vector4(0, 0, _width, _height);
     let _scissorTest = false;
-    const _frustum2 = new Frustum;
+    const _frustum = new Frustum;
     let _clippingEnabled = false;
     let _localClippingEnabled = false;
     this.transmissionResolutionScale = 1;
     const _currentProjectionMatrix = new Matrix4;
-    const _projScreenMatrix2 = new Matrix4;
-    const _vector32 = new Vector3;
+    const _projScreenMatrix = new Matrix4;
+    const _vector3 = new Vector3;
     const _vector4 = new Vector4;
     const _emptyScene = { background: null, fog: null, environment: null, overrideMaterial: null, isScene: true };
     let _renderBackground = false;
@@ -34191,7 +34196,7 @@ class WebGLRenderer {
     this.setClearAlpha = function() {
       background.setClearAlpha.apply(background, arguments);
     };
-    this.clear = function(color = true, depth2 = true, stencil2 = true) {
+    this.clear = function(color = true, depth = true, stencil = true) {
       let bits = 0;
       if (color) {
         let isIntegerFormat = false;
@@ -34224,10 +34229,10 @@ class WebGLRenderer {
           bits |= _gl.COLOR_BUFFER_BIT;
         }
       }
-      if (depth2) {
+      if (depth) {
         bits |= _gl.DEPTH_BUFFER_BIT;
       }
-      if (stencil2) {
+      if (stencil) {
         bits |= _gl.STENCIL_BUFFER_BIT;
         this.state.buffers.stencil.setMask(4294967295);
       }
@@ -34375,10 +34380,10 @@ class WebGLRenderer {
           if (!extensions.get("WEBGL_multi_draw")) {
             const starts = object._multiDrawStarts;
             const counts = object._multiDrawCounts;
-            const drawCount2 = object._multiDrawCount;
+            const drawCount = object._multiDrawCount;
             const bytesPerElement = index ? attributes.get(index).bytesPerElement : 1;
             const uniforms = properties.get(material).currentProgram.getUniforms();
-            for (let i = 0;i < drawCount2; i++) {
+            for (let i = 0;i < drawCount; i++) {
               uniforms.setValue(_gl, "_gl_DrawID", i);
               renderer.render(starts[i] / bytesPerElement, counts[i]);
             }
@@ -34434,7 +34439,7 @@ class WebGLRenderer {
         });
       }
       currentRenderState.setupLights();
-      const materials2 = new Set;
+      const materials = new Set;
       scene.traverse(function(object) {
         if (!(object.isMesh || object.isPoints || object.isLine || object.isSprite)) {
           return;
@@ -34445,30 +34450,30 @@ class WebGLRenderer {
             for (let i = 0;i < material.length; i++) {
               const material2 = material[i];
               prepareMaterial(material2, targetScene, object);
-              materials2.add(material2);
+              materials.add(material2);
             }
           } else {
             prepareMaterial(material, targetScene, object);
-            materials2.add(material);
+            materials.add(material);
           }
         }
       });
       renderStateStack.pop();
       currentRenderState = null;
-      return materials2;
+      return materials;
     };
     this.compileAsync = function(scene, camera, targetScene = null) {
-      const materials2 = this.compile(scene, camera, targetScene);
+      const materials = this.compile(scene, camera, targetScene);
       return new Promise((resolve) => {
         function checkMaterialsReady() {
-          materials2.forEach(function(material) {
+          materials.forEach(function(material) {
             const materialProperties = properties.get(material);
             const program = materialProperties.currentProgram;
             if (program.isReady()) {
-              materials2.delete(material);
+              materials.delete(material);
             }
           });
-          if (materials2.size === 0) {
+          if (materials.size === 0) {
             resolve(scene);
             return;
           }
@@ -34524,8 +34529,8 @@ class WebGLRenderer {
       currentRenderState = renderStates.get(scene, renderStateStack.length);
       currentRenderState.init(camera);
       renderStateStack.push(currentRenderState);
-      _projScreenMatrix2.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
-      _frustum2.setFromProjectionMatrix(_projScreenMatrix2);
+      _projScreenMatrix.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
+      _frustum.setFromProjectionMatrix(_projScreenMatrix);
       _localClippingEnabled = this.localClippingEnabled;
       _clippingEnabled = clipping.init(this.clippingPlanes, _localClippingEnabled);
       currentRenderList = renderLists.get(scene, renderListStack.length);
@@ -34619,9 +34624,9 @@ class WebGLRenderer {
             currentRenderState.pushShadow(object);
           }
         } else if (object.isSprite) {
-          if (!object.frustumCulled || _frustum2.intersectsSprite(object)) {
+          if (!object.frustumCulled || _frustum.intersectsSprite(object)) {
             if (sortObjects) {
-              _vector4.setFromMatrixPosition(object.matrixWorld).applyMatrix4(_projScreenMatrix2);
+              _vector4.setFromMatrixPosition(object.matrixWorld).applyMatrix4(_projScreenMatrix);
             }
             const geometry = objects.update(object);
             const material = object.material;
@@ -34630,7 +34635,7 @@ class WebGLRenderer {
             }
           }
         } else if (object.isMesh || object.isLine || object.isPoints) {
-          if (!object.frustumCulled || _frustum2.intersectsObject(object)) {
+          if (!object.frustumCulled || _frustum.intersectsObject(object)) {
             const geometry = objects.update(object);
             const material = object.material;
             if (sortObjects) {
@@ -34643,7 +34648,7 @@ class WebGLRenderer {
                   geometry.computeBoundingSphere();
                 _vector4.copy(geometry.boundingSphere.center);
               }
-              _vector4.applyMatrix4(object.matrixWorld).applyMatrix4(_projScreenMatrix2);
+              _vector4.applyMatrix4(object.matrixWorld).applyMatrix4(_projScreenMatrix);
             }
             if (Array.isArray(material)) {
               const groups = geometry.groups;
@@ -34665,10 +34670,10 @@ class WebGLRenderer {
         projectObject(children[i], camera, groupOrder, sortObjects);
       }
     }
-    function renderScene(currentRenderList2, scene, camera, viewport) {
-      const opaqueObjects = currentRenderList2.opaque;
-      const transmissiveObjects = currentRenderList2.transmissive;
-      const transparentObjects = currentRenderList2.transparent;
+    function renderScene(currentRenderList, scene, camera, viewport) {
+      const opaqueObjects = currentRenderList.opaque;
+      const transmissiveObjects = currentRenderList.transmissive;
+      const transparentObjects = currentRenderList.transparent;
       currentRenderState.setupLightsView(camera);
       if (_clippingEnabled === true)
         clipping.setGlobalState(_this.clippingPlanes, camera);
@@ -34792,8 +34797,8 @@ class WebGLRenderer {
       const lights = currentRenderState.state.lights;
       const shadowsArray = currentRenderState.state.shadowsArray;
       const lightsStateVersion = lights.state.version;
-      const parameters2 = programCache.getParameters(material, lights.state, shadowsArray, scene, object);
-      const programCacheKey = programCache.getProgramCacheKey(parameters2);
+      const parameters = programCache.getParameters(material, lights.state, shadowsArray, scene, object);
+      const programCacheKey = programCache.getProgramCacheKey(parameters);
       let programs = materialProperties.programs;
       materialProperties.environment = material.isMeshStandardMaterial ? scene.environment : null;
       materialProperties.fog = scene.fog;
@@ -34807,21 +34812,21 @@ class WebGLRenderer {
       let program = programs.get(programCacheKey);
       if (program !== undefined) {
         if (materialProperties.currentProgram === program && materialProperties.lightsStateVersion === lightsStateVersion) {
-          updateCommonMaterialProperties(material, parameters2);
+          updateCommonMaterialProperties(material, parameters);
           return program;
         }
       } else {
-        parameters2.uniforms = programCache.getUniforms(material);
-        material.onBeforeCompile(parameters2, _this);
-        program = programCache.acquireProgram(parameters2, programCacheKey);
+        parameters.uniforms = programCache.getUniforms(material);
+        material.onBeforeCompile(parameters, _this);
+        program = programCache.acquireProgram(parameters, programCacheKey);
         programs.set(programCacheKey, program);
-        materialProperties.uniforms = parameters2.uniforms;
+        materialProperties.uniforms = parameters.uniforms;
       }
       const uniforms = materialProperties.uniforms;
       if (!material.isShaderMaterial && !material.isRawShaderMaterial || material.clipping === true) {
         uniforms.clippingPlanes = clipping.uniform;
       }
-      updateCommonMaterialProperties(material, parameters2);
+      updateCommonMaterialProperties(material, parameters);
       materialProperties.needsLights = materialNeedsLights(material);
       materialProperties.lightsStateVersion = lightsStateVersion;
       if (materialProperties.needsLights) {
@@ -34856,24 +34861,24 @@ class WebGLRenderer {
       }
       return materialProperties.uniformsList;
     }
-    function updateCommonMaterialProperties(material, parameters2) {
+    function updateCommonMaterialProperties(material, parameters) {
       const materialProperties = properties.get(material);
-      materialProperties.outputColorSpace = parameters2.outputColorSpace;
-      materialProperties.batching = parameters2.batching;
-      materialProperties.batchingColor = parameters2.batchingColor;
-      materialProperties.instancing = parameters2.instancing;
-      materialProperties.instancingColor = parameters2.instancingColor;
-      materialProperties.instancingMorph = parameters2.instancingMorph;
-      materialProperties.skinning = parameters2.skinning;
-      materialProperties.morphTargets = parameters2.morphTargets;
-      materialProperties.morphNormals = parameters2.morphNormals;
-      materialProperties.morphColors = parameters2.morphColors;
-      materialProperties.morphTargetsCount = parameters2.morphTargetsCount;
-      materialProperties.numClippingPlanes = parameters2.numClippingPlanes;
-      materialProperties.numIntersection = parameters2.numClipIntersection;
-      materialProperties.vertexAlphas = parameters2.vertexAlphas;
-      materialProperties.vertexTangents = parameters2.vertexTangents;
-      materialProperties.toneMapping = parameters2.toneMapping;
+      materialProperties.outputColorSpace = parameters.outputColorSpace;
+      materialProperties.batching = parameters.batching;
+      materialProperties.batchingColor = parameters.batchingColor;
+      materialProperties.instancing = parameters.instancing;
+      materialProperties.instancingColor = parameters.instancingColor;
+      materialProperties.instancingMorph = parameters.instancingMorph;
+      materialProperties.skinning = parameters.skinning;
+      materialProperties.morphTargets = parameters.morphTargets;
+      materialProperties.morphNormals = parameters.morphNormals;
+      materialProperties.morphColors = parameters.morphColors;
+      materialProperties.morphTargetsCount = parameters.morphTargetsCount;
+      materialProperties.numClippingPlanes = parameters.numClippingPlanes;
+      materialProperties.numIntersection = parameters.numClipIntersection;
+      materialProperties.vertexAlphas = parameters.vertexAlphas;
+      materialProperties.vertexTangents = parameters.vertexTangents;
+      materialProperties.toneMapping = parameters.toneMapping;
     }
     function setProgram(camera, scene, geometry, material, object) {
       if (scene.isScene !== true)
@@ -34977,8 +34982,8 @@ class WebGLRenderer {
         refreshMaterial = true;
       }
       if (refreshProgram || _currentCamera !== camera) {
-        const reverseDepthBuffer2 = state.buffers.depth.getReversed();
-        if (reverseDepthBuffer2) {
+        const reverseDepthBuffer = state.buffers.depth.getReversed();
+        if (reverseDepthBuffer) {
           _currentProjectionMatrix.copy(camera.projectionMatrix);
           toNormalizedProjectionMatrix(_currentProjectionMatrix);
           toReversedProjectionMatrix(_currentProjectionMatrix);
@@ -34989,7 +34994,7 @@ class WebGLRenderer {
         p_uniforms.setValue(_gl, "viewMatrix", camera.matrixWorldInverse);
         const uCamPos = p_uniforms.map.cameraPosition;
         if (uCamPos !== undefined) {
-          uCamPos.setValue(_gl, _vector32.setFromMatrixPosition(camera.matrixWorld));
+          uCamPos.setValue(_gl, _vector3.setFromMatrixPosition(camera.matrixWorld));
         }
         if (capabilities.logarithmicDepthBuffer) {
           p_uniforms.setValue(_gl, "logDepthBufFC", 2 / (Math.log(camera.far + 1) / Math.LN2));
@@ -35217,8 +35222,8 @@ class WebGLRenderer {
             _gl.readPixels(x, y, width, height, utils.convert(textureFormat), utils.convert(textureType), buffer);
           }
         } finally {
-          const framebuffer2 = _currentRenderTarget !== null ? properties.get(_currentRenderTarget).__webglFramebuffer : null;
-          state.bindFramebuffer(_gl.FRAMEBUFFER, framebuffer2);
+          const framebuffer = _currentRenderTarget !== null ? properties.get(_currentRenderTarget).__webglFramebuffer : null;
+          state.bindFramebuffer(_gl.FRAMEBUFFER, framebuffer);
         }
       }
     };
@@ -35296,13 +35301,13 @@ class WebGLRenderer {
           dstLevel = 0;
         }
       }
-      let width, height, depth2, minX, minY, minZ;
+      let width, height, depth, minX, minY, minZ;
       let dstX, dstY, dstZ;
       const image = srcTexture.isCompressedTexture ? srcTexture.mipmaps[dstLevel] : srcTexture.image;
       if (srcRegion !== null) {
         width = srcRegion.max.x - srcRegion.min.x;
         height = srcRegion.max.y - srcRegion.min.y;
-        depth2 = srcRegion.isBox3 ? srcRegion.max.z - srcRegion.min.z : 1;
+        depth = srcRegion.isBox3 ? srcRegion.max.z - srcRegion.min.z : 1;
         minX = srcRegion.min.x;
         minY = srcRegion.min.y;
         minZ = srcRegion.isBox3 ? srcRegion.min.z : 0;
@@ -35311,11 +35316,11 @@ class WebGLRenderer {
         width = Math.floor(image.width * levelScale);
         height = Math.floor(image.height * levelScale);
         if (srcTexture.isDataArrayTexture) {
-          depth2 = image.depth;
+          depth = image.depth;
         } else if (srcTexture.isData3DTexture) {
-          depth2 = Math.floor(image.depth * levelScale);
+          depth = Math.floor(image.depth * levelScale);
         } else {
-          depth2 = 1;
+          depth = 1;
         }
         minX = 0;
         minY = 0;
@@ -35365,7 +35370,7 @@ class WebGLRenderer {
         const dstRenderTargetProperties = properties.get(dstTextureProperties.__renderTarget);
         state.bindFramebuffer(_gl.READ_FRAMEBUFFER, srcRenderTargetProperties.__webglFramebuffer);
         state.bindFramebuffer(_gl.DRAW_FRAMEBUFFER, dstRenderTargetProperties.__webglFramebuffer);
-        for (let i = 0;i < depth2; i++) {
+        for (let i = 0;i < depth; i++) {
           if (isSrc3D) {
             _gl.framebufferTextureLayer(_gl.READ_FRAMEBUFFER, _gl.COLOR_ATTACHMENT0, properties.get(srcTexture).__webglTexture, srcLevel, minZ + i);
             _gl.framebufferTextureLayer(_gl.DRAW_FRAMEBUFFER, _gl.COLOR_ATTACHMENT0, properties.get(dstTexture).__webglTexture, dstLevel, dstZ + i);
@@ -35379,7 +35384,7 @@ class WebGLRenderer {
         const dstTextureProperties = properties.get(dstTexture);
         state.bindFramebuffer(_gl.READ_FRAMEBUFFER, _srcFramebuffer);
         state.bindFramebuffer(_gl.DRAW_FRAMEBUFFER, _dstFramebuffer);
-        for (let i = 0;i < depth2; i++) {
+        for (let i = 0;i < depth; i++) {
           if (isSrc3D) {
             _gl.framebufferTextureLayer(_gl.READ_FRAMEBUFFER, _gl.COLOR_ATTACHMENT0, srcTextureProperties.__webglTexture, srcLevel, minZ + i);
           } else {
@@ -35403,11 +35408,11 @@ class WebGLRenderer {
       } else {
         if (isDst3D) {
           if (srcTexture.isDataTexture || srcTexture.isData3DTexture) {
-            _gl.texSubImage3D(glTarget, dstLevel, dstX, dstY, dstZ, width, height, depth2, glFormat, glType, image.data);
+            _gl.texSubImage3D(glTarget, dstLevel, dstX, dstY, dstZ, width, height, depth, glFormat, glType, image.data);
           } else if (dstTexture.isCompressedArrayTexture) {
-            _gl.compressedTexSubImage3D(glTarget, dstLevel, dstX, dstY, dstZ, width, height, depth2, glFormat, image.data);
+            _gl.compressedTexSubImage3D(glTarget, dstLevel, dstX, dstY, dstZ, width, height, depth, glFormat, image.data);
           } else {
-            _gl.texSubImage3D(glTarget, dstLevel, dstX, dstY, dstZ, width, height, depth2, glFormat, glType, image);
+            _gl.texSubImage3D(glTarget, dstLevel, dstX, dstY, dstZ, width, height, depth, glFormat, glType, image);
           }
         } else {
           if (srcTexture.isDataTexture) {
