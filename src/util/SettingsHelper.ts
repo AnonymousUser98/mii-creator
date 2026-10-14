@@ -167,6 +167,7 @@ export const settingsInfo: Record<string, SettingsOption> = {
       { label: __("Wii U"), value: "wiiu" }
     ]
   },
+  /* This setting does nothing and isn't needed.
   resourceType: {
     type: SettingsType.Multi,
     label: __("Resource Type"),
@@ -180,7 +181,7 @@ export const settingsInfo: Record<string, SettingsOption> = {
         value: String(i)
       }))
     ]
-  },
+  }, */
   shaderType: {
     type: SettingsType.Multi,
     label: __("Shader Type"),
@@ -196,6 +197,7 @@ export const settingsInfo: Record<string, SettingsOption> = {
       { label: __("Wii U (Blinn)"), value: ShaderType.WiiUBlinn },
       { label: __("Wii U (Bright)"), value: ShaderType.WiiUFFLIconWithBody },
       { label: __("Wii U (Toon)"), value: ShaderType.WiiUToon },
+      { label: __("3DS"), value: ShaderType.ThreeDS },
       // { label: __("Switch (WIP)"), value: ShaderType.Switch, disabled: true },
       { label: __("Miitomo"), value: ShaderType.Miitomo },
       { label: __("Miitomo (Basic)"), value: ShaderType.MiitomoBasic }

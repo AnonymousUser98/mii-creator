@@ -1,6 +1,7 @@
 import { Color, MeshToonMaterial, Vector4 } from "three";
 import FFLShaderMaterial from "../../../external/ffl.js/FFLShaderMaterial";
 import LUTShaderMaterial from "../../../external/ffl.js/LUTShaderMaterial";
+import CTRShaderMaterial from "../../../external/ffl.js/CTRShaderMaterial";
 import {
   cLightAmbientFFLIconWithBody,
   cLightDiffuseFFLIconWithBody,

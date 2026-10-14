@@ -14,6 +14,8 @@ import { Config } from "../config";
 import { customRender } from "./pages/library/render/customRender";
 import { importMiiConfirmation } from "./pages/library/importDialog";
 
+import { newFromPassword } from "./passwords";
+
 import { _ } from "../util/Lang";
 import { getCurrentLoadingModal, prepareFFLAsync } from "../util/FFLLoader";
 import Html from "@datkat21/html";
