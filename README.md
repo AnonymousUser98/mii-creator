@@ -1,3 +1,7 @@
+> [!NOTE]
+> Please check out this public instance: https://kariyamii.github.io/MiiCreator/ <br/>
+> It's much better than this one.
+
 # Mii Creator App (Unofficial Public Instance)
 
 ![Preview image](public/assets/images/preview.png)
